@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
+from uncertainties import ufloat
 
 xe, yre, yqe = np.genfromtxt('werte1.txt', unpack=True)
 xz, yqz = np.genfromtxt('werte2.txt', unpack=True)
@@ -8,7 +9,7 @@ xz, yqz = np.genfromtxt('werte2.txt', unpack=True)
 def f(x, a, b):
     return a*x + b
 
-Elit = 18e10 # Elastizitaetsmodul Literaturwert
+Elit = 7e10 # Elastizitaetsmodul Literaturwert
 
 #zylindrischer Stab einseitige Einspannung
 L = 0.5 # in m, Stablänge
@@ -22,8 +23,10 @@ xe = L*xe**2-xe**3/3 # D(x)/y soll gegen diese Funktion aufgetragen werden
 params, pcov = curve_fit(f,xe,yre)
 errors = np.sqrt(np.diag(pcov))
 
+a = ufloat(params[0], errors[0])
+
 I = (np.pi/4)*(B/2)**4 # Trägheitsmoment
-E = (M*9.81)/(2*I*params[0]) # Elastizitaetsmodul
+E = (M*9.81)/(2*I*a) # Elastizitaetsmodul
 
 print('Parameter fuer zylindrischen Stab bei einseitiger Einspannung:')
 print('a =', params[0], '±', errors[0])
@@ -31,12 +34,12 @@ print('b =', params[1], '±', errors[1])
 print('Elastizitaetsmodul:')
 print(E)
 print('Abweichung:')
-print(1-E/Elit)
+print(E/Elit)
 
 plt.plot(xe*1e3,yre*1e3, 'kx', label='Messwerte')
 plt.plot(xe*1e3, f(xe, *params)*1e3, 'r-', label='Fit')
-plt.xlabel(r'$(Lx^2-\frac{x^3}{3}) \:/\: 10^{3} \: m^3}$')
-plt.ylabel(r'$D(x) \:/\: 10^{3} \: m$')
+plt.xlabel(r'$(Lx^2-\frac{x^3}{3}) \:/\: (10^{-3} \: m^{3})$')
+plt.ylabel(r'$D(x) \:/\: (10^{-3} \: m)$')
 plt.legend(loc='best')
 
 plt.savefig('rundeinseitg.pdf')
@@ -51,8 +54,10 @@ yqe *= 1e-3 # von mm auf m
 params, pcov = curve_fit(f,xe,yqe)
 errors = np.sqrt(np.diag(pcov))
 
+a = ufloat(params[0], errors[0])
+
 I = (B**4)/12 # Trägheitsmoment
-E = (M*9.81)/(2*I*params[0]) # Elastizitaetsmodul
+E = (M*9.81)/(2*I*a) # Elastizitaetsmodul
 
 print('Parameter fuer quadratischen Stab bei einseitiger Einspannung:')
 print('a =', params[0], '±', errors[0])
@@ -60,12 +65,12 @@ print('b =', params[1], '±', errors[1])
 print('Elastizitaetsmodul:')
 print(E)
 print('Abweichung:')
-print(1-E/Elit)
+print(E/Elit)
 
 plt.plot(xe*1e3,yqe*1e3, 'kx', label='Messwerte')
 plt.plot(xe*1e3, f(xe, *params)*1e3, 'r-', label='Fit')
-plt.xlabel(r'$(Lx^2-\frac{x^3}{3}) \:/\: 10^{3} \: m^3}$')
-plt.ylabel(r'$D(x) \:/\: 10^{3} \: m$')
+plt.xlabel(r'$(Lx^2-\frac{x^3}{3}) \:/\: (10^{-3} \: m^{3})$')
+plt.ylabel(r'$D(x) \:/\: (10^{-3} \: m)$')
 plt.legend(loc='best')
 
 plt.savefig('quadeinseitg.pdf')
@@ -83,8 +88,10 @@ xz = 3*(L**2)*xz-4*xz**3 # D(x)/y soll gegen diese Funktion aufgetragen werden
 params, pcov = curve_fit(f,xz,yqz)
 errors = np.sqrt(np.diag(pcov))
 
+a = ufloat(params[0], errors[0])
+
 I = (B**4)/12 # Trägheitsmoment
-E = (M*9.81)/(48*I*params[0]) # Elastizitaetsmodul
+E = (M*9.81)/(48*I*a) # Elastizitaetsmodul
 
 print('Parameter fuer quadratischen Stab bei zweiseitiger Einspannung:')
 print('a =', params[0], '±', errors[0])
@@ -92,12 +99,12 @@ print('b =', params[1], '±', errors[1])
 print('Elastizitaetsmodul:')
 print(E)
 print('Abweichung:')
-print(1-E/Elit)
+print(E/Elit)
 
 plt.plot(xz*1e3,yqz*1e3, 'kx', label='Messwerte')
 plt.plot(xz*1e3, f(xz, *params)*1e3, 'r-', label='Fit')
-plt.xlabel(r'$(3L^2x-4x^3) \:/\: 10^{3} \: m^3}$')
-plt.ylabel(r'$D(x) \:/\: 10^{3} \: m$')
+plt.xlabel(r'$(3L^2x-4x^3) \:/\: (10^{-3} \: m^{3})$')
+plt.ylabel(r'$D(x) \:/\: (10^{-3} \: m)$')
 plt.legend(loc='best')
 
 plt.savefig('quadzweiseitg.pdf')
