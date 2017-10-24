@@ -1,0 +1,4 @@
+# von Latex ertsellte Dateien werden nicht beachtet
+*build/
+*.pdf
+*__pycache__/
