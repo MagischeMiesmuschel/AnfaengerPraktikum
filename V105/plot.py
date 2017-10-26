@@ -136,7 +136,7 @@ for x in count:
     Bk[x]= Bku.n
     Bk_error[x] = Bku.s
 
-    Tku = ufloat(To[x], T_error[x])
+    Tku = ufloat(Tk[x], T_error[x])
     Tku_reci = 1/Tku
     T_reci[x] = Tku_reci.n
     T_reci_error[x] = Tku_reci.s
