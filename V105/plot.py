@@ -8,7 +8,7 @@ def f(x, a, b):
     return a*x + b
 
 def B(I):
-    return scicon.mu_0*(I*0.109**2)/(0.109**2+(0.138/2)**2)**(3/2)
+    return 195*scicon.mu_0*(I*0.109**2)/(0.109**2+(0.138/2)**2)**(3/2)
 
 r_kugel = 0.0255 # in m, Radius Kugel
 l_stift = 0.012 # in m, Länge Stift
