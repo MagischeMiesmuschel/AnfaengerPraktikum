@@ -148,7 +148,7 @@ print('T_reci_error: ', T_reci_error)
 
 # Ausgleichsgerade und PLots
 
-params,pcov = curve_fit(f, Bk, T_reci)
+params,pcov = curve_fit(f, Bk, T_reci, sigma = T_reci_error)
 errors = np.sqrt(np.diag(pcov))
 print('a: ', params[0], errors[0], sep='\n')
 print('b: ', params[1], errors[1], sep='\n')
