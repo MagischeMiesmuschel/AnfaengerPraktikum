@@ -2,3 +2,4 @@
 **build/
 **.pdf
 **__pycache__/
+py_output.txt
