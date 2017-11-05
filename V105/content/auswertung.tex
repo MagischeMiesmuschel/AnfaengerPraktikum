@@ -17,7 +17,13 @@ Die Größe der Fehler wird an der Ungenauigkeit der Messinstrumente orientiert:
 
 \subsection{Bestimmung über Gravitation}
 
-
+Aus den eingestellten Stromstärken $I$ werden mit Gleichung \eqref{eqn:bfeld} die entsprechenden Magnetfeldstärken $\symbf{B}$ berechnet.
+Um das magnetische Moment zu bestimmen,
+muss zunächst eine Ausgleichsrechnung für die gemessenen Größen durchgeführt werden.
+Dafür wird §r§ gegen $\symbf{B}$ aufgetragen (siehe Abbildung \ref{fig:plot1}) und eine Regressionsgerade berechnet mit:
+\begin{equation}
+  f(x) = ax+b
+\end{equation}
 
 \begin{figure}
   \centering
@@ -25,6 +31,18 @@ Die Größe der Fehler wird an der Ungenauigkeit der Messinstrumente orientiert:
   \caption{Gravitation.}
   \label{fig:plot1}
 \end{figure}
+
+Es ergeben sich folgende Parameter für die Ausgleichsgerade:
+\begin{equation}
+  a = 0.0299 \pm 0.0004 \: \text{T/m}
+\end{equation}
+\begin{equation}
+  b = 3 \pm 2 \: \text{T/m}
+\end{equation}
+Gleichung \eqref{eqn:gravitation} lässt sich dann zu umstellen und das magnetsiche Moment kann berechnet werden:
+\begin{equation}
+  \symbf{\mu}_{Dipol} = 2 \pm 1 \: \text{A}^{2}/\text{m}
+\end{equation}
 
 \subsection{Bestimmung über Schwingungsdauer}
 
