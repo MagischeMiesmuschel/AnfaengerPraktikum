@@ -74,6 +74,9 @@ print('mu_dipol: ', mu_dipol)
 
 plt.errorbar(r, Bg, xerr=r_error, yerr=Bg_error, fmt='k.', label='Messdaten')
 plt.plot(r, f(r, *params), 'b-', label='Fit')
+plt.legend(loc='best')
+plt.xlabel(r'$r \:/\: m$')
+plt.ylabel(r'$B  \:/\: T$')
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
 plt.savefig('build/plot1.pdf')
 plt.clf()
@@ -117,6 +120,9 @@ print('mu_dipol: ', mu_dipol)
 
 plt.errorbar(Bo, T_square, xerr=Bo_error, yerr=T_square_error, fmt='k.', label='Messdaten')
 plt.plot(Bo, f(Bo, *params), 'b-', label='Fit')
+plt.legend(loc='upper left')
+plt.xlabel(r'$\frac{1}{B} \:/\: \frac{1}{T}$')
+plt.ylabel(r'$T^2 \:/\: s^2$')
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
 plt.savefig('build/plot2.pdf')
 plt.clf()
@@ -155,11 +161,14 @@ print('b: ', params[1], errors[1], sep='\n')
 
 a = ufloat(params[0],errors[0])
 
-mu_dipol = a*2*np.pi*J_kugel*5.5
+mu_dipol = a*2*np.pi*J_kugel*5.1
 print('mu_dipol: ', mu_dipol)
 
 plt.errorbar(Bk, T_reci, xerr=Bk_error, yerr=T_reci_error, fmt='k.', label='Messdaten')
 plt.plot(Bk, f(Bk, *params), 'b-', label='Fit')
+plt.legend(loc='best')
+plt.xlabel(r'$B \:/\: T $')
+plt.ylabel(r'$\frac{1}{T} \:/\: \frac{1}{s}$')
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
 plt.savefig('build/plot3.pdf')
 plt.clf()
