@@ -20,38 +20,54 @@ Die Größe der Fehler wird an der Ungenauigkeit der Messinstrumente orientiert:
 Aus den eingestellten Stromstärken $I$ werden mit Gleichung \eqref{eqn:bfeld} die entsprechenden Magnetfeldstärken $\symbf{B}$ berechnet.
 Um das magnetische Moment zu bestimmen,
 muss zunächst eine Ausgleichsrechnung für die gemessenen Größen durchgeführt werden.
-Dafür wird §r§ gegen $\symbf{B}$ aufgetragen (siehe Abbildung \ref{fig:plot1}) und eine Regressionsgerade berechnet mit:
+Dafür wird $r$ gegen $\symbf{B}$ aufgetragen (siehe Abbildung \ref{fig:plot1}) und eine Regressionsgerade berechnet mit:
 \begin{equation}
   f(x) = ax+b
 \end{equation}
-
 \begin{figure}
   \centering
   \includegraphics{plot1.pdf}
   \caption{Gravitation.}
   \label{fig:plot1}
 \end{figure}
-
 Es ergeben sich folgende Parameter für die Ausgleichsgerade:
-\begin{equation}
-  a = 0.0299 \pm 0.0004 \: \text{T/m}
-\end{equation}
-\begin{equation}
-  b = 3 \pm 2 \: \text{T/m}
-\end{equation}
+\begin{equation*}
+  a = (2,99 \pm 0,05) \cdot 10^{-2} \: \text{T/m}
+\end{equation*}
+\begin{equation*}
+  b = (6,77 \pm 0,48) \cdot 10^{-4} \: \text{T/m}
+\end{equation*}
 Gleichung \eqref{eqn:gravitation} lässt sich dann zu umstellen und das magnetsiche Moment kann berechnet werden:
-\begin{equation}
-  \symbf{\mu}_{Dipol} = 2 \pm 1 \: \text{A}^{2}/\text{m}
-\end{equation}
+\begin{equation*}
+  \symbf{\mu}_{Dipol} = (0,459 \pm 0,008) \: \text{A}^{2}/\text{m}
+\end{equation*}
 
 \subsection{Bestimmung über Schwingungsdauer}
 
+Genau wie zuvor muss zunächst mit Gleichung \eqref{eqn:bfeld} die Magentfeldstärke berechnet werden.
+Im nächsten Schritt wird, um das magentische Moment zu bestimmen, $1/B$ gegen $T^{2}$ aufgetragen und die lineare Regression durchgeführt.
+Für die Ausgleichsgerade (siehe Abbildung \ref{fig:plot2}) werden folgende Parameter ermittelt:
+\begin{equation*}
+  a = (3,30 \pm 0,13) \cdot 10^{-3} \: \text{s}^{2}/\text{T}
+\end{equation*}
+\begin{equation*}
+  b = (3,82 \pm 7,64) \cdot 10^{-2} \: \text{s}^{2}/\text{T}
+\end{equation*}
 \begin{figure}
   \centering
   \includegraphics{plot2.pdf}
   \caption{Schwingung.}
   \label{fig:plot2}
 \end{figure}
+Gleichung \eqref{eqn:schwingung} lässt sich dann umstellen zu
+\begin{equation}
+  \symbf{\mu}_{Dipol} = 4 \pi^2 J_K \frac{1}{a}
+\end{equation}
+mit $a = T^{2} \cdot B$.
+Das magnetische Moment lässt sich dann einfach berechnen:
+\begin{equation*}
+  \symbf{\mu}_{Dipol} = (0,442 \pm 0,018) \: \text{A}^{2}/\text{m}
+\end{equation*}
 
 \subsection{Bestimmung über Präzession}
 
