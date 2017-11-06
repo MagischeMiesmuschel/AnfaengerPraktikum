@@ -48,10 +48,10 @@ Genau wie zuvor muss zunächst mit Gleichung \eqref{eqn:bfeld} die Magentfeldst�
 Im nächsten Schritt wird, um das magentische Moment zu bestimmen, $1/B$ gegen $T^{2}$ aufgetragen und die lineare Regression durchgeführt.
 Für die Ausgleichsgerade (siehe Abbildung \ref{fig:plot2}) werden folgende Parameter ermittelt:
 \begin{equation*}
-  a = (3,30 \pm 0,13) \cdot 10^{-3} \: \text{s}^{2}/\text{T}
+  a = (3,30 \pm 0,13) \cdot 10^{-3} \: \text{s}^{2} \text{T}
 \end{equation*}
 \begin{equation*}
-  b = (3,82 \pm 7,64) \cdot 10^{-2} \: \text{s}^{2}/\text{T}
+  b = (3,82 \pm 7,64) \cdot 10^{-2} \: \text{s}^{2} \text{T}
 \end{equation*}
 \begin{figure}
   \centering
@@ -71,9 +71,27 @@ Das magnetische Moment lässt sich dann einfach berechnen:
 
 \subsection{Bestimmung über Präzession}
 
+Als Erstes wird wieder mit Gleichung \eqref{eqn:bfeld} die Magnetfeldstärke berechnet.
+Für die Ausgleichsrechnung wird $B$ gegen $1/T$ aufgetragen.
+Der Fit (siehe Abbildung \ref{fig:plot3}) besitzt folgende Werte:
+\begin{equation*}
+  a = (151,32 \pm 5,18) \: 1/\text{T s}
+\end{equation*}
+\begin{equation*}
+  b = (5,51 \pm 0,54) \cdot 10^{-2} \: 1/\text{T s}
+\end{equation*}
 \begin{figure}
   \centering
   \includegraphics{plot3.pdf}
   \caption{Präzession.}
   \label{fig:plot3}
 \end{figure}
+Um das magnetische Moment bestimmen zu können muss jetzt noch Gleichung \eqref{eqn:praezession} umgeformt werden
+\begin{equation}
+  \symbf{\mu}_{Dipol} = 2 \pi L_K a
+\end{equation}
+mit $a = 1/(T \cdot B)$ und $L_K = J_K \omega$.
+Das letzte Verfahren liefert dann für das magnetische Moment den Wert:
+\begin{equation*}
+  \symbf{\mu}_{Dipol} = (0,179 \pm 0,006) \: \text{A}^{2}/\text{m}
+\end{equation*}
