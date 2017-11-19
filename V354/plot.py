@@ -3,12 +3,14 @@ import numpy as np
 from scipy.optimize import curve_fit
 from uncertainties import ufloat
 import scipy.constants as scicon
+import math
 
 def T_a(t1,t2):
     return t2-t1
 
 def U_a(U1,U2):
     return U2-U1
+
 
 # T_a/U_a ist die Steigung der einhüllenden Kurve
 
@@ -26,6 +28,23 @@ C = ufloat(2.098e-9, 0.006e-9) #in Farrad
 R_ap = 3.28e3 #in Ohm
 U_0 = 117 #in Volt
 R_N = 50 #in Ohm    Der Wiederstand des Netzgeräts
-#f_res = 1/(2 * pi) sqrt((1/LC) - R^^2/2 * L^^2)
-
+w_0 = (1/(L * C))**(0.5) #Omega_Null
+f_res = 1/(2 * math.pi) * ((1/(L * C)) - ((R2+R_N)**2)/2 * (L**2))**(0.5) # errechnete Resonanz-Frequenz
+print(f_res) 
 plt.plot(t_a, Spannung_a)
+plt.xlabel('t in $\mu s$')
+plt.ylabel('U in $V$')
+plt.savefig('plot1.pdf')
+
+R_ap_rechn=(4 * L / C)**(0.5)
+R_ap_prozent = R_ap / R_ap_rechn
+print(R_ap_prozent) #Prozentuale Abweichung vom Gemessenen zum Errechneten Wert
+U_diff = [x / U_0 for x in Uc_c]
+plt.plot(Frequenz_cd, U_diff)
+plt.xlabel('F in $kHz$')
+plt.ylabel('$U$ / $U_0$')
+plt.savefig('plot2.pdf')
+q = 1 / (w_0 * C * R2) #Resonanzüberhöhung, Güte
+print(q)
+for x in range (0, 19):
+    print(U_diff[x])
