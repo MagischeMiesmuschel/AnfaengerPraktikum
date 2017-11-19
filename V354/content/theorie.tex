@@ -1,4 +1,20 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+Ein elektrischer Schwingkreis setzt sich zusammen aus einer Kapazität $C$ in Form eines Kondensators und einer Induktivität $L$ in Form einer Spule.
+Eine eingespeißte Energiemenge pendelt zwischen diesen beiden Energiespeichern, der Strom wechselt periodisch seine Richtung.
+Das System ist also dazu in der Lage, periodische Schwinungen durchzuführen, bei denen die Energie erhalten bleibt.
+In der Realität jedoch haben die Bauteile wie Spule, Kondensatoren und Kabel einen ohmschen Widerstand $R$, der dem System Energie in Form von Wärme entzieht.
+Für den Schwingkreis mit ohmschen Widerstand $R$ ergibt sich also eine gedämpfte Schwingung, Stromstärke und Spannung nehmen mit der Zeit ab.
+\begin{figure}
+  \centering
+  \includegraphics{}
+  \caption{Schematischer Aufbau RLC-Kreis}
+  \label{fig:abb1}
+\end{figure}
+Mit Hilfe der 2. Kirchhoffschen Regel lässt sich eine Differntialgleichung zur Beschreibung des Problems finden.
+Die in Abbildung \ref{fig:abb1} dargestellten Spannungen addieren sich zu Null:
+\begin{equation}
+  U_R(t) + U_C(t) + U_L(t)  = 0
+  \label{eqn:gl1}
+\end{equation}
