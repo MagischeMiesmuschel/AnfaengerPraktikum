@@ -4,7 +4,8 @@ from scipy.optimize import curve_fit
 from uncertainties import ufloat
 
 xe, yre, yqe = np.genfromtxt('werte1.txt', unpack=True)
-xz, yqz = np.genfromtxt('werte2.txt', unpack=True)
+xzl, yqzl = np.genfromtxt('werte2.txt', unpack=True)
+xzr, yqzr = np.genfromtxt('werte3.txt', unpack=True)
 
 def f(x, a, b):
     return a*x + b
@@ -76,16 +77,16 @@ plt.legend(loc='best')
 plt.savefig('quadeinseitg.pdf')
 plt.clf()
 
-#quadratischer Stab zweiseitig Einspannung
+#quadratischer Stab zweiseitig Einspannung links
 L = 0.56 # in m, Stablänge
 M = 3.550 # in kg, angehängte Masse
 B = 8*1e-3 # in m, Breite des Stabes
-xz *= 1e-3 # von mm auf m
-yqz *= 1e-3 # von mm auf m
+xzl *= 1e-3 # von mm auf m
+yqzl *= 1e-3 # von mm auf m
 
-xz = 3*(L**2)*xz-4*xz**3 # D(x)/y soll gegen diese Funktion aufgetragen werden
+xzl = 3*(L**2)*xzl-4*xzl**3 # D(x)/y soll gegen diese Funktion aufgetragen werden
 
-params, pcov = curve_fit(f,xz,yqz)
+params, pcov = curve_fit(f,xzl,yqzl)
 errors = np.sqrt(np.diag(pcov))
 
 a = ufloat(params[0], errors[0])
@@ -93,7 +94,7 @@ a = ufloat(params[0], errors[0])
 I = (B**4)/12 # Trägheitsmoment
 E = (M*9.81)/(48*I*a) # Elastizitaetsmodul
 
-print('Parameter fuer quadratischen Stab bei zweiseitiger Einspannung:')
+print('Parameter fuer quadratischen Stab bei zweiseitiger Einspannung links:')
 print('a =', params[0], '±', errors[0])
 print('b =', params[1], '±', errors[1])
 print('Elastizitaetsmodul:')
@@ -101,11 +102,45 @@ print(E)
 print('Abweichung:')
 print(E/Elit)
 
-plt.plot(xz*1e3,yqz*1e3, 'kx', label='Messwerte')
-plt.plot(xz*1e3, f(xz, *params)*1e3, 'r-', label='Fit')
+plt.plot(xzl*1e3,yqzl*1e3, 'kx', label='Messwerte')
+plt.plot(xzl*1e3, f(xzl, *params)*1e3, 'r-', label='Fit')
 plt.xlabel(r'$(3L^2x-4x^3) \:/\: (10^{-3} \: m^{3})$')
 plt.ylabel(r'$D(x) \:/\: (10^{-3} \: m)$')
 plt.legend(loc='best')
 
-plt.savefig('quadzweiseitg.pdf')
+plt.savefig('quadzweiseitg_links.pdf')
+plt.clf()
+
+#quadratischer Stab zweiseitig Einspannung rechts
+L = 0.56 # in m, Stablänge
+M = 3.550 # in kg, angehängte Masse
+B = 8*1e-3 # in m, Breite des Stabes
+xzr *= 1e-3 # von mm auf m
+yqzr *= 1e-3 # von mm auf m
+
+xzr = 4*xzr**3-12*L*xzr**2+9*(L**2)*xzr-L**3  # D(x)/y soll gegen diese Funktion aufgetragen werden
+
+params, pcov = curve_fit(f,xzr,yqzr)
+errors = np.sqrt(np.diag(pcov))
+
+a = ufloat(params[0], errors[0])
+
+I = (B**4)/12 # Trägheitsmoment
+E = (M*9.81)/(48*I*a) # Elastizitaetsmodul
+
+print('Parameter fuer quadratischen Stab bei zweiseitiger Einspannung rechts:')
+print('a =', params[0], '±', errors[0])
+print('b =', params[1], '±', errors[1])
+print('Elastizitaetsmodul:')
+print(E)
+print('Abweichung:')
+print(E/Elit)
+
+plt.plot(xzr*1e3,yqzr*1e3, 'kx', label='Messwerte')
+plt.plot(xzr*1e3, f(xzr, *params)*1e3, 'r-', label='Fit')
+plt.xlabel(r'$(4x^3-12Lx^2+9L^2x-L^3) \:/\: (10^{-3} \: m^{3})$')
+plt.ylabel(r'$D(x) \:/\: (10^{-3} \: m)$')
+plt.legend(loc='best')
+
+plt.savefig('quadzweiseitg_rechts.pdf')
 plt.clf()
