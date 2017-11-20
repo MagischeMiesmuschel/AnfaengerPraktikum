@@ -1,9 +1,102 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+Die notierten Werte lauten:
+\begin{align}
+L = (10.11 +/- 0.03) mH 
+C = (2.098 +/- 0.006) nF
+R_1 = (48.1 +/- 0.1) \si{\ohm}
+R_2 = (509.5 +/- 0.5) \si{\ohm}
+\end{align}
+Die gemessenen Daten der Spannungsamplitude $U_c$ und dazugehöriger Zeiten $t$,
+befinden sich im Anhang auf Tabelle 1.
+Der angefertigte Plot der Einhüllenden des Abklingvorgangs ist in \ref{fig:plot1} zu sehen.
+\begin{figure}
+  \centering
+  \includegraphics{build\plot1.pdf}
+  \caption{Abklingvorgang des gedämpften RCL-Schwingkreises mit Fit.}
+  \label{fig:plot1}
+\end{figure}
+
+Die Form der Einhüllenden ist gegeben REFERENZ durch:
+\begin{equation}
+  A = A_0 e^(-2 \pi \mu t)
+\end{equation}
+Mit der Ausgleichsrechnung ergeben sich die Werte:
+\begin{align}
+  A_0 = (224.58 +/- 4.29) \si{\volt}
+  \mu = (261 +/- 16) \frac{1}{s}
+\end{align}
+Daraus ergeben sich REFERENZ die Werte für den Effektivwiderstand $R_eff$ und die Abklingdauer $T_ex$:
+\begin{align}
+  R_eff = (33.2 +/- 2.0) \si{\ohm}
+  T_ex = (0.61 +/- 0.4) ms
+\end{align}
+Der in der Schaltung verbaute Widerstand$R_1 = (48.1 +/- 0.1) \si{\ohm}$ weicht um $14.9 \si{\ohm}$ ab.
+Der gemessene Wert für $R_ap$, bei dem der aperiodische Grenzfall eintritt, beträgt $3280 \si{\ohm}$.
+Verglichen mit dem REFERENZ berechneten Wert von $(4390 +/- 9) \si{\ohm}$, zeigt sich eine Differenz von $1110 \si{\ohm}$.
+Dies ist zum Einen dadurch zu erklären, dass die restlichen Bauteile, vor allem die Spule, ebenfalls in der Theorie nicht beachtete Widerstände haben.
+Zum anderen konnte ein genaues Einstellen nicht erfüllt werden, da im Bereich um den Grenzwiderstand keine wesentliche Änderung am Spannungsverlauf zu erkennen waren.
+
+Die gemessenen Daten zur Bestimmung der Resonanzüberhöhung $q$, sowie der Breite der Resonanzkurve $\nu_+ - \nu_-$ befinden sich im Anhang in Tabelle 2.
+Die Erregerspannung $U$ beträgt dabei $117 \si{\volt}$.
+Deren Frequenzabhängigkeit ist nach experimentellem Nachweis am Oszilloskop vernachlässigbar.
+Das Verhältnis $\frac{U_c}{U}$ wird gegen $f$ , zu sehen in \ref{fig:plot2}, abgetragen.
+Der Maximalwert $q_exp$ wird aus dem Graphen als Güte abgelesen.
 
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics{build\plot2.pdf}
+  \caption{Normierte Kondenstorspannung in Abhängigkeit von der Frequenz.}
+  \label{fig:plot2}
+\end{figure}
+
+Wird der theoretische Wert der Güte REFERENZ bestimmt, so ergibt sich:
+\begin{align}
+  q_exp = 2.45
+  q_theo = 3.923 +/- 0.009
+  \intertext{relative Abweichung:}
+  \frac{q_theo - q_exp}{q_theo} = 37.5 \%
+\end{align}
+Um die Breite der Resonanzkurve bestimmen zu können, wird der Frequenzbereich um das Maximum nun linear dargestellt.
+Das Ergebnis is in \ref{fig:plot3} zu sehen.
+Aus dieser wird die Breite der Resonanzkurve abgelesen und die Werte werden mit den REFERENZ theoretisch berechneten Werten verglichen:
+\begin{align}
+  \intertext{Experimentell:}
+  \nu_+ - \nu_- = 11140 Hz
+  \intertext{Theoretisch:}
+  \nu_+ - \nu_- =
+  \intertext{relaive Abweichung:}
+\end{align}
+
+\begin{figure}
+  \centering
+  \includegraphics{build\plot3.pdf}
+  \caption{Lineare Darstellung der normierten Kondenstorspannung in Abhängigkeit von der Frequenz.}
+  \label{fig:plot3}
+\end{figure}
+
+Die Messdaten, um die Werte für die Resonanzfrequenz $\nu_res$, sowie für die Frequenzen $\nu_1$ beziehungsweise $\nu_2$, an denen die Phase $\frac{\pi}{4}$ beziehungsweise $\frac{3 \pi}{4}$ beträgt, 
+berechnen zukönnen, beﬁnden sich im Anhang in Tabelle 3. Die Phase $\Phi$ wird in \ref{fig:plot4} gegen die Frequenz abgetragen. 
+Der Bereich um die Resonanzfrequenz wird, wie in \ref{fig:plot4} erkennbar, zur besseren Ablesbarkeit linear dargestellt.
+$\nu_res$ wird nach REFERENZ und $\nu_1$ und $\nu_2$ werden nach REFERENZ errechnet und mit den abgelhesenen Werten verglichen: 
+\begin{align}
+  \nu_(res, exp) = 33 000 Hz
+  \nu_(res, theo) = (34 280 +/- 70) Hz
+  \intertext{relative Abweichung:}
+  3.7 \%
+  \nu_(1, exp) = 27 200 Hz
+  \nu_(1, theo) =
+  \intertext{relative Abweichung:}
+
+  \nu_(2, exp) = 38 340 Hz
+  \nu_(2, theo) =
+  \intertext{relative Abweichung:}
+
+\end{align}
+
+\begin{figure}
+  \centering
+  \includegraphics{build\plot4.pdf}
+  \caption{Lineare Darstellung der Phasenverschiebung zwischen Kondensator- und Erregerspannung.}
+  \label{fig:plot4}
 \end{figure}
