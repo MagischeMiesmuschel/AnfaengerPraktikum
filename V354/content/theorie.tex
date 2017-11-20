@@ -18,3 +18,42 @@ Die in Abbildung \ref{fig:abb1} dargestellten Spannungen addieren sich zu Null:
   U_R(t) + U_C(t) + U_L(t)  = 0
   \label{eqn:gl1}
 \end{equation}
+Die Spannungen können mit dem Ohmschen Gesetz \eqref{eqn:gl2}, dem Induktionsgesetz \eqref{eqn:gl3} und der Defintion der Kapazität \eqref{eqn:gl4} geschrieben werden als:
+\begin{equation}
+  U_R(t) = RI(t)
+  \label{eqn:gl2}
+\end{equation}
+\begin{equation}
+  U_L(t) = L \frac{dI}{dt}
+  \label{eqn:gl3}
+\end{equation}
+\begin{equation}
+  U_C(t) = \frac{Q(t)}{C}
+  \label{eqn:gl4}
+\end{equation}
+Daraus folgt die Gleichung:
+\begin{equation}
+  RI(t) + \frac{Q(t)}{C} + L \frac{dI}{dt} = 0
+  \label{eqn:gl5}
+\end{equation}
+Wird diese nach der Zeit abgeleitet, erhält man die gewünschte Differntialgleichung, die an den harmonischen Oszillator aus der Mechanik erinnert.
+\begin{equation}
+  \ddot{I(t)} + \frac{R}{L} \dot{I(t)} + \frac{1}{LC}I(t) = 0
+  \label{eqn:gl6}
+\end{equation}
+Ein Lösungsansatz der Gleichung ist:
+\begin{equation}
+  I(t) = e^{-2\pi\mu t}(A_1 e^{\text{i}2\pi\nu t} + A_2 e^{-\text{i}2\pi\nu t})
+  \label{eqn:gl7}
+\end{equation}
+mit den Abkürzungen:
+\begin{equation}
+  \mu := \frac{R}{4\pi L}
+  \label{eqn:gl8}
+\end{equation}
+\begin{equation}
+  \nu := \frac{1}{2\pi} \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}
+  \label{eqn:gl9}
+\end{equation}
+Die Form der Lösung ist im Besonderen von \nu abhängig, das je nachdem ob die Diskriminante positiv oder negativ ist, reel oder komplex wird.
+Deshalb wird für die weitere Betrachtung eine Fallunterscheidung vorgenommen.
