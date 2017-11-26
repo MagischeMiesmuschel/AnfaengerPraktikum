@@ -16,9 +16,9 @@ Somit hat sie nach der Periodendauer T oder der Distanz D wieder ihren Anfangswe
 Die wichtigsten periodischen Funktionen sind der Sinus und Cosinus, mit einer Periodendauer von 2 $\pi$ und einem Wertevorrat von -1 bis 1.
 Eine von der Zeit abhängige Sinusfunktion mit Amplitude a lässt sich darstellen als
 \begin{align}
-  f(t) = a \symbf{sin} \frac{2 \pi}{T} t
+  f(t) = a \symbf{sin} (\frac{2 \pi}{T} t)
   \intertext{Für Cosinus mit Amplitude b entsprechend}
-  f(t) = b \symbf{cos} \frac{2 \pi}{T} t
+  f(t) = b \symbf{cos} (\frac{2 \pi}{T} t)
 \end{align}
 Fast alle periodischen Vorgänge in der Natur lassen sich mit diesen beiden Funktionen beschreiben.
 Das ist die Konsequenz des Fourierschen Theorems, welches folgend erklärt wird.
@@ -27,16 +27,16 @@ Das ist die Konsequenz des Fourierschen Theorems, welches folgend erklärt wird.
 \label{sec:Fouriersche Theorem}
 Ist die Reihe
 \begin{equation}
-  \frac{1}{2} a_0 + \sum_{n = 1}^{\infty} \left( a_n \symbf{cos} n \frac{2 \pi}{T} t + b_n \symbf{sin} n \frac{2 \pi}{T} t \right) 
+  \frac{1}{2} a_0 + \sum_{n = 1}^{\infty} \left( a_n \symbf{cos} (n \frac{2 \pi}{T} )t + b_n \symbf{sin} (n \frac{2 \pi}{T} t) \right) 
   \label{eqn:gl1}
 \end{equation}
 gleichmäßig konvergent, stellt sie eine periodische Funktion f(t) dar mit der Periodendauer T.
 Aus der Konvergenz der Reihe folgt, dass die Koeffizienten $a_n$ und $b_n$ für $n -> \infty$ gegen 0 laufen müssen.
 Außerdem folgt aus \ref{eqn:FouTheo} für $a_n$ und $b_n$
 \begin{equation}
-  a_n = \frac{2}{T} \int_0^T f(t) \symbf{cos} n \frac{2 \pi}{T} t dt \quad
+  a_n = \frac{2}{T} \int_0^T f(t) \symbf{cos} (n \frac{2 \pi}{T} t) dt \quad
   \textrm{und} \quad
-  b_n = \frac{2}{T} \int_0^T f(t) \symbf{sin} n \frac{2 \pi}{T} t dt \quad
+  b_n = \frac{2}{T} \int_0^T f(t) \symbf{sin} (n \frac{2 \pi}{T} t) dt \quad
   ,n= 1, 2, .... 
   \label{eqn:gl2}
 \end{equation}
@@ -61,13 +61,13 @@ Gleichgültig ob f(t) periodisch ist oder nicht, kann man mit der Fourier-Transf
 und nicht nur die einzelnen Komponenten einer periodischen Funktion f(t) wie in \ref{eqn:gl2}.
 Die Fourier-Transformation hat die Gestalt
 \begin{equation}
-  g(\nu) = \int_{-\infty}^{\infty} f(t) \exp{i \nu t} dt \label{eqn:gl3}
+  g(\nu) = \int_{-\infty}^{\infty} f(t) \exp{(i \nu t)} dt \label{eqn:gl3}
 \end{equation}
 in der $g(\nu)$ das Frequenzspektrum darstellt.
 ist f(t) periodisch, dann besteht g aus einer Reihe von $\delta$-Funktionen, etwa wie in \ref{fig:abb1} angedeutet ist.
 Die Fourier-Transformation ist auch umkehrbar; das bedeutete, dass die Fourier-Transformierte der Spektralfunktion g gleich der Zeitabhängigkeit des Vorganges ist
 \begin{align}
-  f(t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty} g{\nu} \exp{-i \nu t} d \nu
+  f(t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty} g{\nu} \exp{(-i \nu t)} d \nu
 \end{align}
 Weil man über einen unendlichen Zeitraum für exakte Ergebnisse messen müsste und es in der Praxis nicht möglich ist, werden Abweichungen von den Erwartungswerten auftreten.
 Durch das abschneiden der Messreihe ist die Periodizität von f aufgehoben und somit besteht g nicht aus $\delta$-Funktionen und ist überll stetig und differenzierbar.
