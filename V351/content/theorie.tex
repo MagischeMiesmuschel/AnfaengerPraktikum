@@ -27,7 +27,7 @@ Das ist die Konsequenz des Fourierschen Theorems, welches folgend erklärt wird.
 \label{sec:Fouriersche Theorem}
 Ist die Reihe
 \begin{equation}
-  \frac{1}{2} a_0 + \sum_{n = 1}^{\infty} \left( a_n \symbf{cos} (n \frac{2 \pi}{T} )t + b_n \symbf{sin} (n \frac{2 \pi}{T} t) \right) 
+  \frac{1}{2} a_0 + \sum_{n = 1}^{\infty} \left( a_n \symbf{cos} (n \frac{2 \pi}{T} )t + b_n \symbf{sin} (n \frac{2 \pi}{T} t) \right)
   \label{eqn:gl1}
 \end{equation}
 gleichmäßig konvergent, stellt sie eine periodische Funktion f(t) dar mit der Periodendauer T.
@@ -37,13 +37,13 @@ Außerdem folgt aus \ref{eqn:FouTheo} für $a_n$ und $b_n$
   a_n = \frac{2}{T} \int_0^T f(t) \symbf{cos} (n \frac{2 \pi}{T} t) dt \quad
   \textrm{und} \quad
   b_n = \frac{2}{T} \int_0^T f(t) \symbf{sin} (n \frac{2 \pi}{T} t) dt \quad
-  ,n= 1, 2, .... 
+  ,n= 1, 2, ....
   \label{eqn:gl2}
 \end{equation}
 Bis auf die Grundfrequenz $\nu_1 = 1/T$, treten in der Fourier-Transformation \ref{eqn:gl1} nur ganzzahlige vielfache von $\nu_1$ auf.
 Diese heißen harmonische Oberschwingungen.
 Das berrechnen der Koeffizienten bezeichnet man als Fourier-Analyse.
-In speziellen Fällen können einige der Koeffizienten 0 sein. 
+In speziellen Fällen können einige der Koeffizienten 0 sein.
 Gilt $f(t) = f(-t)$ handelt es sich um eine gerade Funktion und alle $b_n$ sind gleich 0.
 Gilt $f(t) = -f(-t)$ handelt es sich um eine ungerade Funktion und alle $a_n$ sind gleich 0.
 Trägt man die Amplitude der Teilschwingungen gegen die Frequenz auf, so erhölt man das Spektrum der Schwingungen.
@@ -57,7 +57,7 @@ Bei nicht periodischen Funktionen wird dies zu einem kontinuierlichem Spektrum.
 \end{figure}
 
 \subsection{Die Fourier-Transformation}
-Gleichgültig ob f(t) periodisch ist oder nicht, kann man mit der Fourier-Transformation das gesamte Frequenzspektrum einer zeitabhängigen Funktion berechnen 
+Gleichgültig ob f(t) periodisch ist oder nicht, kann man mit der Fourier-Transformation das gesamte Frequenzspektrum einer zeitabhängigen Funktion berechnen
 und nicht nur die einzelnen Komponenten einer periodischen Funktion f(t) wie in \ref{eqn:gl2}.
 Die Fourier-Transformation hat die Gestalt
 \begin{equation}
@@ -72,4 +72,4 @@ Die Fourier-Transformation ist auch umkehrbar; das bedeutete, dass die Fourier-T
 Weil man über einen unendlichen Zeitraum für exakte Ergebnisse messen müsste und es in der Praxis nicht möglich ist, werden Abweichungen von den Erwartungswerten auftreten.
 Durch das abschneiden der Messreihe ist die Periodizität von f aufgehoben und somit besteht g nicht aus $\delta$-Funktionen und ist überll stetig und differenzierbar.
 Somit ergibt sich ein Linienspektrum mit Linien endlicher Breite.
-Desweiteren werden durch das Abschneiden weitere Nebenmaxima neben den Hauptmaxima, den ursprünglichen $\delta$-Funktionen, erzeugt, deren Amplitude jedoch schnell abnimmt.
+Desweiteren werden durch das Abschneiden weitere Nebenmaxima neben den Hauptmaxima, den ursprünglichen $\delta$-Funktionen, erzeugt, deren Amplitude jedoch schnell abnimmt.\cite{AnleitungV351}
