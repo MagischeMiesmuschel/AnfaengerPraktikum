@@ -16,7 +16,7 @@ frequenz3 = 100e3 # Hertz
 def f(x, a, b):
     return a*x + b
 
-# nomieren auf erste Amplitude
+# nomieren auf die erste Amplitude
 
 U1 = U1/U1[0]
 U2 = U2/U2[0]
