@@ -39,10 +39,9 @@ f_res = (1/(2 * math.pi)) * ((1/(L * C)) - ((R2+R_N)**2)/(4 * (L**2)))**(0.5) # 
 #Teil a)
 
 plt.plot(t_a, Spannung_a, 'k.', label = 'Messdaten')
-plt.xlabel('t in $\mu s$')
+plt.xlabel('t in s$')
 plt.ylabel('U in $V$')
-#plt.xticks([0, 0 /  1,5e-6/ 35e-6/ 64e-6/ 94e-6/ 123e-6/ 152e-6/ 182e-6/ 212e-6/ 241e-6/ 270e-6/ 300e-6/ 330e-6],
- #           [0, 5, 35, 54, 94, 123, 152, 182, 212, 241,270,300, 330])
+plt.xlim(0.00001, 0.00037)
 params, cov_matrix = curve_fit(e_fkt, t_a, Spannung_a)
 errors = np.sqrt(np.diag(cov_matrix))
 print('A = ', params[0], '+/-', errors[0])
@@ -65,11 +64,17 @@ print('mu = ', mu)
 
 #Teil c)
 
+#Theoriekurve
+Frequenz_neu = np.genfromtxt('WerteTheo1.txt', unpack=True)
+U_diff_theo =[ 1 / ((1 - L * C * x**2)**2 + x**2 * R2**2 * C**2)**(0.5) for x  in Frequenz_neu]
+print(U_diff_theo)
+U_diff_theo_nutz = np.genfromtxt('Udiffneu.txt', unpack=True)
 R_ap_rechn=(4 * L / C)**(0.5)
 R_ap_prozent = R_ap / R_ap_rechn
 print('R_ap = ', R_ap, 'R_ap_rechn = ', R_ap_rechn, 'R_ap_prozent = ', R_ap_prozent) #Prozentuale Abweichung vom Gemessenen zum Errechneten Wert
 U_diff = [x / U_0 for x in Uc_c]
 plt.plot(Frequenz_cd, U_diff, 'k.', label = 'Messdaten')
+plt.plot(Frequenz_cd, U_diff_theo_nutz, 'r-', label = 'Theorie')
 plt.xlabel('f in $kHz$')
 plt.ylabel('$U$ / $U_0$')
 plt.legend()
@@ -81,12 +86,16 @@ print('U_diff         Frequenz_cd')
 for x in range (0, 19):
     print(U_diff[x], Frequenz_cd[x])
 
-f_res_gemessen = 33 #in kHz, Frequenz zum Maximum aus Plot2
+f_res_gemessen = 33000 #in kHz, Frequenz zum Maximum aus Plot2
 q_gemessen = 2.45 #Maximum vom Plot2
 q_halbw = 1/(np.sqrt(2)) * q_gemessen
 q_prozent = q_gemessen / q_rechn
 print('q_rechn = ', q_rechn, 'q_gemessen = ',q_gemessen, 'q_prozent = ', q_prozent )
 print('q_halbw = ', q_halbw)
+
+q_theo_neu = (w_0 * L)/(R2 + R_N)
+q_exp_neu = (f_res_gemessen ) / 11140
+print(q_theo_neu, q_exp_neu)
 plt.plot(Frequenz_cd, U_diff, 'k.', label = 'Messdaten')
 plt.xlabel('f in $kHz$')
 plt.ylabel('$U$ / $U_0$')

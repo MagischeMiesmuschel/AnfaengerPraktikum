@@ -2,14 +2,14 @@
 \label{sec:Auswertung}
 Die notierten Werte lauten:
 \begin{align}
-L = (10.11 +/- 0.03) mH
-C = (2.098 +/- 0.006) nF
-R_1 = (48.1 +/- 0.1) \si{\ohm}
-R_2 = (509.5 +/- 0.5) \si{\ohm}
+L = (10.11 \pm 0.03) mH \\
+C = (2.098 \pm 0.006) nF \\
+R_1 = (48.1 \pm 0.1) \si{\ohm} \\
+R_2 = (509.5 \pm 0.5) \si{\ohm} 
 \end{align}
 Die gemessenen Daten der Spannungsamplitude $U_c$ und dazugehöriger Zeiten $t$,
 befinden sich im Anhang auf Tabelle 1.
-Der angefertigte Plot der Einhüllenden des Abklingvorgangs ist in \ref{fig:plot1} zu sehen.
+Der angefertigte Plot der Einhüllenden des Abklingvorgangs ist in Abb. \ref{fig:plot1} zu sehen.
 \begin{figure}
   \centering
   \includegraphics{build/plot1.pdf}
@@ -19,29 +19,29 @@ Der angefertigte Plot der Einhüllenden des Abklingvorgangs ist in \ref{fig:plot
 
 Die Form der Einhüllenden nach \eqref{eqn:gl7} ist gegeben durch:
 \begin{equation}
-  A = A_0 e^(-2 \pi \mu t)
+  A = A_0 e^{-2 \pi \mu t}
 \end{equation}
 Mit der Ausgleichsrechnung ergeben sich die Werte:
 \begin{align}
-  A_0 = (224.58 +/- 4.29) \si{\volt}
-  \mu = (261 +/- 16) \frac{1}{s}
+  A_0 = (224.58 \pm 4.29) \si{\volt} \\
+  \mu = (261 \pm 16) \frac{1}{s}
 \end{align}
 Daraus ergeben sich nach \eqref{eqn:gl8} und $T_ex = \frac{1}{2 \pi \mu}$ die Werte für den Effektivwiderstand $R_{\text{eff}}$ und die Abklingdauer $T_{\text{ex}}$:
 \begin{align}
-  R_{\text{eff}} = (33.2 +/- 2.0) \si{\ohm}
-  T_{\text{ex}} = (0.61 +/- 0.4) ms
+  R_{\text{eff}} = (33.2 \pm 2.0) \si{\ohm} \\
+  T_{\text{ex}} = (0.61 \pm 0.4) ms
 \end{align}
 Der in der Schaltung verbaute Widerstand$R_1 = (48.1 +/- 0.1) \si{\ohm}$ weicht um $14.9 \si{\ohm}$ ab.
 Der gemessene Wert für $R_ap$, bei dem der aperiodische Grenzfall eintritt, beträgt $3280 \si{\ohm}$.
-Verglichen mit dem durch $\frac{1}{LC} = \frac{(R_ap)^2}{4L^2}$ berechneten Wert von $(4390 +/- 9) \si{\ohm}$, zeigt sich eine Differenz von $1110 \si{\ohm}$.
+Verglichen mit dem durch $\frac{1}{LC} = \frac{(R_ap)^2}{4L^2}$ berechneten Wert von $(4390 \pm 9) \si{\ohm}$, zeigt sich eine Differenz von $1110 \si{\ohm}$.
 Dies ist zum Einen dadurch zu erklären, dass die restlichen Bauteile, vor allem die Spule, ebenfalls in der Theorie nicht beachtete Widerstände haben.
 Zum anderen konnte ein genaues Einstellen nicht erfüllt werden, da im Bereich um den Grenzwiderstand keine wesentliche Änderung am Spannungsverlauf zu erkennen waren.
 
 Die gemessenen Daten zur Bestimmung der Resonanzüberhöhung $q$, sowie der Breite der Resonanzkurve $\nu_+ - \nu_-$ befinden sich im Anhang in Tabelle 2.
 Die Erregerspannung $U$ beträgt dabei $117 \si{\volt}$.
 Deren Frequenzabhängigkeit ist nach experimentellem Nachweis am Oszilloskop vernachlässigbar.
-Das Verhältnis $\frac{U_c}{U}$ wird gegen $f$ , zu sehen in \ref{fig:plot2}, abgetragen.
-Der Maximalwert $q_exp$ wird aus dem Graphen als Güte abgelesen.
+Das Verhältnis $\frac{U_c}{U}$ wird gegen $f$ , zu sehen in Abb. \ref{fig:plot2}, abgetragen.
+Der Maximalwert $q_{exp}$ wird aus dem Graphen als Güte abgelesen.
 
 \begin{figure}
   \centering
@@ -50,15 +50,10 @@ Der Maximalwert $q_exp$ wird aus dem Graphen als Güte abgelesen.
   \label{fig:plot2}
 \end{figure}
 
-Wird der theoretische Wert der Güte nach $q = \frac{1}{\omega_o R C}$ bestimmt, so ergibt sich:
-\begin{align*}
-  q_{exp} &= 2.45 \\
-  q_{theo} &= 3.923 \pm 0.009 \\
-  \text{relative Abweichung:} &= \frac{q_{theo} - q_{exp}}{q_{theo}} = 37.5 \%
-\end{align*}
 Um die Breite der Resonanzkurve bestimmen zu können, wird der Frequenzbereich um das Maximum nun linear dargestellt.
-Das Ergebnis is in \ref{fig:plot3} zu sehen.
+Das Ergebnis is in Abb. \ref{fig:plot3} zu sehen.
 Aus dieser wird die Breite der Resonanzkurve abgelesen und die Werte werden mit den durch $\omega_+ - \omega_- \approx \frac{R}{L}$ theoretisch berechneten Werten verglichen:
+
 \begin{align*}
   \intertext{Experimentell:}
   \omega_+ - \omega_- = 11140 \text{Hz}
@@ -66,6 +61,14 @@ Aus dieser wird die Breite der Resonanzkurve abgelesen und die Werte werden mit 
   \omega_+ - \omega_- \approx 50395 \text{Hz} \\
   \text{relaive Abweichung:} = 77.0 \%
 \end{align*}
+
+Wird der theoretische Wert der Güte nach $q = \frac{\omega_0}{\omega_+ - \omega_-}$ bestimmt, so ergibt sich:
+\begin{align*}
+  q_{exp} &= 2.962\\
+  q_{theo} &= 3.923 \pm 0.009 \\
+  \text{relative Abweichung:} &= \frac{q_{theo} - q_{exp}}{q_{theo}} = 24.5 \%
+\end{align*}
+
 
 \begin{figure}
   \centering
@@ -75,9 +78,9 @@ Aus dieser wird die Breite der Resonanzkurve abgelesen und die Werte werden mit 
 \end{figure}
 
 Die Messdaten, um die Werte für die Resonanzfrequenz $\nu_res$, sowie für die Frequenzen $\nu_1$ beziehungsweise $\nu_2$, an denen die Phase $\frac{\pi}{4}$ beziehungsweise $\frac{3 \pi}{4}$ beträgt,
-berechnen zukönnen, beﬁnden sich im Anhang in Tabelle 3. Die Phase $\Phi$ wird in \ref{fig:plot4} gegen die Frequenz abgetragen.
+berechnen zukönnen, beﬁnden sich im Anhang in Tabelle 3. Die Phase $\Phi$ wird in Abb. \ref{fig:plot4} gegen die Frequenz abgetragen.
 Der Bereich um die Resonanzfrequenz wird, wie in \ref{fig:plot4} erkennbar, zur besseren Ablesbarkeit linear dargestellt.
-$\nu_res$ wird nach $ \omega_res = \sqrt{\frac{1}{LC} - \frac{R^2}{2L^2}}$ und $\nu_1$ und $\nu_2$ werden nach $\omega_(1,2) = +/- \frac{R}{2L} + \sqrt{\frac{R^2}{4L^2} + \frac{1}{LC}}$ errechnet und mit den abgelesenen Werten verglichen:
+$\nu_{res}$ wird nach $ \omega_{res} = \sqrt{\frac{1}{LC} - \frac{R^2}{2L^2}}$ und $\nu_1$ und $\nu_2$ werden nach $\omega_{1,2} = \pm \frac{R}{2L} + \sqrt{\frac{R^2}{4L^2} + \frac{1}{LC}}$ errechnet und mit den abgelesenen Werten verglichen:
 
 \begin{align*}
   \nu_(res, exp) &= 33 000 Hz \\
