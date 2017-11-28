@@ -32,7 +32,7 @@ Ist die Reihe
 \end{equation}
 gleichmäßig konvergent, stellt sie eine periodische Funktion f(t) dar mit der Periodendauer T.
 Aus der Konvergenz der Reihe folgt, dass die Koeffizienten $a_n$ und $b_n$ für $n -> \infty$ gegen 0 laufen müssen.
-Außerdem folgt aus \ref{eqn:FouTheo} für $a_n$ und $b_n$
+Außerdem folgt aus \ref{eqn:gl1} für $a_n$ und $b_n$
 \begin{equation}
   a_n = \frac{2}{T} \int_0^T f(t) \symbf{cos} (n \frac{2 \pi}{T} t) dt \quad
   \textrm{und} \quad
@@ -73,3 +73,28 @@ Weil man über einen unendlichen Zeitraum für exakte Ergebnisse messen müsste 
 Durch das abschneiden der Messreihe ist die Periodizität von f aufgehoben und somit besteht g nicht aus $\delta$-Funktionen und ist überll stetig und differenzierbar.
 Somit ergibt sich ein Linienspektrum mit Linien endlicher Breite.
 Desweiteren werden durch das Abschneiden weitere Nebenmaxima neben den Hauptmaxima, den ursprünglichen $\delta$-Funktionen, erzeugt, deren Amplitude jedoch schnell abnimmt.\cite{AnleitungV351}
+
+\subsection{Berechnung der Koeffizienten}
+\label{sec:Koeffizienten}
+
+Für den Versuch sollen für drei verschiedene Spannungen die Fourier-Koeffizienten berechnet werden.
+Zur Vereinfachung wird angenommen, dass die Funktion entweder gerade oder ungerade ist.
+Für gerade Funktionen ist $b_n = 0$, also fällt der Sinusanteil weg.
+Und für ungerade Funktionen ist $a_n = 0$, also fällt der Cosinusanteil weg.
+\begin{description}
+  \item[Rechteckspannung]
+  \begin{align*}
+    a_n &= 0 \\
+    b_n &= \frac{2T}{n\pi} - \frac{2T}{n\pi}(-1)^n
+  \end{align*}
+  \item[Sägezahnspannung]
+  \begin{align*}
+    a_n &= 0 \\
+    b_n &= -\frac{T}{n\pi}(-1)^n
+  \end{align*}
+  \item[Dreieckspannung]
+  \begin{align*}
+    a_n &= \frac{4T}{n^2\pi^2}(-1)^n - \frac{4T}{n^2\pi^2} \\
+    b_n &= 0
+  \end{align*}
+\end{description}
