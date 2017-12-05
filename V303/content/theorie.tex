@@ -1,7 +1,7 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-Ein Lock-In-Verstärker (siehe Abbildung \ref{fig:Phase1}) dient hauptsächlich der Messung von verrauschten Spannungssignalen.
+Ein Lock-In-Verstärker (siehe Abbildung \ref{fig:Schaltung1}) dient hauptsächlich der Messung von verrauschten Spannungssignalen.
 Das mit der Referenzfrequenz $\omega_0$ modulierte Messsignal $U_{\text{sig}}$ wird im ertsen Schritt durch einen Bandpassfilter geleitet.
 Dieser sorgt dafür, dass die rauschenden Oberwellen des Messsignals  mit Frequenzen $\omega >> \omega_0$ und $\omega << \omega$ herausgefiltert werden.
 Anschließend wird das Messsignal in einem Mischer mit einer Referenzspannung $U_{\text{ref}}$ multipliziert, deren Amplitude auf 1 nomiert ist.
@@ -28,3 +28,10 @@ ergibt sich für die Ausgangsspannung $U_{\text{out}}$ folgende Proportionalitä
   U_{\text{out}} = \frac{2}{\pi} U_0 \cos(\phi)
   \label{eqn:gl3}
 \end{align} \cite{V303}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{data/Schaltung1.jpg}
+  \caption{Schematischer Aufbau eines Lock-In-Verstärkers \cite{V303}}
+  \label{fig:Schaltung1}
+\end{figure}
