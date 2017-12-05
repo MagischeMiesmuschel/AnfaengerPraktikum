@@ -15,7 +15,7 @@ build/plot1.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python plot.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot1.pdf
+build/main.pdf: data build/plot1.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
@@ -30,6 +30,9 @@ build/main.pdf: FORCE | build
 
 build:
 	mkdir -p build
+
+data:
+	mkdir -p data
 
 clean:
 	rm -rf build
