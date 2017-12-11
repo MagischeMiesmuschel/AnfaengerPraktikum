@@ -7,7 +7,7 @@ Wenn ein endlicher Strom $\symbf{I}$ durch einen Lastwiderstnd $R_a$ fließt, da
 Durch die zuordnung eines Innenwiderstandes $R_i$ zur Spannungsquelle kann dieses Phänomen formal erklärt werden.
 Aus der Maschenregl in der Formulierung: "Die Summe aller Spannungsabfälle an den Widerständen $R_m$ der Masche ist gleich die Summe der Leerlaufspnnungen."
 \begin{equation}
-  \sum\limits{n} U_{0n} = \sum\limits{m} R_m \symbf{I}_m
+  \sum\limits{n} U_{0_n} = \sum\limits{m} R_m \symbf{I}_m
   \label{eqn:eq1}
 \end{equation} 
 Nach Abb. \ref{fig:abb1} folgt mit $U_{0_n} = U_0$, $\symbf{I}_m = \symbf{I}$ für $m = 1, 2$, $R_1 = R_i$ und $R_2 = R_a$ die Gleichung
@@ -21,6 +21,8 @@ Nach Abb. \ref{fig:abb1} folgt mit $U_{0_n} = U_0$, $\symbf{I}_m = \symbf{I}$ f�
   \caption{Ersatzschaltbild einer realen Spannungsquelle mit Lastwiderstand $R_a$. \cite{V301}}
   \label{fig:abb1}
 \end{figure}
+\\
+
 Für $U_k$ ergibt sich dann
 \begin{equation}
   U_k = \symbf{I} R_a = U_0 - \symbf{I} R_i
@@ -40,4 +42,5 @@ Der Innenwiderstand elektrischer Generatorn ist nicht zwingend durch den Gleichs
 Somit idt es von Nöten den Innenwiderstand als differentielle Größe einzuführen.
 \begin{equation}
   R_i = \frac{dU_k}{d\symbf{I}}
+  \label{eqn:eq4}
 \end{equation}
