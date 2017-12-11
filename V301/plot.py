@@ -117,6 +117,7 @@ plt.plot(UdurchI, (U_0**2/(UdurchI + R_i)**2)*(UdurchI)*1e3, label='Theoriekurve
 plt.xlim(0, 55)
 plt.xlabel(r'$R_a = \frac{U_k}{I} \,/\, \Omega$')
 plt.ylabel(r'$N = U_k \cdot I \,/\, (10^{-3} \cdot W)$ ')
+plt.tight_layout()
 plt.legend()
 plt.grid()
 plt.savefig('build/plot5.pdf')

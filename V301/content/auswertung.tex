@@ -1,9 +1,87 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Das für die Messungen verwendete Voltmeter hat einen Innenwiderstand von $R_v \geq 10 \, \text{M}\Omega $.
+Für die ertsen beiden Messreihen wird eine Monozelle verwendet, deren Leerlaufspannung $U_0$ direkt gemessen 1,6 Volt beträgt.
+
+Zur Berechnung des Innenwiderstands $R_i$ und der Leerlaufspannung $U_0$ werden $U_k$ und $\symbf{I}$ gegeneinader aufgetragen.
+Anschließend wird mit diesen Werten und Gleichung \eqref{eqn:eq3} eine lineare Ausgleichsrechnung durchgeführt.
+Der y-Achsenabschnitt $b$ und die Steigung $a$ der resultierenden Geraden (siehe Abb. \ref{fig:plot1}) sind die Leerlaufspannung $U_0$ und der Innenwiderstand $R_i$ der Monozelle:
+\begin{align*}
+  -a = R_i = (16,9 \pm 0,2) \Omega \\
+  b = U_0 = (1,60 \pm 0,01) \text{V}
+\end{align*}
 \begin{figure}
   \centering
-  \includegraphics{build/plot1.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics{plot1.pdf}
+  \caption{Klemmenspannung und Stromstärke der Monozelle ohne Gegenspannung.}
+  \label{fig:plot1}
+\end{figure}
+Im zweiten Versuchsteil mit der Monozelle wird eine Gegenspannung von 3,6 Volt angelegt.
+Zur Bestimmung des Innenwiderstands und der Leerlaufspannung werden die gleichen Schritte wie zuvor durchgeführt.
+Lediglich die Vorzeichen der Stromstärke tauschen sich für die Gleichung der Klemmenspannung (siehe Gl. \eqref{eqn:eq5}), da die Stromrichtung sich umkehrt.
+Für die Ausgleichsgerade (siehe Abb. \ref{fig:plot1}) ergeben sich dann folgende Werte:
+\begin{align*}
+  a = R_i = (15,4 \pm 0,6) \Omega \\
+  b = U_0 = (1,68 \pm 0,03) \text{V}
+\end{align*}
+\begin{figure}
+  \centering
+  \includegraphics{plot2.pdf}
+  \caption{Klemmenspannung und Stromstärke der Monozelle mit Gegenspannung.}
+  \label{fig:plot2}
+\end{figure}
+Innenwiderstand und Leerlaufspannung der Rechteckspannungsquelle bzw. der Sinusspannungsquelle lassen sich analog über eine lineare Regression mit Gleichung \eqref{eqn:eq3} bestimmen.
+Es werden die in Abbildung \ref{fig:plot3} und \ref{fig:plot4} dargestellten Ausgleichsgeraden mit folgenden Werten berechnet:
+\begin{align*}
+  \intertext{Rechteckspannung:}
+  -a = R_i = (55,3 \pm 0,4) \Omega \\
+  b = U_0 = (0,632 \pm 0,001) \text{V}
+  \intertext{Sinusspannung:}
+  -a = R_i = (665 \pm 5) \Omega \\
+  b = U_0 = (1,080 \pm 0,002) \text{V}
+\end{align*}
+\begin{figure}
+  \centering
+  \includegraphics{plot3.pdf}
+  \caption{Klemmenspannung und Stromstärke der Rechteckspannung.}
+  \label{fig:plot3}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{plot4.pdf}
+  \caption{Klemmenspannung und Stromstärke der Sinusspannung.}
+  \label{fig:plot4}
+\end{figure}
+
+Da der Eingangswiderstand $R_v$ des Voltmeters nicht unendlich ist, tritt bei der direkten Messung der Leerlaufspannung ein systematischer Fehler auf.
+Dieser soll im Folgenden aus den zu Anfang notierten $U_0 \approx U_k = 1,6 \text{V}$ und $R_v = 10 \, \text{M}\Omega $ und dem berechneten $R_i = 16,9 \, \Omega$ ermittelt werden.
+Mit $\symbf{I} = U_k / R_a$ und $R_a = R_v$ lässt sich Gleichung \eqref{eqn:eq3} schreiben als:
+\begin{equation*}
+  U_0 = U_k \frac{R_i}{R_v} + U_k
+\end{equation*}
+Mit dieser Gleichung lässt sich nun die systematische Abweichung von $U_0$ ohne Berücksichtigung und mit Berücksichtigung des Eingangswiderstands berechnen.
+\begin{align*}
+  \increment U_0 = U_0 - U_k = 2,704 \cdot 10^{-6} \text{V} \\
+  \frac{\increment U_0}{U_k} = 1,69 \cdot 10^{-6}
+\end{align*}
+Diese relative Abweichung ist so klein, dass der systematische Fehler vernachlässigt werden kann.
+Ein weiterer systematischer Fehler tritt auf, wenn das Voltmeter hinter Punkt H in Abbildung \ref{fig:abb2} angeschlossen wird.
+In diesem Fall wird am Voltmeter nicht nur die Spannug über der Spannungsquelle gemessen, sondern auch über dem Amperemeter, das auch einen Widerstand besitzt.
+
+Als Letztes soll die Leistung, die über dem Belastungswiderstand anfällt und von diesem abhängt, betrachtet werden.
+Dieser Versuchsteil bezieht sich nur auf die Monozelle ohne Gegenspannng.
+Dazu wird die aus den Messwerten $U_k$ und $\symbf{I}$ mit einer Theoriekurve (siehe Abb. \ref{fig:plot5}), die auf dem zuvor berechneten Innenwiderstand und der Leerlaufspannung der Monozelle beruht.
+Für die Leistung gilt:
+\begin{align*}
+  N = U_k \cdot \symbf{I}
+  \intertext{und durch Umformen von Gleichung \eqref{eqn:eq2} nach $\symbf{I}$:}
+  N = \symbf{I}^2 \cdot R_a = \frac{U_0^2}{(R_a + R_i)^2} R_a
+\end{align*}
+Wie in der Theorie \ref{sec:Theorie} beschrieben nimmt die Leistung für ein bestimmtes $N$ einen Maximalwert an (Leistungsanpassung).
+\begin{figure}
+  \centering
+  \includegraphics{plot5.pdf}
+  \caption{Am Belastungswiderstand umgesetzte Leistung.}
+  \label{fig:plot5}
 \end{figure}
