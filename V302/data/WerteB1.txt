@@ -1,0 +1,4 @@
+#R3 R4 C2 in Ohm und nF ohne Rx Wert3
+489 511 399
+588 412 597
+704 296 922

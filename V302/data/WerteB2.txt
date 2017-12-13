@@ -1,0 +1,4 @@
+#R3 R4 C2 in Ohm und nF ohne Rx Wert1
+377 623 399
+476 524 597
+600.5 399.5 922
