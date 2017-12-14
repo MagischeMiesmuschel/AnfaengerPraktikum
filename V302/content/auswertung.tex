@@ -1,9 +1,83 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Durch die relative Unsicherheit der Bauteile wird die Unsicherheit für jeden Mittelwert einmal nach Gauß und einmal nach der Gleichung \ref{eqn:FEHLT}.
+Für die Werte $R_2$, $C_2$ und $L_2$ wird eine Unsicherheit von \pm 0.2\% angenommen.
+
+\subsection{Wheatsonesche Brücke}
+\label{sec:Weed}
+Die relative Unsicherheit der Bauteile beträgt \pm 0.5\% für das Verhältnis $R_3/R_4$.
+Mit den notierten Werten aus Tabelle 1 im Anhang und mit Gleichung \ref{eqn:FEHLT} lässt sich der Widerstand $R_x$ berechnen zu:
+\begin{align}
+  R_{x,10} &= (240 \pm 0.7 \textrm{(Gauß)} \pm 0.39 \textrm{(Mittelwert)}) \Omega \\
+  R_{x_13} &= (321 \pm 1 \textrm{(Gauß)} \pm 0.43 \textrm{(Mittelwert)}) \Omega
+\end{align}
+
+\subsection{Kapazitätsmessbrücke}
+\label{sec:Kapazitaet}
+Der variable Widerstand $R_2$ hat hier eine Unsicherheit von \pm 3\% und das Verhältnis von $R_3/R_4$ eine von \pm 0.5\%.
+Die Berechnung von $C_x$ und $R_x$ erfolgt nach Gleichung \ref{eqn:FEHLT} und \ref{eqn:FEHLT}, mit den notierten Werten in Tabelle 2 im Anhang.
+\begin{align}
+  C_{x,3} &= (407.6 \pm 1.3 \textrm{(Gauß)} \pm 9.9 \textrm{(Mittelwert)}) nF \\
+  R_{x,3} &= 0\\
+  \\
+  C_{x,1} &= (643.3 \pm 2 \textrm{(Gauß)} \pm 1.5 \textrm{(Mittelwert)}) nF \\
+  R_{x,1} &= 0\\
+  \\
+  C_{x,8} &= (287.2 \pm 0.9 \textrm{(Gauß)} \pm 6.7 \textrm{(Mittelwert)}) nF \\
+  R_{x,8} &= (577 \pm 10 \textrm{(Gauß)} \pm 1.41 \textrm{(Mittelwert)}) \Omega
+\end{align}
+
+\subsection{Induktivitätsmessbrücke}
+\label{sec:Induktiv}
+Der variable Widerstand $R_2$ hat die gleiche Unsicherheit wie im vorherigen Kapitel \ref{sec:Kapazitaet}, sowie das Verhältnis $R_3/R_4$.
+Es war nur möglich eine Messung durchzuführen, durch beschädigte Spulen.
+Lediglich eine war nutzbar und an der Stelle $L_2$ einzubauen.
+Deshalb wird hier kein Mittelwertsfehler angegeben bei der Berechnung von $L_x$ und $R_x$ nach Gleichung \ref{eqn:FEHLT} mit den Werten aus Tabelle 3 im Anhang.
+\begin{align}
+  L_{x,18} &= (49.58 \pm 0.27) mH \\
+  R_{x,18} &= (373.5 \pm 2) \Omega
+\end{align}
+
+\subsection{Maxwell-Brücke}
+\label{sec:Maxwell}
+Die relativen Unsichereiten der beiden Widerstände $R_3$ und $R_4$ betragen 3\% und für $C_4$ gibt es eine von 0.2\%.
+Die Werte für $L_x$ und $R_x$ berechnen sich nach den Gleichungen \ref{eqn:FEHLT} und \ref{eqn:FEHLT} mit den Werten aus der Tabelle 4 im Anhang.
+\begin{align}
+  L_{x,18} &= (49.7 \pm 0.9 \textrm{(Gauß)} \pm 0.11 \textrm{(Mittelwert)}) mH \\
+  R_{x,18} &= (348 \pm 9 \textrm{(Gauß)} \pm 1.2 \textrm{(Mittelwert)}) \Omega
+\end{align}
+
+\subsection{Wien-Robinson-Brücke}
+\label{sec:Wien}
+Das Verhältnis der effektiven Brückenspannung $U_{Br,eff}$ zur Speisespannung $U_S$ wird gegen $\Omega = \frac{\nu}{\nu_0}$ in Abb. \ref{fig:plot} abgetragen.
+$U_{Br,eff}$ berechnet sich nach:
+\begin{equation}
+  U_{Br,eff} = \frac{U_{Br}}{2 \sqrt{2}}
+\end{equation}
+In dieselbe Abbildung wird eine Theoriekurve, die nach Gleichung \ref{eqn:FEHLT} berechnet wird, eingezeichnet.
+Die Frequenz bei der die Brückenspannung erschwinden sollte ergibt sich zu:
+\begin{align}
+  \omega_0 &= \frac{1}{RC} = \frac{1}{332 \Omega \cdot 993 \cdot 10^{-9} F} = 3033,28 Hz \\
+  \nu_0 &= \frac{\omega_0}{2 \pi} = 482,76 Hz
+\end{align} 
+\newpage
 \begin{figure}
   \centering
-  \includegraphics{plot1.pdf}
-  \caption{Plot.}
+  \includegraphics{build/plot1.pdf}
+  \caption{Vergleich von Messdaten und Theoriekurve.}
   \label{fig:plot}
 \end{figure}
+Der Vergleich der Kurven zeigt einen ähnlichen Verlauf mit guter Übereinstimmung bei $\omega_0$.
+Dies lässt auf einen kleinen Klirrfaktor schließen, welcher im folgenden berechnet wird.
+Für diese Berechnung wird zunächt genähert, dass die Summe der Oberwellen nur von dem Term der zweiten Oberwelle bestimmt wird.
+Es wird mit der Effektivspannung nach Gleichung \ref{eqn:FEHLT} der Wert für $U_2$ mit $\Omega = 2$ berechnet.
+\begin{align}
+  U_2 &= \frac{0.014 V}{\sqrt{\frac{(2^2-1)^2}{9 \cdot [(1-2^2)^2+9 \cdot 2^2]}}} \\
+  &= 0,63 V
+\end{align}
+$U_1$ sind 3.88 V, von $U_S$ bei $\nu_0$.
+Dementsprechend ist der Klirrfaktor:
+\begin{align}
+  k = \frac{U_2}{U_1} = 0,1624
+\end{align}
