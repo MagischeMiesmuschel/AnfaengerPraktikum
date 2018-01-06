@@ -33,7 +33,7 @@ Daraus berechnet sich die Wärmemenge $\frac{dQ_1}{dt}$ zu:
 Mit $m_1c_w$ für die Wärmekapazität des Wasser in Reservoir 1 und $m_kc_k$ die Wärmekapazität der Kupferschlange und des Eimers.
 Somit folgt für die Güteziffer \nu :
 \begin{equation}
-  \nu = \frac{dQ_1}{dtN} \stackrel{\ref{eqn:eqn2}}\Rightarrow (m_1c_w + m_kc_k) \frac{dT_1}{dt} \cdot \frac{1}{N}
+  \nu = \frac{dQ_1}{dtN} \stackrel{\ref{eqn:eqn3}}\Rightarrow \nu = (m_1c_w + m_kc_k) \frac{dT_1}{dt} \cdot \frac{1}{N}
   \label{eqn:eqn4}
 \end{equation}
 mit N := gemittelte Leistungsaufnahme des Kompressors.
@@ -62,36 +62,11 @@ mit bekannter Verdampfungswärme L.
 Für die Arbeit $A_m$ gilt bei Verringerung des Gasvolumens von $V_a \textrm{und} V_b$:
 \begin{align}
   A_m = - \int_{V_a}^{V_b} pdV
+  \label{eqn:eqn8}
 \end{align}
 Aus der adiabatischen Kompression des Kompressors, also eine Zustandsänderung ohne Wärmeverluste an die Umgebung, folgt mit der Poissonschen Gleichung und $N_{mech} = \frac{dA_m}{dt}$:
 \begin{equation}
-  N_{mech} = \frac{1}{\kappa - 1} \left( p_b \sqrt[\kappa]{\frac{p_a}{p_b}} - p_a )\right \frac{dV_a}{dt} = \frac{1}{\kappa - 1} \left( p_b \sqrt[\kappa]{\frac{p_a}{p_b}} - p_a )\right \frac{1}{\rho} \frac{dm}{dt}
-  \label{eqn:eqn8}
+  N_{mech} = \frac{1}{\kappa - 1} \left( p_b \sqrt[\kappa]{\frac{p_a}{p_b}} - p_a \right) \frac{dV_a}{dt} = \frac{1}{\kappa - 1} \left( p_b \sqrt[\kappa]{\frac{p_a}{p_b}} - p_a \right) \frac{1}{\rho} \frac{dm}{dt}
+  \label{eqn:eqn9}
 \end{equation}
-mit der Dichte \rho des Gases und dem Druck $p_a$.
-
-\section{Aufbau}
-\label{sec:Aufbau}
-Eine Wärmepumpe kann schematisch wie folgt dargestellt werden:
-\begin{figure}
-  \centering
-  \includegraphics{data/Abb1.jpg}
-  \caption{Prinzipieller Aufbau einer Wärmepumpe. \cite{AnleitungV206}}
-  \label{fig:Abb1}
-\end{figure}
-Für die Wärmepumpe wird ein reales Gas benutzt, welches in der Lage ist Wärme während des Verdampfens aufzunehmen und bei der Kondensation abzugeben.
-Dies ist die Phasenumwandlungsenergie einer transportablen Energie des Gases.
-Für eine ideal arbeitende Pumpe sollte das Gas eine möglichst hohe Kondensationswärme besitzen.
-Der Kompressor K sorgt für eine adiabatische Kompression und einen Kreislauf.
-Das Druckventil D lässt drickreguliert das Gas durchströmen.
-Dort findet sich ein Druckgradient durch die Druckunterschiede in den Reservoiren vor.
-Das Gas mit dem Druck $p_b$ und der Temperatur $T_1$ ist flüssig,
-während es auf der anderen Seite bei $p_a$ mit der Temperatur $T_2$ gasförmig ist.
-Wenn sich das Drosselventil D öffnet, entzieht es dem Wasser in Reservoir 2 die Verdampfungswärme L.
-Somit folgt, dass das Reservoir 2, das kältere, wärmespendende Gefäß ist.
-Das Gas strömt durch den Kompressor K, wird komprimiert und erwärmt sich somit.
-Dadurch steigt der Druck im Reservoir $p_a$ , bis sich das Gas verflüssigt und somit Wärme an das Gefäß abgibt.
-Mittels weiterer Apparaturen, wie dem Reiniger R werden Blasen durch die Entfernung von Gasresten entfernt,
-oder der Steuervorrichtung S, welche das Drossenventil D reguliert.
-Dadurch wird sichergestellt, dass nur Gase in den Kompressor gelangen.
-||||||| merged common ancestors
+mit der Dichte $\rho$ des Gases und dem Druck $p_a$.

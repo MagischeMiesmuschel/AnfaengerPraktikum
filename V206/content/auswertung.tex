@@ -1,9 +1,74 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Für die Auswertung werden folgende Messwerte verwendet.
+
+\begin{table}
+  \centering
+  \caption{Eine Tabelle mit Messdaten.}
+  \label{tab:some_data}
+  \begin{tabular}{c c c c c c}
+    \toprule
+    $t$ (min) & $T_1$ ($\circ$C) & $T_2$ ($\circ$C) & $p_a$ (bar) & $p_b$ (bar) & $P$ (w) \\
+    \midrule
+     1 & 20.9 & 19.7 & 1.4 &  5.8 & 170 \\
+     2 & 21.8 & 19.6 & 1.8 &  6.4 & 180 \\
+     3 & 23.8 & 18.5 & 1.9 &  7.0 & 187 \\
+     4 & 26.4 & 17.0 & 2.1 &  7.5 & 195 \\
+     5 & 28.8 & 15.4 & 2.2 &  8.0 & 203 \\
+     6 & 31.3 & 13.6 & 2.2 &  8.5 & 205 \\
+     7 & 33.6 & 11.8 & 2.2 &  9.0 & 208 \\
+     8 & 35.7 & 10.2 & 2.2 &  9.4 & 210 \\
+     9 & 37.7 &  8.6 & 2.2 &  9.8 & 210 \\
+    10 & 39.7 &  7.0 & 2.2 & 10.2 & 212 \\
+    11 & 41.5 &  5.5 & 2.2 & 10.6 & 212 \\
+    12 & 43.2 &  4.0 & 2.2 & 11.0 & 210 \\
+    13 & 44.9 &  2.7 & 2.2 & 11.5 & 212 \\
+    14 & 46.5 &  1.4 & 2.2 & 12.0 & 214 \\
+    15 & 48.1 &  0.7 & 2.2 & 12.3 & 215 \\
+    16 & 49.5 &  0.1 & 2.3 & 12.7 & 214 \\
+    17 & 50.9 & -0.2 & 2.2 & 13.0 & 214 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{verwendete Software und Fehlerrechnung}
+\label{sec:SoftwareFehlerrechnung}
+
+Für die Auswertung werden neben NumPy\cite{numpy} mehrere Python Pakete benutzt.
+Plots werden mit Matplotlib\cite{matplotlib} erstellt und Ausgleichsgeraden mit SciPy\cite{scipy}.
+Fehlerbehaftete Größen werden mit Uncertainties\cite{uncertainties} berechnet, das die Gaußsche Fehlerfortpflanzung benutzt:
+\begin{equation*}
+    \increment f = \sqrt{\sum_{i=1}^N \left( \frac{\partial f}{\partial x_i} \right)^{2} \cdot (\increment x_i)^{2}}
+\end{equation*}
+Alle Mittelwerte werden mit folgender Formel berechnet:
+\begin{equation*}
+  \bar{x} = \frac{1}{N} \sum_{i = 1}^N x_i
+\end{equation*}
+Der zugehörige Fehler berechnet sich mit:
+\begin{equation*}
+  \increment \bar{x} = \frac{1}{\sqrt{N}} \sqrt{\frac{1}{N-1} \sum_{i = 1}^N (x_i - \bar{x})^2}
+\end{equation*}
+
+\subsection{Bestimmung der Güteziffer}
+
+
+
 \begin{figure}
   \centering
-  \includegraphics{plot1.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics{build/plot1.pdf}
+  \caption{Temperaturverläufe während der Messung.}
+  \label{fig:plot1}
 \end{figure}
+
+\subsection{Bestimmung des Massendurchsatzes}
+
+
+\begin{figure}
+  \centering
+  \includegraphics{build/plot2.pdf}
+  \caption{Dampfdruck-Kurve des Transportgases.}
+  \label{fig:plot2}
+\end{figure}
+
+\subsection{Bestimmung der mechansichen Kompressorleistung}
