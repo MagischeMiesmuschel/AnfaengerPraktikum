@@ -1,15 +1,35 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-Für die Auswertung werden folgende Messwerte verwendet.
+\subsection{verwendete Software und Fehlerrechnung}
+\label{sec:SoftwareFehlerrechnung}
 
+Für die Auswertung werden neben NumPy\cite{numpy} mehrere Python Pakete benutzt.
+Plots werden mit Matplotlib\cite{matplotlib} erstellt und Ausgleichsgeraden mit SciPy\cite{scipy}.
+Fehlerbehaftete Größen werden mit Uncertainties\cite{uncertainties} berechnet, das die Gaußsche Fehlerfortpflanzung benutzt:
+\begin{equation*}
+    \increment f = \sqrt{\sum_{i=1}^N \left( \frac{\partial f}{\partial x_i} \right)^{2} \cdot (\increment x_i)^{2}}
+\end{equation*}
+Alle Mittelwerte werden mit folgender Formel berechnet:
+\begin{equation*}
+  \bar{x} = \frac{1}{N} \sum_{i = 1}^N x_i
+\end{equation*}
+Der zugehörige Fehler berechnet sich mit:
+\begin{equation*}
+  \increment \bar{x} = \frac{1}{\sqrt{N}} \sqrt{\frac{1}{N-1} \sum_{i = 1}^N (x_i - \bar{x})^2}
+\end{equation*}
+
+\subsection{Messdaten und Systemgrößen}
+\label{sec:Auswertung_Messdaten}
+
+Für die Auswertung werden folgende Messwerte verwendet.
 \begin{table}
   \centering
-  \caption{Eine Tabelle mit Messdaten.}
-  \label{tab:some_data}
+  \caption{Temperaturen der Reservoire, Drücke in den Leitungen, Kompressorleistung.}
+  \label{tab:Messdaten}
   \begin{tabular}{c c c c c c}
     \toprule
-    $t$ (min) & $T_1$ ($\circ$C) & $T_2$ ($\circ$C) & $p_a$ (bar) & $p_b$ (bar) & $P$ (w) \\
+    $t$ (min) & $T_1$ ($^\circ$C) & $T_2$ ($^\circ$C) & $p_a$ (Bar) & $p_b$ (Bar) & $P$ (w) \\
     \midrule
      1 & 20.9 & 19.7 & 1.4 &  5.8 & 170 \\
      2 & 21.8 & 19.6 & 1.8 &  6.4 & 180 \\
@@ -31,44 +51,163 @@ Für die Auswertung werden folgende Messwerte verwendet.
     \bottomrule
   \end{tabular}
 \end{table}
-
-\subsection{verwendete Software und Fehlerrechnung}
-\label{sec:SoftwareFehlerrechnung}
-
-Für die Auswertung werden neben NumPy\cite{numpy} mehrere Python Pakete benutzt.
-Plots werden mit Matplotlib\cite{matplotlib} erstellt und Ausgleichsgeraden mit SciPy\cite{scipy}.
-Fehlerbehaftete Größen werden mit Uncertainties\cite{uncertainties} berechnet, das die Gaußsche Fehlerfortpflanzung benutzt:
-\begin{equation*}
-    \increment f = \sqrt{\sum_{i=1}^N \left( \frac{\partial f}{\partial x_i} \right)^{2} \cdot (\increment x_i)^{2}}
-\end{equation*}
-Alle Mittelwerte werden mit folgender Formel berechnet:
-\begin{equation*}
-  \bar{x} = \frac{1}{N} \sum_{i = 1}^N x_i
-\end{equation*}
-Der zugehörige Fehler berechnet sich mit:
-\begin{equation*}
-  \increment \bar{x} = \frac{1}{\sqrt{N}} \sqrt{\frac{1}{N-1} \sum_{i = 1}^N (x_i - \bar{x})^2}
-\end{equation*}
+Auf die Drücke wird noch 1 Bar addiert.
+Das Volumen der Reservoire ist jeweils 3 Liter und die spezifische Wärmekapazität von Wasser ist $ c_w =4.182 \cdot 10^3$ J/(kgK).
+Die Kupferleitungen der Wärmepumpe haben einen $c_k m_k$-Wert von 660 J/K.
+Außerdem werden in späteren Abschnitten noch einige Stoffeigenschaften des Transportgases Dichloridflourmethan ($\text{Cl}_2\text{F}_2\text{C}$) benötigt.
+\begin{align*}
+  \rho_0 = 5,51 \, \text{g/l bei } T_0 = 0 \, ^\circ\text{C und } p_0 = 1 \, \text{Bar} \\
+  \text{molare Masse: } M_{\text{Gas}} = 0,12091 \, \text{kg/mol}
+\end{align*}
+\FloatBarrier
 
 \subsection{Bestimmung der Güteziffer}
+\label{sec:Auswertung_Gueteziffer}
 
-
-
+Für die gemessenen Temperaturen (siehe Tabelle \ref{tab:Messdaten}) wird eine Ausgleichsrechnung (siehe Abb. \ref{fig:plot1}) mit folgender Gleichung durchgeführt.
+\begin{equation*}
+  T(t) = At^2 + Bt + C
+\end{equation*}
+$T_1$ wird mit folgenden Parametern approximiert:
+\begin{align*}
+  A_1 &= \SI{-9(1)e-6}{\kelvin\per\second\squared} \\
+  B_1 &= \SI{0.042(2)}{\kelvin\per\second} \\
+  C_1 &= \SI{290.3(4)}{\kelvin} \\
+\end{align*}
+Für $T_2$ liefert die Ausgleichsrechnung:
+\begin{align*}
+  A_2 &= \SI{6(2)e-6}{\kelvin\per\second\squared} \\
+  B_2 &= \SI{-0.030(3)}{\kelvin\per\second} \\
+  C_2 &= \SI{296.2(6)}{\kelvin}
+\end{align*}
 \begin{figure}
   \centering
   \includegraphics{build/plot1.pdf}
   \caption{Temperaturverläufe während der Messung.}
   \label{fig:plot1}
 \end{figure}
+Mit Hilfe dieser Paramter lassen sich nun Differentialquotienten berechnen, die die Temperaturänderung zu bestimmten Zeiten beschreiben.
+\begin{equation*}
+  \frac{\symup{d}T(t)}{\symup{d}t} = 2At + B
+\end{equation*}
+In den Tabellen \ref{tab:diffT1} und \ref{tab:diffT2} sind für vier verschiedene Zeiten bzw. Temperaturen Differentialquotienten berechnet.
+\begin{table}
+  \centering
+  \caption{Differentialquotienten für $T_1$.}
+  \label{tab:diffT1}
+  \begin{tabular}{c c c c}
+    \toprule
+    $t$ (s) & $T_1$ (K) & $\symup{d}T_1/\symup{t}$ (K/s) & Fehler (K/s) \\
+    \midrule
+    180 & 296,95 & 0,039 & 0,002 \\
+    360 & 304,45 & 0,036 & 0,002 \\
+    540 & 310,85 & 0,032 & 0,002 \\
+    720 & 316,35 & 0,029 & 0,003 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\begin{table}
+  \centering
+  \caption{Differentialquotienten für $T_2$.}
+  \label{tab:diffT2}
+  \begin{tabular}{c c c c}
+    \toprule
+    $t$ (s) & $T_2$ (K) & $\symup{d}T_2/\symup{t}$ (K/s) & Fehler (K/s) \\
+    \midrule
+    180 & 291,65 & -0,028 & 0,003 \\
+    360 & 286,75 & -0,026 & 0,003 \\
+    540 & 281,75 & -0,024 & 0,004 \\
+    720 & 277,15 & -0,021 & 0,004 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\FloatBarrier
+Mit Gleichung \eqref{eqn:eqn4} kann nun die Güteziffer $\nu$ bestimmt werden, indem die entsprechenden Größen aus Kapitel \ref{sec:Auswertung_Messdaten} und die Differentialquotienten für $T_1$ aus Tabbele \ref{tab:diffT1} eingesetzt werden.
+Die Theoriewerte der Gütezifffer $\nu_{\text{ideal}}$ werden mit Gleichung \eqref{eqn:eqn1} berechnet.
+\begin{table}
+  \centering
+  \caption{gemessene und ideale Güteziffer.}
+  \label{tab:guete}
+  \begin{tabular}{c c c c c}
+    \toprule
+    $t$ (s) & $T_1$ (K) & $\nu$ & Fehler & $\nu_{\text{ideal}}$  \\
+    \midrule
+    180 & 296,95 & 2,8 & 0,1 & 56,0 \\
+    360 & 304,45 & 2,3 & 0,1 & 17,2 \\
+    540 & 310,85 & 2,0 & 0,1 & 10,7 \\
+    720 & 316,35 & 1,9 & 0,1 &  8,1 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Auf die deutliche Abweichung zwischen Theorie und Praxis wird später in der Diskussion eingegangen.
+\FloatBarrier
 
 \subsection{Bestimmung des Massendurchsatzes}
+\label{sec:Auswertung_Massendurchsatz}
 
-
+Zur Bestimmung des Massendurchsatzes muss zunächst über eine lineare Ausgleichsrechnung die Verdampfunswärme berechnet werden.
+Dafür werden der Druck $p_b$ und die Temperatur $T_1$ in einer Dampfdruck-Kurve (siehe Abb. \ref{fig:plot2}) mit $p_0$ = 1 Bar und der allgemeinen Gaskonstante $R$ aufgetragen.
+\begin{equation*}
+  \ln{\frac{p_b}{p_o}} = - \frac{L}{R} \cdot \frac{1}{T_1}
+\end{equation*}
+Für die Ausgleichsgerade $g(T_1) = m \cdot T_1 + n$ ergeben sich folgende Parameter:
+\begin{align*}
+  m &= -2111 \pm 54 \\
+  n &= 9,2 \pm 0,2 \\
+\end{align*}
+Die Verdampfunswärme $L$ beträgt dann:
+\begin{equation*}
+  L = - m \cdot R = \SI{1,76(4)e4}{\kelvin\per\mol}
+\end{equation*}
 \begin{figure}
   \centering
   \includegraphics{build/plot2.pdf}
   \caption{Dampfdruck-Kurve des Transportgases.}
   \label{fig:plot2}
 \end{figure}
+\FloatBarrier
+Der Massendurchsatz kann nun mit Gleichung \eqref{eqn:eqn8} errechnet werden.
+Da die Verdampfunswärme pro Mol berechnet wird, wird zunächst die zeitliche Änderung der Stoffmenge $n_{\text{Gas}}$ bestimmt.
+Durch Multiplikation mit der molaren Masse des Transportgases (siehe Kapitel \ref{sec:Auswertung_Messdaten}) wird der Massendurchsatz berechnet.
+\begin{table}
+  \centering
+  \caption{gemessene und ideale Güteziffer.}
+  \label{tab:guete}
+  \begin{tabular}{c c c c c}
+    \toprule
+    $t$ (s) & $\symup{d}n_{\text{Gas}}/\symup{d}t$ (mol/s) & Fehler (mol/s) & $\symup{d}m/\symup{d}t$ & Fehler (kg/s)  \\
+    \midrule
+    180 & -0,021 & 0,002 & -0,0025 & 0,0003 \\
+    360 & -0,020 & 0,002 & -0,0023 & 0,0003 \\
+    540 & -0,018 & 0,003 & -0,0021 & 0,0003 \\
+    720 & -0,016 & 0.003 & -0,0019 & 0,0004 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \subsection{Bestimmung der mechansichen Kompressorleistung}
+\label{sec:Auswertung_Leistung}
+
+Um die Kompressorleistung zu berechnen, ist es notwendig, die Dichte des Transportgases $\rho$ zu kennen.
+Diese kann aus der idealen Gasgleichung bestimmt werden.
+\begin{equation*}
+ \rho = \frac{\rho_0 T_0 p_a}{T_2 p_0}
+\end{equation*}
+Aus Kapitel \ref{sec:Auswertung_Messdaten} ist $\rho_0$ bekannt und aus Kapitel \ref{sec:Auswertung_Massendurchsatz} der Massendurchsatz.
+Das Verhältnis der Molwärmen $\kappa$ soll 1,14 sein.
+Mit diesen Angaben kann nun aus Gleichung \eqref{eqn:eqn9} die Kompressorleistung berechnet werden.
+\begin{table}
+  \centering
+  \caption{mechansiche Kompressorleistung.}
+  \label{tab:Leistung}
+  \begin{tabular}{c c c}
+    \toprule
+    $t$ (s) & $N_{\text{mech}}$ (W) & Fehler (W) \\
+    \midrule
+    180 & 46 & 5 \\
+    360 & 45 & 5 \\
+    540 & 46 & 7 \\
+    720 & 45 & 9 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
