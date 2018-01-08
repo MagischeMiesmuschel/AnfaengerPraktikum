@@ -122,20 +122,20 @@ In den Tabellen \ref{tab:diffT1} und \ref{tab:diffT2} sind für vier verschieden
   \end{tabular}
 \end{table}
 \FloatBarrier
-Mit Gleichung \eqref{eqn:eqn4} kann nun die Güteziffer $\nu$ bestimmt werden, indem die entsprechenden Größen aus Kapitel \ref{sec:Auswertung_Messdaten} und die Differentialquotienten für $T_1$ aus Tabbele \ref{tab:diffT1} eingesetzt werden.
+Mit Gleichung \eqref{eqn:eqn4} kann nun die Güteziffer $\nu$ bestimmt werden, indem die entsprechenden Größen aus Kapitel \ref{sec:Auswertung_Messdaten} und die Differentialquotienten für $T_1$ aus Tabelle \ref{tab:diffT1} eingesetzt werden.
 Die Theoriewerte der Gütezifffer $\nu_{\text{ideal}}$ werden mit Gleichung \eqref{eqn:eqn1} berechnet.
 \begin{table}
   \centering
   \caption{gemessene und ideale Güteziffer.}
   \label{tab:guete}
-  \begin{tabular}{c c c c c}
+  \begin{tabular}{c c c c c c}
     \toprule
-    $t$ (s) & $T_1$ (K) & $\nu$ & Fehler & $\nu_{\text{ideal}}$  \\
+    $t$ (s) & $T_1$ (K) & $\nu$ & Fehler & $\nu_{\text{ideal}}$ & relative Abweichung von $\nu_{\text{ideal}}$ \\
     \midrule
-    180 & 296,95 & 2,8 & 0,1 & 56,0 \\
-    360 & 304,45 & 2,3 & 0,1 & 17,2 \\
-    540 & 310,85 & 2,0 & 0,1 & 10,7 \\
-    720 & 316,35 & 1,9 & 0,1 &  8,1 \\
+    180 & 296,95 & 2,8 & 0,1 & 56,0 & 95,00 $\%$ \\
+    360 & 304,45 & 2,3 & 0,1 & 17,2 & 86,63 $\%$ \\
+    540 & 310,85 & 2,0 & 0,1 & 10,7 & 81,31 $\%$ \\
+    720 & 316,35 & 1,9 & 0,1 &  8,1 & 76,54 $\%$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -171,8 +171,8 @@ Da die Verdampfunswärme pro Mol berechnet wird, wird zunächst die zeitliche Ä
 Durch Multiplikation mit der molaren Masse des Transportgases (siehe Kapitel \ref{sec:Auswertung_Messdaten}) wird der Massendurchsatz berechnet.
 \begin{table}
   \centering
-  \caption{gemessene und ideale Güteziffer.}
-  \label{tab:guete}
+  \caption{Massendurchsatz.}
+  \label{tab:Massendurchsatz}
   \begin{tabular}{c c c c c}
     \toprule
     $t$ (s) & $\symup{d}n_{\text{Gas}}/\symup{d}t$ (mol/s) & Fehler (mol/s) & $\symup{d}m/\symup{d}t$ & Fehler (kg/s)  \\
@@ -185,7 +185,7 @@ Durch Multiplikation mit der molaren Masse des Transportgases (siehe Kapitel \re
   \end{tabular}
 \end{table}
 
-\subsection{Bestimmung der mechansichen Kompressorleistung}
+\subsection{Bestimmung der mechansichen Kompressorleistung und Wirkungsgrad}
 \label{sec:Auswertung_Leistung}
 
 Um die Kompressorleistung zu berechnen, ist es notwendig, die Dichte des Transportgases $\rho$ zu kennen.
@@ -208,6 +208,23 @@ Mit diesen Angaben kann nun aus Gleichung \eqref{eqn:eqn9} die Kompressorleistun
     360 & 45 & 5 \\
     540 & 46 & 7 \\
     720 & 45 & 9 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\FloatBarrier
+Der Wirkungsgrad ist der Quotient aus mechansicher Kompressorleistung $N_\text{mech}$ und der aufgebrachten elektrischen Leistung $P$.
+\begin{table} wirk
+  \centering
+  \caption{Wirkungsgrad.}
+  \label{tab:Wirkungsgrad}
+  \begin{tabular}{c c c}
+    \toprule
+    $t$ (s) & $N_{\text{mech}}/P$ & Fehler \\
+    \midrule
+    180 & 24,8 \% & 2,5 \% \\
+    360 & 22,1 \% & 2,7 \% \\
+    540 & 22,0 \% & 3,3 \% \\
+    720 & 21,0 \% & 4,0 \% \\
     \bottomrule
   \end{tabular}
 \end{table}

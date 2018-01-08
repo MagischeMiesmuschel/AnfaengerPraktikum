@@ -125,14 +125,13 @@ for x in count:
     m_durchsatz = (c_w*m_w + c_k_m_k)*(2*A2*x*180 + B2)/L
     print("t = ", x*180, "Massendurchsatz in Mol: ", m_durchsatz)
     print("Massendurchsatz:", m_durchsatz*molaremasse_cl2f2c)
-print()
-
-# mechansiche Leistung
-
-print("mechansiche Leistung")
-for x in count:
+    # mechansiche Leistung
     m_durchsatz = (c_w*m_w + c_k_m_k)*(2*A2*x*180 + B2)/L
     dichte = (273.15*pa[x*3-1]*5.51)/(T2[x*3-1]*1e5)
     N_mech = 1/(1.14 - 1)*(pb[x*3-1]*((pa[x*3-1]/pb[x*3-1])**(1/1.14))-pa[x*3-1])*(1/dichte)*m_durchsatz*molaremasse_cl2f2c
+    print("mechansiche Leistung")
     print(N_mech)
+    print("Wirkunsgrad")
+    print(N_mech/P[x*3-1])
+    print()
 print()
