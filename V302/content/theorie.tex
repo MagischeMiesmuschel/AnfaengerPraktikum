@@ -11,9 +11,9 @@ Eine allgemeine Brückenschaltung ist in Abblidung \ref{fig:Schaltung1} zu sehen
   \caption{Allgemeine Brückenschaltung.}
   \label{fig:Schaltung1}
 \end{figure}
-An eine Masche, die in 2 weitere Maschen aufegteilt werden kann, ist eine äußere Speisespannung $U_{\text{s}}$ angelegt.
+An eine Masche, die in zwei weitere Maschen aufegteilt werden kann, ist eine äußere Speisespannung $U_{\text{s}}$ angelegt.
 Gemessen wird die Spannung zwischen Punkt A und B, die als Brückenspannung bezeichnet wird und vom Verhältnis der Impedanzen abhängt.
-Bei der Nullmethode wird eine unbekannte Impedanz gemessen, indem das Verhältnis der restlichen bekannten Impedanzen so variiert, dass die Brückenspannung Null wird.
+Bei der Nullmethode wird eine unbekannte Impedanz gemessen, indem das Verhältnis der restlichen bekannten Impedanzen so variiert wird, dass die Brückenspannung Null wird.
 Mit Hilfe der Kirchhoffschen Regeln
 \begin{itemize}
   \item \textcquote{V302}{1. In einem Verzweigungspunkt von elektrischen Strömen [...] ist die Summe der zufließenden Ströme ($\symbf{I}$ > 0) gleich der Summe der abfließenden Ströme ($\symbf{I}$ < 0).}
@@ -56,7 +56,7 @@ Sie kann dazu genutzt werden, um einen unbekannten Widerstand $R_x$ zu ermitteln
 \subsection{Kapazitätsmessbrücke}
 \label{sec:Theorie2}
 Ein reeler Kondensator besitzt neben seiner Kapazität, auch immer einen ohmschen Widerstand, die beide mit der Brücke in Abbildung \ref{fig:Schaltung3} bestimmt werden können.
-Hierfür sind zwei Abstimmungsfreiheitsgerade notwendig, da die Brückenspannung nach Betrag und Phase verschwinden muss für die Erfüllung von \eqref{eqn:gl2} und \eqref{eqn:gl3}.
+Hierfür sind zwei Abstimmungsfreiheitsgerade notwendig, da die Brückenspannung nach Betrag und Phase, für die Erfüllung von Gleichung \eqref{eqn:gl2} und \eqref{eqn:gl3}, verschwinden muss .
 \begin{equation}
   R_x = R_2 \frac{R_3}{R_4}
   \label{eqn:gl5}
@@ -115,8 +115,8 @@ Folgende Bedingungen gelten für diese Schaltung:
 
 \subsection{Wien-Robinson-Brücke}
 \label{sec:Theorie5}
-Im Gegensatz zu den anderen Brückenschaltungen hängt diese von der Frequenz.
-Deshalb wird bei dieser Brückenschaltung die Brückenspannung nicht über Abgleichelemente reguliert, sondern über die Frequenz.
+Im Gegensatz zu den anderen Brückenschaltungen hängt die Brückenspannung von der Frequenz ab.
+Deshalb wird bei dieser Brückenschaltung die Brückenspannung nicht über Abgleichelemente reguliert, sondern über die Frequenz $f = \frac{\omega}{2 \pi}$.
 Für Speisespannung und Brückenspannung gilt folgende Beziehung.
 \begin{equation}
   \left\lvert \frac{\symbffrak{U}_{\text{s}}}{\symbffrak{U}_{\text{Br}}} \right\rvert^2 = \frac{(\omega^2 R^2 C^2 - 1)^2}{9((1 - \omega^2 R^2 C^2)^2 + 9 \omega^2 R^2 C^2)}
@@ -128,13 +128,13 @@ Durch die zweckmäßige Einführung von $\Omega = \omega/\omega_0$, lässt sich 
   \left\lvert \frac{\symbffrak{U}_{\text{s}}}{\symbffrak{U}_{\text{Br}}} \right\rvert^2 = \frac{(\Omega^2 - 1)^2}{9((1 - \Omega^2)^2 + 9 \Omega^2)}
   \label{eqn:gl12}
 \end{equation}
-Unter reelen Umständen erreicht die Brückenspannung nur ein Minimum > 0, da der Generator auch unerwünschte Oberwellen erzeugt.
-Deren Anteil im Vergleich zur Grundwelle wird über den Klirrfaktor beschrieben.
+Unter realen Umständen erreicht die Brückenspannung nur ein Minimum > 0, da der Generator auch unerwünschte Oberwellen erzeugt.
+Deren Anteil im Vergleich zur Grundwelle wird über den Klirrfaktor k beschrieben.
 \begin{equation}
   k := \frac{\sqrt{U^2_2 + U^2_3 + ...}}{U_1}
   \label{eqn:13}
 \end{equation}
-Zur Vereinfachung wird nur eine Oberwelle berücksichtig, die sich mit der Funktion \eqref{eqn:gl12} berechnen lässt:
+Zur Vereinfachung wird nur eine Oberwelle berücksichtig, die sich mit der Gleichung \eqref{eqn:gl12} berechnen lässt:
 \begin{equation}
   U_2 = \frac{U_{\text{Br}}}{f(\Omega =2)}
   \label{eqn:14}

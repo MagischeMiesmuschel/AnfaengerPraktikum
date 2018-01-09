@@ -7,7 +7,8 @@ import scipy.constants as scicon
 import math
 
 def f(x):
-   return (1/9)*(x**2-1)**2/((1-x**2)**2 + 9*x**2) #Gleichung 19
+   return ((23.5/200)*(x**2-1)**2/((1-x**2)**2 + 9*x**2)) #Gleichung 19
+
 
 def m(x,y):
     z=0
@@ -104,12 +105,12 @@ print('R_L18_d: ', np.mean(R_L18_d), '(Gauß) +/-', m(unumpy.nominal_values(R_L1
 w0_e = 1/(R0_e * C_e *2 * math.pi)
 O_e = f_e / w0_e
 U_br_eff = U_br/(2*2**(0.5))
-plt.plot(O_e, U_br_eff/U_s, 'kx', label='Messwerte')
+plt.plot(O_e, (U_br_eff/U_s), 'kx', label='Messwerte')
 plt.plot(np.linspace(0,70,10000), f(np.linspace(0,70,10000)), 'r-', label='Theorie')
 plt.grid()
 plt.legend()
 plt.xlabel(r'$\nu / \nu_0$')
-plt.ylabel(r'$\frac{U_{Br,eff}}{U_s}$', rotation=0)
+plt.ylabel(r'$U_{Br,eff}/U_s$')
 plt.xlim(0.03, 69)
 plt.ylim(0,0.13)
 plt.xscale('log')
