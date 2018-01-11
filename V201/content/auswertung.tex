@@ -1,9 +1,50 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
+\subsection{Bestimmung der Wärmekapazität des Kalorimeters}
+\label{sec:Kalorie}
+Für die spätere Berechnung der spezifischen Wärmekapazitäten verschiedener Stoffe wird unter anderem die Wärmekapazität des Kaloriemeters benötigt.
+Die Berechnung dieser erfolgt durch Gleichung \ref{eqn:FEHLT} und mit den gemessenen Werten:
+\begin{equation}
+ T_k = 293,75 \text{K}\\
+ m_k = 312,42 \text{g}\\
+ T_w = 359,15 \text{K}\\
+ m_w = 300,54 \text{g}\\
+ T_M = 323,15 \text{K}\\
+ m_kalorie = 841,85 \text{g}
+\end{equation}
+Für $c_w$ wird der in \cite{V201} angegeben Wert von $\SI{4,18}{\joule\per\gram\per\kelvin}$ verwendet.
+Somit berechnet sich ein Wert von $ c_kalorie = \SI{0,276}{\joule\per\gram\per\kelvin}.$
+
+\subsection{Wärmekapazität verschiedener Stoffe}
+\label{sec:verschiedeneStoffe}
+Analog zum vorherigen Auswertungsteil \ref{sec:Kalorie} wird die Wärmekapazität $c_k$ der Stoffe bestimmt durch die Gleichung \ref{eqn:FEHLT}.
+Bei den drei Messungen für Blei ergeben sich folgende Werte:
+\begin{table}
   \centering
-  \includegraphics{plot1.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+  \label{tab:WerteBlei}
+  \begin{tabular}{c c c c}
+   \toprule
+   & Messung 1 & Messung 2 & Messung 3 \\
+   \midrule
+   $m_w$/g & 599,956 & 589,26 & 572,89 \\
+   $T_w$/K & 294,45 & 293,95 & 294,35 \\
+   $T_{Blei}$/K & 366,15 & 360,15 & 363,15 \\
+   $T_M$/K & 296,35 & 295,05 & 295,75 \\
+   \bottomrule
+  \end{tabular}
+\end{table}
+\newpage
+Die Werte für die spezifische Wärmekapazität werden mit
+\begin{equation}
+  \overline{x} = \frac{1}{N} \cdot \sum_{i=1}^N x_i
+\end{equation}
+gemittelt. Der zugehörige Fehler bestimmt sich durch 
+\begin{equation}
+  \Delta \overline{x} = \frac{1}{\sqrt{N}} \cdot \sqrt{\frac{1}{N-1} \cdot \sum_{i=1}^N \left(x_i - \overline{x}\right)^2}
+\end{equation}
+Somit ergibt sich die spezifische Wärmekapazität für Blei zu:
+\begin{align*}
+  c_k = \left(0,108 \pm 0,016 \right) \si{{\joule\per\gram\per\kelvin}}
+\end{align*}
+Dies entspricht einer Abweichung von 16,3\% vom Literaturwert $c_k = \SI{0,130}{\joule\per\gram\per\kelvin}$.
