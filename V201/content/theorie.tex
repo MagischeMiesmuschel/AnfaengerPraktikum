@@ -1,4 +1,103 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{V201}
+\subsection{Molwärme und spezifische Wärmekapazität}
+\label{sec:molwärme}
+
+Die Molwärme ist die Wärmemenge $\text{d}Q$, die benötigt wird um einen Stoff um $\text{T}$ zu erwärmen, bezogen auf \SI{1}{\mol}.
+Dabei muss zwischen Molwärme bei konstantem Druck $C_p$ und konstantem Volumen $C_V$ unterschieden werden.
+Für den Fall, dass die Wärmezufuhr- oder abfuhr bei konstantem Volumen staffindet, ergibt sich für die Molwärme:
+\begin{equation}
+  C_V = \left(\frac{\text{d}Q}{\text{d}T}\right)_V
+  \label{eqn:gl1}
+\end{equation}
+Da aufgrund des konstanten Volumens keine Arbeit verrichtet wird, ist nach dem ersten Hauptsatz der Thermodynamik die innere Engegie $U$ gleich der Wärmemenge $Q$.
+Daraus folgt für die Molwärme:
+\begin{equation}
+  C_V = \left(\frac{\text{d}U}{\text{d}T}\right)_V
+  \label{eqn:gl2}
+\end{equation}
+Die dazugehörige Dimension ist:
+\begin{equation*}
+  dim C_V = \frac{\text{Energie}}{\text{Temperatur} \cdot \text{Stoffmenge}}
+\end{equation*}
+Über die spezifische Wärmekapazität eines Festkörpers $c_\text{k}$ lässt sich die Molwärme bestimmen.
+Die experimentelle Bestimmung der spezifischen Wärmekapazität  bei konstantem Volumen $c_{\text{k},V}$ lässt sich jedoch nur schwer umsetzten, denn die Ausdehnung des Stoffes lässt sich nur mit sehr großen Drücken verhindern.
+Deshalb wird die spezifsche Wärmekapazität bei konstantem Druck $c_{\text{k},p}$ gemessen und zur Umrechnung der Zusammenhang zwischen $C_V$ und $C_p$ verwendet.
+\begin{equation}
+  C_V = C_p - 9 \alpha^2 \kappa V_0 T
+  \label{eqn:gl3}
+\end{equation}
+Der lineare Ausdehnungskoeffizient $\alpha$ und das Kompressionsmodul $\kappa$ sind materialabhängige Größen und das Molvolumen $V_0$ undd $C_p$ können umgeschrieben werden zu \cite{Molwärme}:
+\begin{align*}
+  V_0 = \frac{M}{\rho} \\
+  C_p = c_{\text{k},p} \cdot M \\
+  \intertext{mit der molaren Masse $M$.}
+\end{align*}
+Die Gleichung \eqref{eqn:gl3} kann dann folgendermaßen ausgedrückt werden:
+\begin{equation}
+  C_V = c_{\text{k},p} M - 9 \alpha^2 \kappa \frac{M}{\rho} T
+  \label{eqn:gl4}
+\end{equation}
+\subsection{klassische Betrachtung und das Dulong-Petitsche Gesetz}
+\label{sec:klassisch}
+
+Das Dulong-Petitsche Gesetz besagt, dass die Molwärme bei konstantem Volumen unabhängig von den chemischen Eigenschaften des Festkörpers ist.
+Die entsprechende Erklärung liefert die klassiche Thermodynamik.
+Die Atome im Gitter eines Festkörpers besitzen keine Translations- und Rotationsfreiheitsgrade, sondern nur Schwingungsfreiheitsgrade.
+Betrachtet man die Schwingung der Atome als harmonische Oszillation, ergibt sich für die mittlere innere Energie eines Atoms $\langle u \rangle$:
+\begin{equation}
+  \langle u \rangle = 2 \langle E_\text{kin} \rangle
+  \label{eqn:gl5}
+\end{equation}
+Nach dem Äquipartitionstheorem ist die kinetische Energie eines Atoms pro Freiheitsgrad
+\begin{equation}
+  \langle E_\text{kin} \rangle = \frac{1}{2} k T
+  \label{eqn:gl6}
+\end{equation}
+mit der Boltzmann-Konstante $k$.
+Durch Multiplizieren mit der Loschmidtschen Zahl $N_\text{L}$ kann nun die mittlere innere Engergie des Körpers pro \si{\mol} $\langle U \rangle$ bestimmt werden.
+\begin{equation}
+  \langle U \rangle = N_\text{L} \langle u \rangle = N_\text{L} k T = R T
+  \label{eqn:gl7}
+\end{equation}
+Aus Gleichung \eqref{eqn:gl2} und \eqref{eqn:gl7} lässt sich nun die Aussage des Dulong-Petitsche Gesetz ableiten, dass für die Molwärme $C_V$ gilt
+\begin{equation}
+  C_V = 3 R
+  \label{eqn:gl8}
+\end{equation}
+mit der allgemeinen Gaskonstante $R$.
+
+\subsection{quantenmechanische Betrachtung}
+\label{sec:quantenmechanisch}
+
+Wenn die Temperatur des Körpers niedrig genug ist, kann die Molwärme beliebig klein werden, was dem Dulong-Petitschen Gesetz widerspricht.
+Der Grund dafür liegt in der Annahme der klassichen Physik, dass die Oszillation der Atome jeden Betrag annehmen kann.
+Diese Annahme steht jedoch im Widerspruch mit der Quantenmechanik, denn diese besagt, dass ein Teilchen, das mit der Freqeunz $\omega$ schwingt, nur bestimmte Energieniveaus annehmen kann.
+\begin{equation}
+  \increment u = n \hbar \omega
+  \label{eqn:gl9}
+\end{equation}
+Daraus folgt der wesentlich kompliziertere Zusammenhang:
+\begin{equation}
+  \langle U_\text{qu} \rangle = \frac{3 N_\text{L} \hbar \omega}{\exp(\hbar \omega / k T) - 1}
+  \label{eqn:gl10}
+\end{equation}
+Das Dulong-Petitsche Gesetz ist ein Spezialfall dieser Gleichung \eqref{eqn:gl10}, für große $T$ strebt $\langle U_\text{qu} \rangle$ gegen $3 R$.
+Außerdem ist $\omega \propto 1/\sqrt{m}$, deshalb wird für Elemente mit geringem Atomgewicht die klassiche Näherung erst für deutlich höhere Temperaturen erreicht.
+
+\subsection{Messung der spezifische Wärmekapazität mit Kalorimeter}
+\label{sec:wärmeaustausch}
+
+Durch den Wärmeaustausch eines erhitzen Metalls mit Wasser in einem Kalorimeter lässt sich mit folgender Gleichung die spezifsche Wärmekapazität des Metalls bestimmen.
+\begin{equation}
+  c_\text{k} = \frac{(c_\text{w} m_\text{w} + c_\text{g} m_\text{g}) (T_\text{m} - T_\text{w})}{m_\text{k} (T_\text{k} - T_\text{m})}
+  \label{eqn:gl11}
+\end{equation}
+$c_\text{w}$, $m_\text{w}$ und $T_\text{w}$ sind die spezifische Wärmekapazität, die Masse und die Temperatur des Wassers.
+$T_\text{k}$ ist die Temperatur des Metalls und $T_\text{m}$ die Mischtemperatur, also die Temperatur nachdem der Wärmeaustausch beendet ist.
+Die spezifische Wärmekapazität $c_\text{g}$ und die Masse $m_\text{g}$ des Kalorimeters lassen sich mit einem Wärmeaustausch zwischen Wasser unterschiedlicher Temperaturen $T_\text{y}$ und $T_\text{x}$ bestimmen.
+\begin{equation}
+  c_\text{g} m_\text{g} = \frac{c_\text{w} m_\text{y} (T_\text{y} - T_\text{m}) - c_\text{w} m_\text{x} (T_\text{m} - T_\text{x})}{(T_\text{m} - T_\text{x})}
+  \label{eqn:gl12}
+\end{equation}
