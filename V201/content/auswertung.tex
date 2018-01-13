@@ -4,21 +4,33 @@
 \subsection{Bestimmung der Wärmekapazität des Kalorimeters}
 \label{sec:Kalorie}
 Für die spätere Berechnung der spezifischen Wärmekapazitäten verschiedener Stoffe wird unter anderem die Wärmekapazität des Kaloriemeters benötigt.
+<<<<<<< HEAD
 Die Berechnung dieser erfolgt durch Gleichung \ref{eqn:gl12} und mit den gemessenen Werten:
+||||||| merged common ancestors
+Die Berechnung dieser erfolgt durch Gleichung \ref{eqn:FEHLT} und mit den gemessenen Werten:
+=======
+Die Berechnung dieser erfolgt durch Gleichung \eqref{eqn:gl12} und mit den gemessenen Werten:
+>>>>>>> Verbesserung in Theorie, Auswertung und Diskussion
 \begin{align*}
- T_k = 293,75 \text{K}\\
- m_k = 312,42 \text{g}\\
- T_w = 359,15 \text{K}\\
- m_w = 300,54 \text{g}\\
- T_M = 323,15 \text{K}\\
- m_{kalorie} = 841,85 \text{g}
+ T_\text{x} = 293,75 \text{K}\\
+ m_\text{x} = 312,42 \text{g}\\
+ T_\text{y} = 359,15 \text{K}\\
+ m_\text{y} = 300,54 \text{g}\\
+ T_\text{m} = 323,15 \text{K}\\
+ m_\text{kalorie} = 841,85 \text{g}
 \end{align*}
-Für $c_w$ wird der in \cite{V201} angegeben Wert von $\SI{4,18}{\joule\per\gram\per\kelvin}$ verwendet.
-Somit berechnet sich ein Wert von $ c_kalorie = \SI{0,276}{\joule\per\gram\per\kelvin}.$
+Für $c_\text{w}$ wird der in \cite{V201} angegeben Wert von $\SI{4,18}{\joule\per\gram\per\kelvin}$ verwendet.
+Somit berechnet sich ein Wert von $ c_\text{kalorie} = \SI{0,276}{\joule\per\gram\per\kelvin}.$
 
 \subsection{Wärmekapazität verschiedener Stoffe}
 \label{sec:verschiedeneStoffe}
+<<<<<<< HEAD
 Analog zum vorherigen Auswertungsteil \ref{sec:Kalorie} wird die Wärmekapazität $c_k$ der Stoffe bestimmt durch die Gleichung \ref{eqn:gl11}.
+||||||| merged common ancestors
+Analog zum vorherigen Auswertungsteil \ref{sec:Kalorie} wird die Wärmekapazität $c_k$ der Stoffe bestimmt durch die Gleichung \ref{eqn:FEHLT}.
+=======
+Analog zum vorherigen Auswertungsteil \ref{sec:Kalorie} wird die Wärmekapazität $c_\text{k}$ der Stoffe bestimmt durch die Gleichung \eqref{eqn:gl11}.
+>>>>>>> Verbesserung in Theorie, Auswertung und Diskussion
 Bei den drei Messungen für Blei ergeben sich folgende Werte:
 \begin{table}
   \centering
@@ -27,88 +39,80 @@ Bei den drei Messungen für Blei ergeben sich folgende Werte:
    \toprule
    & Messung 1 & Messung 2 & Messung 3 \\
    \midrule
-   $m_w$/g & 599,956 & 589,26 & 572,89 \\
-   $T_w$/K & 294,45 & 293,95 & 294,35 \\
-   $T_{Blei}$/K & 366,15 & 360,15 & 363,15 \\
-   $T_M$/K & 296,35 & 295,05 & 295,75 \\
+   $m_\text{w}$/g & 599,956 & 589,26 & 572,89 \\
+   $T_\text{w}$/K & 294,45 & 293,95 & 294,35 \\
+   $T_\text{Blei}$/K & 366,15 & 360,15 & 363,15 \\
+   $T_\text{m}$/K & 296,35 & 295,05 & 295,75 \\
    \bottomrule
   \end{tabular}
 \end{table}
-\newpage
 Die Werte für die spezifische Wärmekapazität werden mit
 \begin{equation}
   \overline{x} = \frac{1}{N} \cdot \sum_{i=1}^N x_i
 \end{equation}
-gemittelt. Der zugehörige Fehler bestimmt sich durch 
+gemittelt. Der zugehörige Fehler bestimmt sich durch
 \begin{equation}
   \Delta \overline{x} = \frac{1}{\sqrt{N}} \cdot \sqrt{\frac{1}{N-1} \cdot \sum_{i=1}^N \left(x_i - \overline{x}\right)^2}
 \end{equation}
 Somit ergibt sich die spezifische Wärmekapazität für Blei zu:
 \begin{align*}
-  c_k = \left(0,108 \pm 0,016 \right) \si{{\joule\per\gram\per\kelvin}}
+  c_\text{k} = \left(0,108 \pm 0,016 \right) \si{\joule\per\gram\per\kelvin}
 \end{align*}
-Dies entspricht einer Abweichung von 16,3\% vom Literaturwert $c_k = \SI{0,130}{\joule\per\gram\per\kelvin}$.
-Für Kupfer wird erneut die Gleichung \ref{eqn:gl11} benutzt, mit den Daten
+Dies entspricht einer Abweichung von 16,3\% vom Literaturwert $c_\text{k} = \SI{0,130}{\joule\per\gram\per\kelvin}$.
+
+Für Kupfer wird erneut die Gleichung \eqref{eqn:gl11} benutzt, mit den Daten
 \begin{table}
   \centering
-  \label{tab:WerteBlei}
+  \label{tab:WerteKupfer}
   \begin{tabular}{c c c c}
    \toprule
    & Messung 1 & Messung 2 & Messung 3 \\
    \midrule
    $m_w$/g & 572,89 & 559,56 & 633,43 \\
    $T_w$/K & 294,35 & 294,35 & 294,35 \\
-   $T_{Blei}$/K & 361,15 & 363,15 & 367,15 \\
-   $T_M$/K & 294,85 & 298,65 & 297,15 \\
+   $T_{Kupfer}$/K & 361,15 & 363,15 & 367,15 \\
+   $T_\text{m}$/K & 294,85 & 298,65 & 297,15 \\
    \bottomrule
   \end{tabular}
 \end{table}
-\\
+\FloatBarrier
 ergibt sich die spezifische Wärmekapazität von Kupfer zu:
 \begin{align*}
-  c_k = \left(0,444 \pm 0,192 \right) \si{{\joule\per\gram\per\kelvin}}
+  c_\text{k} = \left(0,444 \pm 0,192 \right) \si{\joule\per\gram\per\kelvin}
 \end{align*}
-Dies entspricht einer Abweichung von 15,3\% vom Literaturwert $c_k = \SI{0,385}{\joule\per\gram\per\kelvin}$.
-Für Aluminium wird erneut die Gleichung \ref{eqn:gl11} benutzt, mit den Daten
+Dies entspricht einer Abweichung von 15,3\% vom Literaturwert $c_\text{k} = \SI{0,385}{\joule\per\gram\per\kelvin}$.
+
+Für Aluminium wird erneut die Gleichung \eqref{eqn:gl11} benutzt, mit den Daten
 \begin{table}
   \centering
-  \label{tab:WerteBlei}
+  \label{tab:WerteAluminium}
   \begin{tabular}{c c c c}
    \toprule
    & Messung 1 & Messung 2 & Messung 3 \\
    \midrule
-   $m_w$/g & 573 & 566,22 & 588,78 \\
-   $T_w$/K & 294,75 & 294,85 & 294,75 \\
-   $T_{Blei}$/K & 361,65 & 363,15 & 365,95 \\
-   $T_M$/K & 299,15 & 298,75 & 298,55 \\
+   $m_\text{w}$/g & 573 & 566,22 & 588,78 \\
+   $T_\text{w}$/K & 294,75 & 294,85 & 294,75 \\
+   $T_\text{Aluminium}$/K & 361,65 & 363,15 & 365,95 \\
+   $T_\text{m}$/K & 299,15 & 298,75 & 298,55 \\
    \bottomrule
   \end{tabular}
 \end{table}
-\\
+\FloatBarrier
 ergibt sich die spezifische Wärmekapazität von Aluminium zu:
 \begin{align*}
-  c_k = \left(0,105 \pm 0,069 \right) \si{{\joule\per\gram\per\kelvin}}
+  c_\text{k} = \left(0,105 \pm 0,069 \right) \si{\joule\per\gram\per\kelvin}
 \end{align*}
-Dies entspricht einer Abweichung von 23,2\% vom Literaturwert $c_k = \SI{0,897}{\joule\per\gram\per\kelvin}$.
+Dies entspricht einer Abweichung von 23,2\% vom Literaturwert $c_\text{k} = \SI{0,897}{\joule\per\gram\per\kelvin}$.
 
 \subsection{Molwärme der Stoffe}
 \label{sec:Molwärme}
-Die Molwärme bei konstantem Druck ergibt sich nach Gleichung \ref{eqn:gl4} zu
+Die Molwärme bei konstantem Druck ergibt sich nach Gleichung \eqref{eqn:gl4}.
+Die Werte von $M$, $\alpha$ und $\kappa$ werden der Versuchsanleitung entnommen \cite{V201}.
+Mit der Benutzung der drei berechneten $c_\text{k}$ ergeben sich für die Molwärmen der Stoffe folgende Werte:
 \begin{align*}
-  C_V &= C_P - 9 \alpha^2 \kappa V_0 T\\
-  &= c_k \cdot M - 9 \alpha^2 \kappa \frac{M}{\rho}T
-\end{align*}
-Da $C_P$ berechnet werden soll, wird die Gleichung
-\begin{equation}
-  C_P = c_k * M
-\end{equation}
-zur Bestimmung benutzt, mit $M$ als Molmasse des jeweiligen Elements.
-Die Werte von $M$ werden der Versuchsanleitung entnommen \cite{V201}.
-Mit der Benutzung der drei berechneten $c_k$ und den zugehörigen Molmassen, ergeben sich für die Molwärmen der Stoffe folgende Werte:
-\begin{align*}
-  C_{P,Blei} = \SI{22,54 \pm 3.32}{\joule\per\gram\per\kelvin}\\
-  C_{P,Kupfer} = \SI{6,91 \pm 1,02}{\joule\per\gram\per\kelvin}\\
-  C_{P,Alu} = \SI{2,94 \pm 0,43}{\joule\per\gram\per\kelvin}
+  C_{p,\text{Blei}} = \SI{22,54 \pm 3.32}{\joule\per\gram\per\kelvin}\\
+  C_{p,\text{Kupfer}} = \SI{6,91 \pm 1,02}{\joule\per\gram\per\kelvin}\\
+  C_{p,\text{Aluminium}} = \SI{2,94 \pm 0,43}{\joule\per\gram\per\kelvin}
 \end{align*}
 Dies ergibt für Blei eine Abweichung von 9,48\% von den zu überprüfenden 3R (= $\SI{24,9}{\joule\per\gram\per\kelvin}$) aus dem Dulong-Petitschen Gesetz.
 Für Kupfer beträgt die Abweichung somit 72,26\% von 3R und für Aluminium liegt diese bei 88,20\%.
