@@ -1,4 +1,50 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+In einem Körper, welcher sich nicht im Temperaturgleichgewicht befindet, kommt es zu einem Wärmetransport entlang des Temperaturgefälles.
+Es wird sich hierbei auf die Wärmeleitung beschrenkt..
+In festen Körpern geschieht der Wärmetransport durch Phononen und über frei bewegliche Elektronen.
+Der Gitterbeitrag ist in Metallen vernachlässigbar. \\
+\noindent
+Zu Grunde liegt ein Stab der Länge L, mit dem Querschnitt A, aus einem Material der Dichte \rho und mit spezifischer Wärme c.
+Durch die Querschnittsfläche A fließt in der Zeit dt die Wärmemenge
+\begin{equation}
+  dQ = -\kappa \text{A} \frac{\delta T}{\delta x} dt
+  \label{eqn:eqn1}
+\end{equation}
+wenn das eine Ende wärmer ist als das andere.
+\kappa ist die Wärmeleitfähigkeit.
+Der Wärmestrom fließt nach immer in Richtung abnehmender Temperatur, dies wird durch das Minuszeichen in der Gleichung gezeigt.
+Für die Wärmestromdichte $j_{\text{w}}$ gilt entsprechend
+\begin{equation}
+  j_{\text{w}} = -\kappa \frac{\delta T}{\delta x}
+  \label{eqn:eqn2}
+\end{equation}
+Durch die Kontinuitätsgleichung wird hieraus die (eindimensionale) Wärmeleitungsgleichung
+\begin{equation}
+  \frac{\delta T}{\delta t} = \frac{\kappa}{\rho c} \frac{\delta^2 T}{\delta x^2}
+  \label{eqn:eqn3}
+\end{equation}
+abgeleitet, welche die räumliche und zeitliche Entwicklung der Temperaturverteilung beschreibt.
+Die Größe $\sigma T = \frac{\kappa}{\rho c}$ wird als Temperaturleitfähigkeit bezeichnet.
+Durch sie wird die Schnelligkeit des Ausgleiches der Temperaturunterschiede angegeben.\\
+\noindent
+Durch abwechselndes erwärmen und abkühlen eines sehr langen Stabes mit der Periode T, pflanzt sich eine räumliche und zeitliche Temperaturwelle der Form
+\begin{equation}
+  T(x,t) = T_{\text{max}}e^{\sqrt{\frac{\omega \rho c}{2 \kappa}}x} \text{cos} \left ( \omega t - \sqrt{\frac{\omega \rho c}{2 \kappa}}x \right)
+  \label{eqn:eqn4}
+\end{equation}
+durch den Stab fort. 
+Die Phasengeschwindigkeit der Welle lautet:
+\begin{equation}
+  v = \frac{\omega}{k} = \frac{\omega}{sqrt{\frac{\omega \rho c}{2 \kappa}}} = \sqrt{\frac{2 \kappa \omega}{\rho c}}
+  \label{eqn:eqn5}
+\end{equation}
+Aus dem Amplitudeverhältnis $A_{\text{nah}}$ und $A_{\text{fern}}$ der Welle an zwei Stellen $x_{\text{nah}}$ und $x_{\text{fern}}$.
+Wird nun genutzt, dass $\omega = \frac{2 \pi}{T*}$ und $\Phi = \frac{2 \pi \delta t}{T*}$ (mit der Phase \Phi und Periodendauer T*),
+dann ergibt sich für die Wärmeleitfähigkeit:
+\begin{equation}
+  \kappa = \frac{\rho c (\Delta x)^2}{2 \Delta t \text{ln}(A_{\text{nah}} / A_{\text{fern}})}
+  \label{eqn:eqn6}
+\end{equation}
+$\Delta x$ ist der Abstand der beiden Messstellen und $\Delta t$ die Phasendifferenz der Temperaturwellen zwischen den beiden Messstellen.
