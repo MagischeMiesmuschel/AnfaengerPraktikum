@@ -1,4 +1,4 @@
-#	Temperatur 1 (°C)	Temperatur 2 (°C)	Temperatur 3 (°C)	Temperatur 4 (°C)	Temperatur 5 (°C)	Temperatur 6 (°C)	Temperatur 7 (°C)	Temperatur 8 (°C)
+#	Messung Temperatur 1 (C)	Temperatur 2 (C)	Temperatur 3 (C)	Temperatur 4 (C)	Temperatur 5 (C)	Temperatur 6 (C)	Temperatur 7 (C)	Temperatur 8 (C)
 1	28.48	28.29	28.03	27.95	28.97	28.92	28.96	28.12
 2	28.45	28.27	28.02	27.92	28.93	28.90	28.94	28.11
 3	28.44	28.29	28.06	27.90	28.91	28.99	28.93	28.10

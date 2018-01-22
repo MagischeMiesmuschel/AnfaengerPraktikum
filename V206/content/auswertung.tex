@@ -22,7 +22,7 @@ Der zugehörige Fehler berechnet sich mit:
 \subsection{Messdaten und Systemgrößen}
 \label{sec:Auswertung_Messdaten}
 
-Für die Auswertung werden folgende Messwerte verwendet.
+Für die Auswertung werden folgende Messwerte verwendet, die aus \cite{AnleitungV206} entnommen werden.
 \begin{table}
   \centering
   \caption{Temperaturen der Reservoire, Drücke in den Leitungen, Kompressorleistung.}
@@ -86,10 +86,16 @@ Für $T_2$ liefert die Ausgleichsrechnung:
   \caption{Temperaturverläufe während der Messung.}
   \label{fig:plot1}
 \end{figure}
+\noindent
 Mit Hilfe dieser Paramter lassen sich nun Differentialquotienten berechnen, die die Temperaturänderung zu bestimmten Zeiten beschreiben.
 \begin{equation*}
   \frac{\symup{d}T(t)}{\symup{d}t} = 2At + B
 \end{equation*}
+Der entsprechende Gaußsche Fehler berechnet sich mit:
+\begin{equation}
+  \increment \left(\frac{\symup{d}T(t)}{\symup{d}t} \right) = \sqrt{4 t^2 (\increment A)^2 + (\increment B)^2}
+  \label{eqn:gl10}
+\end{equation}
 In den Tabellen \ref{tab:diffT1} und \ref{tab:diffT2} sind für vier verschiedene Zeiten bzw. Temperaturen Differentialquotienten berechnet.
 \begin{table}
   \centering
@@ -122,7 +128,13 @@ In den Tabellen \ref{tab:diffT1} und \ref{tab:diffT2} sind für vier verschieden
   \end{tabular}
 \end{table}
 \FloatBarrier
+\noindent
 Mit Gleichung \eqref{eqn:eqn4} kann nun die Güteziffer $\nu$ bestimmt werden, indem die entsprechenden Größen aus Kapitel \ref{sec:Auswertung_Messdaten} und die Differentialquotienten für $T_1$ aus Tabelle \ref{tab:diffT1} eingesetzt werden.
+Der dazugehörige Fehler folgt aus dem Fehler der Differentialquotienten:
+\begin{equation}
+  \increment \nu = \frac{1}{N} (m_1c_w + m_kc_k) \increment \left(\frac{\symup{d}T_1}{\symup{d}t} \right)
+  \label{eqn:gl11}
+\end{equation}
 Die Theoriewerte der Gütezifffer $\nu_{\text{ideal}}$ werden mit Gleichung \eqref{eqn:eqn1} berechnet.
 \begin{table}
   \centering
@@ -145,20 +157,25 @@ Auf die deutliche Abweichung zwischen Theorie und Praxis wird später in der Dis
 \subsection{Bestimmung des Massendurchsatzes}
 \label{sec:Auswertung_Massendurchsatz}
 
-Zur Bestimmung des Massendurchsatzes muss zunächst über eine lineare Ausgleichsrechnung die Verdampfunswärme berechnet werden.
+Zur Bestimmung des Massendurchsatzes wird zunächst über eine lineare Ausgleichsrechnung die Verdampfunswärme berechnet.
 Dafür werden der Druck $p_b$ und die Temperatur $T_1$ in einer Dampfdruck-Kurve (siehe Abb. \ref{fig:plot2}) mit $p_0$ = 1 Bar und der allgemeinen Gaskonstante $R$ aufgetragen.
 \begin{equation*}
   \ln{\frac{p_b}{p_o}} = - \frac{L}{R} \cdot \frac{1}{T_1}
 \end{equation*}
 Für die Ausgleichsgerade $g(T_1) = m \cdot T_1 + n$ ergeben sich folgende Parameter:
 \begin{align*}
-  m &= -2111 \pm 54 \\
+  m &= (-2111 \pm 54) \, \text{K} \\
   n &= 9,2 \pm 0,2 \\
 \end{align*}
 Die Verdampfunswärme $L$ beträgt dann:
 \begin{equation*}
-  L = - m \cdot R = \SI{1,76(4)e4}{\kelvin\per\mol}
+  L = - R \cdot m = \SI{1,76(4)e4}{\joule\per\mol}
 \end{equation*}
+Der Fehler von $L$ berechnet sich mit:
+\begin{equation}
+  \increment L = R \cdot \increment m
+  \label{eqn:gl12}
+\end{equation}
 \begin{figure}
   \centering
   \includegraphics{build/plot2.pdf}
@@ -166,8 +183,14 @@ Die Verdampfunswärme $L$ beträgt dann:
   \label{fig:plot2}
 \end{figure}
 \FloatBarrier
-Der Massendurchsatz kann nun mit Gleichung \eqref{eqn:eqn8} errechnet werden.
+\noindent
+Der Massendurchsatz kann nun mit Gleichung \eqref{eqn:eqn7} errechnet werden und der dazugehörige Fehler mit folgender Gleichung:
+\begin{equation}
+  \increment \left(\frac{\symup{d}m}{\symup{d}t} \right) = M_\text{Gas} \frac{1}{L} (m_2 c_w + m_k c_k) \increment \left(\frac{\symup{d}T_2}{\symup{d}t} \right)
+  \label{eqn:gl13}
+\end{equation}
 Da die Verdampfunswärme pro Mol berechnet wird, wird zunächst die zeitliche Änderung der Stoffmenge $n_{\text{Gas}}$ bestimmt.
+
 Durch Multiplikation mit der molaren Masse des Transportgases (siehe Kapitel \ref{sec:Auswertung_Messdaten}) wird der Massendurchsatz berechnet.
 \begin{table}
   \centering
@@ -175,7 +198,7 @@ Durch Multiplikation mit der molaren Masse des Transportgases (siehe Kapitel \re
   \label{tab:Massendurchsatz}
   \begin{tabular}{c c c c c}
     \toprule
-    $t$ (s) & $\symup{d}n_{\text{Gas}}/\symup{d}t$ (mol/s) & Fehler (mol/s) & $\symup{d}m/\symup{d}t$ & Fehler (kg/s)  \\
+    $t$ (s) & $\symup{d}n_{\text{Gas}}/\symup{d}t$ (mol/s) & Fehler (mol/s) & $\symup{d}m/\symup{d}t$ (kg/s) & Fehler (kg/s)  \\
     \midrule
     180 & -0,021 & 0,002 & -0,0025 & 0,0003 \\
     360 & -0,020 & 0,002 & -0,0023 & 0,0003 \\
@@ -190,12 +213,17 @@ Durch Multiplikation mit der molaren Masse des Transportgases (siehe Kapitel \re
 
 Um die Kompressorleistung zu berechnen, ist es notwendig, die Dichte des Transportgases $\rho$ zu kennen.
 Diese kann aus der idealen Gasgleichung bestimmt werden.
-\begin{equation*}
+\begin{equation}
  \rho = \frac{\rho_0 T_0 p_a}{T_2 p_0}
-\end{equation*}
+ \label{eqn:gl14}
+\end{equation}
 Aus Kapitel \ref{sec:Auswertung_Messdaten} ist $\rho_0$ bekannt und aus Kapitel \ref{sec:Auswertung_Massendurchsatz} der Massendurchsatz.
-Das Verhältnis der Molwärmen $\kappa$ soll 1,14 sein.
+Nach \cite{AnleitungV206} soll das Verhältnis der Molwärmen $\kappa = 1,14$ sein.
 Mit diesen Angaben kann nun aus Gleichung \eqref{eqn:eqn9} die Kompressorleistung berechnet werden.
+\begin{equation}
+  \increment N_\text{mech} = \frac{1}{\kappa - 1} \left( p_b \sqrt[\kappa]{\frac{p_a}{p_b}} - p_a \right) \frac{1}{\rho} \increment \left(\frac{\symup{d}m}{\symup{d}t}\right)
+  \label{eqn:gl15}
+\end{equation}
 \begin{table}
   \centering
   \caption{mechansiche Kompressorleistung.}
@@ -212,8 +240,9 @@ Mit diesen Angaben kann nun aus Gleichung \eqref{eqn:eqn9} die Kompressorleistun
   \end{tabular}
 \end{table}
 \FloatBarrier
+\noindent
 Der Wirkungsgrad ist der Quotient aus mechansicher Kompressorleistung $N_\text{mech}$ und der aufgebrachten elektrischen Leistung $P$.
-\begin{table} wirk
+\begin{table}
   \centering
   \caption{Wirkungsgrad.}
   \label{tab:Wirkungsgrad}

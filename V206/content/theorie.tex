@@ -10,9 +10,9 @@ Diese wird von der Wärmepumpe geleistet.
 
 \subsection{Güteziffer}
 \label{sec:Güteziffer}
-Das Verhältnis zwischen tranportierter Wärmeenergie $Q_{trans}$ und zu verrichtender Arbeit A:
+Das Verhältnis zwischen tranportierter Wärmeenergie $Q_\text{trans}$ und zu verrichtender Arbeit A:
 \begin{equation}
-  \nu = \frac{Q_{trans}}{A} \stackrel{\ref{eqn:eqn2}}\Rightarrow \nu_{id} = \frac{T_1}{T_1-T_2}
+  \nu = \frac{Q_\text{trans}}{A} \stackrel{\ref{eqn:eqn2}}\Rightarrow \nu_{id} = \frac{T_1}{T_1-T_2}
   \label{eqn:eqn1}
 \end{equation}
 wird durch die Güteziffer \nu bezeichnet.
@@ -57,16 +57,17 @@ mit Gl. \ref{eqn:eqn5} und \ref{eqn:eqn6} zu:
 \end{equation}
 mit bekannter Verdampfungswärme L.
 
-\subsection{Mechanische Kompressorleistung $N_{mech}$}
+\subsection{Mechanische Kompressorleistung $N_\text{mech}$}
 \label{sec:Kompleistung}
 Für die Arbeit $A_m$ gilt bei Verringerung des Gasvolumens von $V_a \textrm{und} V_b$:
 \begin{align}
   A_m = - \int_{V_a}^{V_b} pdV
   \label{eqn:eqn8}
 \end{align}
-Aus der adiabatischen Kompression des Kompressors, also eine Zustandsänderung ohne Wärmeverluste an die Umgebung, folgt mit der Poissonschen Gleichung und $N_{mech} = \frac{dA_m}{dt}$:
+Aus der adiabatischen Kompression des Kompressors, also eine Zustandsänderung ohne Wärmeverluste an die Umgebung, folgt mit der Poissonschen Gleichung und $N_\text{mech} = \frac{dA_m}{dt}$:
 \begin{equation}
-  N_{mech} = \frac{1}{\kappa - 1} \left( p_b \sqrt[\kappa]{\frac{p_a}{p_b}} - p_a \right) \frac{dV_a}{dt} = \frac{1}{\kappa - 1} \left( p_b \sqrt[\kappa]{\frac{p_a}{p_b}} - p_a \right) \frac{1}{\rho} \frac{dm}{dt}
+  N_\text{mech} = \frac{1}{\kappa - 1} \left( p_b \sqrt[\kappa]{\frac{p_a}{p_b}} - p_a \right) \frac{dV_a}{dt} = \frac{1}{\kappa - 1} \left( p_b \sqrt[\kappa]{\frac{p_a}{p_b}} - p_a \right) \frac{1}{\rho} \frac{dm}{dt}
   \label{eqn:eqn9}
 \end{equation}
 mit der Dichte $\rho$ des Gases und dem Druck $p_a$.
+\kappa ist das Verhältnis der Molwärmen $C_p$ und $C_V$.
