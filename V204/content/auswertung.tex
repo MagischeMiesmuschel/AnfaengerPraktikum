@@ -1,9 +1,214 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{verwendete Software und Fehlerrechnung}
+\label{sec:SoftwareFehlerrechnung}
+
+Für die Auswertung werden neben NumPy\cite{numpy} mehrere Python Pakete benutzt.
+Plots werden mit Matplotlib\cite{matplotlib} erstellt und Ausgleichsgeraden mit SciPy\cite{scipy}.
+Fehlerbehaftete Größen werden mit Uncertainties\cite{uncertainties} berechnet, das die Gaußsche Fehlerfortpflanzung benutzt:
+\begin{equation*}
+    \increment f = \sqrt{\sum_{i=1}^N \left( \frac{\partial f}{\partial x_i} \right)^{2} \cdot (\increment x_i)^{2}}
+\end{equation*}
+Alle Mittelwerte werden mit folgender Formel berechnet:
+\begin{equation*}
+  \bar{x} = \frac{1}{N} \sum_{i = 1}^N x_i
+\end{equation*}
+Der zugehörige Fehler berechnet sich mit:
+\begin{equation*}
+  \increment \bar{x} = \frac{1}{\sqrt{N}} \sqrt{\frac{1}{N-1} \sum_{i = 1}^N (x_i - \bar{x})^2}
+\end{equation*}
+
+\subsection{Abmessungen und Stoffeigenschaften}
+\label{sec:Eigenschaften}
+
+Um die Messergebnisse auswerten und vergleichen zu können, sind die Abmessungen und Stoffeigenschaften der Metalle notwendig.
+Deshalb sind Tabelle \ref{tab:Stoffeigenschaften} zusammengefasst, wie Dichte $\rho$, spezifische Wärmekapazität $c$ und Wärmeleitfähigkeit $\kappa$.
+In Tabelle \ref{tab:Abmessungen} die Länge $L$, Querschnitt $A$ und zusätzlich der gemessene Abstand zwischen den Thermoelementen $\increment x$.
+\begin{table}
+  \centering
+  \caption{Stoffeigenschaften aus \cite{V204} und \cite{Metalle}.}
+  \label{tab:Stoffeigenschaften}
+  \begin{tabular}{c c c c}
+    \toprule
+    Material & $\rho$ (\si[per-mode=fraction]{\kilo\gram\per\cubic\meter})  & $c$ (\si[per-mode=fraction]{\joule\per\kilo\gram\per\kelvin}) & $\kappa_\text{Literatur}$ (\si[per-mode=fraction]{\watt\per\meter\per\kelvin}) \\
+    \midrule
+    Messing & 8520 & 385 & 120 \\
+    Aluminium & 2800 & 830 & 237 \\
+    Edelstahl & 8000 & 400 & 15 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\begin{table}
+  \centering
+  \caption{Abmessungen aus \cite{V204}.}
+  \label{tab:Abmessungen}
+  \begin{tabular}{c c c c}
+    \toprule
+    Material & Länge $L$ (\si{\meter}) & Querschnitt $A$ (\si{\square\meter}) & Abstand $\increment x$ (\si{\meter}) \\
+    \midrule
+    Messing (breit) & 0,09 & \num{4.8e-5} & 0,03 \\
+    Messing (schmal) & 0,09 & \num{2.8e-5} & 0,03 \\
+    Aluminium & 0,09 & \num{4.8e-5} & 0,03 \\
+    Edelstahl & 0,09 & \num{4.8e-5} & 0,03 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\FloatBarrier
+
+\subsection{Statische Methode}
+\label{sec:Auswertung_statisch}
+
 \begin{figure}
   \centering
   \includegraphics{plot1.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \caption{Temperatur Messing breit $T_1$ und Messing schmal $T_4$.}
+  \label{fig:plot1}
 \end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{plot2.pdf}
+  \caption{Temperatur Aluminium $T_5$ und Edelstahl $T_8$.}
+  \label{fig:plot2}
+\end{figure}
+\noindent
+In Plot \ref{fig:plot1} sind die Temperaturverläufe der Thermoelemente $T_1$ und $T_4$ dargestellt und in Plot \ref{fig:plot2} von $T_5$ und $T_8$.
+Der zunächst steile Anstieg der Temperaturkurven, ausgenommen Edelstahl, nimmt nach relativ kurzer Zeit im Vergleich zur Messdauer von über 1800 Sekunden ab.
+Nach ungefähr 500 Sekunden entspricht die Temperaturänderung nahezu einer flachen linearen Steigung.
+Die Temperatur des Aluminiums steigt am stärksten und nimmt auch den höchsten Wert an, gefolgt vom breiten Messingstab.
+Der Temperaturanstieg des schmalen Messingstabes ist zu Beginn der Messung fast identisch zum breiten Stab, jedoch fällt die Steigung beim schmalen Stab früher ab.
+Edelstahl zeigt die geringste Temperaturänderungen und erreicht auch die niedrigsten Temperaturen.
+Um eine bessere Aussage über die Wärmeleitfähigkeit der Metalle machen zu können, werden die Temperaturen nach 700 Sekunden in Tabelle \ref{tab:T700} verglichen.
+\begin{table}
+  \centering
+  \caption{Temperaturen nach 700 Sekunden.}
+  \label{tab:T700}
+  \begin{tabular}{c c c c c}
+    \toprule
+    $t$ (\si{\second}) & $T_1$ (\si{\celsius}) & $T_4$ (\si{\celsius}) & $T_5$ (\si{\celsius}) & $T_8$ (\si{\celsius}) \\
+    \midrule
+    700 & 28,2 & 27,54 & 29,26 & 25,32 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Aus diesen Werten kann gefolgert werden, dass je größer der Querschnitt des Metalls ist die Wärmeleitfähigkeit zunimmt und dass Aluminium am besten die Wärme leitet gefolgt von Messing und dann Edelstahl.
+\FloatBarrier
+\noindent
+Zur Bestimmung der Wärmeströme von Edelstahl und Messing (breit) wird Gleichung \eqref{eqn:eqn1} verwendet.
+Der Differentialquotient von $\delta T / \delta x $ wird dabei durch einen Differenzenquotienten ersetzt.
+Die Querschnittsfläche $A$ die Wärmeleitfähigkeit $\kappa$ und der Abstand der Thermoelement $\increment x$ wird den Tabellen aus Kapitel \ref{sec:Eigenschaften} entnommen.
+Für fünf verschiedene Zeiten werden die Temperaturdifferenz des nahen ($T_2$ bzw. $T_7$) und fernen ($T_1$ bzw. $T_8$) Thermoelements genommen.
+Die Temperaturdifferenzen über den gesamten Messzeitraum sind in Plot \ref{fig:plot6} dargestellt und werden später noch genauer beschrieben.
+In folgender Tabelle \ref{tab:Strom} sind die berechneten Wärmeströme angegeben.
+\begin{table}
+  \centering
+  \caption{Wärmeströme zu unterschiedlichen Zeitpunkten.}
+  \label{tab:Strom}
+  \begin{tabular}{c c c c c}
+    \toprule
+    $t$ (\si{\second}) & ($T_2 - T_1$) (\si{\kelvin}) & $\symup{d}Q / \symup{d}t$ (\si{\watt}) & ($T_7 - T_8$) (\si{\kelvin}) & $\symup{d}Q / \symup{d}t$ (\si{\watt}) \\
+    \midrule
+     200 & 1,03 & -0,20 & 3,07 & -\num{7.37e-2} \\
+     400 & 0,71 & -0,14 & 3,03 & -\num{7.27e-2} \\
+     600 & 0,65 & -0,12 & 3,00 & -\num{7.20e-2} \\
+     800 & 0,64 & -0,12 & 2,97 & -\num{7.13e-2} \\
+    1000 & 0,64 & -0,12 & 2,97 & -\num{7.13e-2} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\noindent
+Zunächst ist ein starker Anstieg für die Temperaturdifferenz sowohl von Edelstahl ($T_7 - T_8$), als auch von Messing ($T_2 - T_1$), zu beobachten.
+Nach etwa 300 Sekunden ist jedoch die Temperaturdifferenz für beide Metalle nahezu konstant.
+Die steile Temperaturänderung kann mit den Temperaturverläufen der einzelnen Thermoelemente aus \ref{fig:plot1} und \ref{fig:plot2} erklärt werden.
+Am Anfang der Messung steigt die Temperatur am nahen Thermoelement schnell an und da die Wärme erst verzögert das ferne Thermoelement erreicht, nimmt die Temperaturdifferenz auch schnell zu.
+Wie aber festgestellt wurde flacht die Temperaturzunahme deutlich ab und so stellt sich eine fast konstante Temperaturdifferenz ein.
+Für die Differnzkurve des Messings ist noch auffällig, dass diese einen Hochpunkt besitzt, die Temperaturdifferenz schwinkt einmal über bevor sie fast konstant wird.
+Das liegt an der verzögerten Abnahme des Temperaturanstiegs des fernen Thermoelement.
+Während die Temperatur von $T_2$ im Vergleich zu $T_1$ kaum noch steigt, nimmt $T_1$ noch deutlich mehr zu und die Temperaturdifferenz wird kleiner.
+\begin{figure}
+  \centering
+  \includegraphics{plot6.pdf}
+  \caption{Temperaturdifferenz Messing ($T_2 - T_1$) und Edelstahl ($T_7 - T_8$).}
+  \label{fig:plot6}
+\end{figure}
+\FloatBarrier
+
+\subsection{Dynamische Methode}
+\label{sec:Auswertung_dynamisch}
+
+Bei der Angström-Methode wird die Wärmeleitfähigkeit der Metalle über die Ausbreitungsgeschwindigkeit der Temperaturwelle berechnet, die durch periodisches Aufwärmen und Abkühlen erzeugt wird.
+Dazu müssen die Amplituden der Temperaturwelle des nahen und fernen Thermoelements bekannt sein, sowie die Phasendifferenz $\increment t$ zwischen den beiden Thermoelementen.
+Die Amplituden werden bestimmt, indem der Abstand zwischen einem Hoch- und einem Tiefpunkt berechnet und anschließend halbiert wird.
+Außerdem muss der kontinuierliche Temperaturanstieg berücksichtigt werden und aus der Amplitude heraus gerechnet werden.
+Dieser Anstieg kann innerhalb einer Perioder als linear genähert werden.
+Deshalb ist es ausreichend, die Temperaturdifferenz zwischen dem Tiefpunkt, der zuvor für die Berechnung der Peak-to-peak Distanz benutzt wurde, und dem nächsten Tiefpunkt zu bestimmen.
+Diese Temperaturdifferenz wird nun halbiert und von der Amplitude subtrahiert.
+Die Phasendifferenz $\increment t$ wird über die zeitliche Differnz zwischen zwei Tiefpunkten bestimmt.
+Nach Gleichung \eqref{eqn:eqn6} kann nun mit Hilfe der Tabellen aus Kapitel \ref{sec:Eigenschaften} die Wärmeleitfähigkeit $\kappa$ berechnet werden.
+In Abbildung \ref{fig:plot3} sind die Temperaturwellen von Messing zu sehen und in Tabelle \ref{tab:Messing} die dazugehörigen Parameter.
+Die Wärmeleitfähigkeit $\kappa$ beträgt $ (94 \pm 20) \si{\watt\per\meter\per\kelvin}$.
+\begin{figure}
+  \centering
+  \includegraphics{plot3.pdf}
+  \caption{Temperaturwellen von Messing.}
+  \label{fig:plot3}
+\end{figure}
+\begin{table}
+  \centering
+  \caption{Amplitude und Phasendifferenz für Messing.}
+  \label{tab:Messing}
+  \begin{tabular}{c c c c c c c c c c}
+    \toprule
+    $A_1$ (\si{\kelvin}) &  0,11 & 0,185 & 0,23 & 0,26 & 0,28 & 0,295 & 0,31 & 0,32 & 0,335 \\
+    \midrule
+    $A_2$ (\si{\kelvin}) & 1,045 & 1,16 & 1,215 & 1,24 & 1,27 & 1,275 & 1,295 & 1,3 & 1,32 \\
+    \bottomrule
+    $\frac{\text{Phasendifferenz}}{\increment t (\si{\second})}$ & 10 & 8 & 8 & 10 & 10 & 10 & 10 & 12 & 12 \\
+  \end{tabular}
+\end{table}
+Für die Bestimmung der Wärmeleitfähigkeit des Aluminiums werden die gleichen Schritte durchgeführt wie für Messing.
+Die Temperaturwellen von Aluminium sind in \ref{fig:plot4} abbgebildet und Parameter in Tabelle \ref{tab:Aluminium}.
+Daraus ergibt sich folgende Wärmeleitfähigkeit $\kappa = (200 \pm 60) \si{\watt\per\meter\per\kelvin}$.
+\begin{figure}
+  \centering
+  \includegraphics{plot4.pdf}
+  \caption{Temperaturwellen von Aluminium.}
+  \label{fig:plot4}
+\end{figure}
+\begin{table}
+  \centering
+  \caption{Amplitude und Phasendifferenz für Aluminium.}
+  \label{tab:Aluminium}
+  \begin{tabular}{c c c c c c c c c c}
+    \toprule
+    $A_5$ (\si{\kelvin}) &  0,365 & 0,545 & 0,62 & 0,66 & 0,685 & 0,695 & 0,705 & 0,715 & 0,73 \\
+    \midrule
+    $A_6$ (\si{\kelvin}) & 1,285 & 1,465 & 1,515 & 1,58 & 1,585 & 1,615 & 1,605 & 1,62 & 1,64 \\
+    \bottomrule
+    $\frac{\text{Phasendifferenz}}{\increment t (\si{\second})}$ & 4 & 4 & 6 & 4 & 6 & 8 & 6 & 8 & 6 \\
+  \end{tabular}
+\end{table}
+Die Messung für Edelstahl unterscheidet sich nur durch eine längere Periodendauer, in der geheizt und gekühlt wird.
+Die Wärmeleitfähigkeit wird aber nach dem gleichen Schema wie zuvor berechnet.
+Für Edelstahl ergibt sich also auch eine Temperaturwelle (siehe Abb. \ref{fig:plot5}) mit den Parametern aus Tabelle \ref{tab:Edelstahl}.
+Die Wärmeleitfähigkeit von Edelstahl ist folglich $\kappa = (14.1 \pm 2.4) \si{\watt\per\meter\per\kelvin}$.
+\begin{figure}
+  \centering
+  \includegraphics{plot4.pdf}
+  \caption{Temperaturwellen von Edelstahl.}
+  \label{fig:plot5}
+\end{figure}
+\begin{table}
+  \centering
+  \caption{Amplitude und Phasendifferenz für Edelstahl.}
+  \label{tab:Edelstahl}
+  \begin{tabular}{c c c c c c c c c c}
+    \toprule
+    $A_7$ (\si{\kelvin}) &  2,055 & 2,225 & 2,255 & 2,29 & 2,33 & 2,38 & 2,365 & 2,32 & 2,34 \\
+    \midrule
+    $A_8$ (\si{\kelvin}) & 0,08 & 0,135 & 0,15 & 0,14 & 0,205 & 0,27 & 0,2 & 0,175 & 0,195 \\
+    \bottomrule
+    $\frac{\text{Phasendifferenz}}{\increment t (\si{\second})}$ & 32 & 38 & 36 & 36 & 38 & 36 & 48 & 46 & 42 \\
+  \end{tabular}
+\end{table}
