@@ -38,9 +38,15 @@ print('c_blei = ', c_blei)
 print('c_blei Durchschnitt = ', c_blei_d , ' +/- ', m(c_blei, 3))
 print('Prozentuale Abweichung von der Theorie : ', 100*(c_blei_d - c_blei_theo)/c_blei_theo)
 C_blei_mol = c_blei * 207.2
+C_V_blei=[1,1,1]
+C_V_blei[0] = C_blei_mol[0] - 9 * (29e-6)**2 *(42e3) *(207.2 / 11.35) * 366.15
+C_V_blei[1] = C_blei_mol[1] - 9 * (29e-6)**2 *(42e3) *(207.2 / 11.35) * 360.15
+C_V_blei[2] = C_blei_mol[2] - 9 * (29e-6)**2 *(42e3) *(207.2 / 11.35) * 363.15
+C_V_blei_d = np.mean(C_V_blei)
 C_blei_mol_d = np.mean(C_blei_mol)
 print('C_blei_mol = ', C_blei_mol_d, ' +/- ', m(C_blei_mol,3))
-print('Prozentuale Abweichung von der Theorie : ',100*(C_blei_mol_d - C_dulong)/C_dulong)
+print('C_V_blei = ', C_V_blei_d, ' +/- ', m(C_V_blei,3))
+print('Prozentuale Abweichung von der Theorie : ',100*(C_V_blei_d - C_dulong)/C_dulong)
 
 #Teil 2 c von Kupfer
 m_kupfer = 230.2
@@ -52,8 +58,14 @@ print('c_kupfer Durchschnitt = ', c_kupfer_d, ' +/- ', m(c_kupfer, 3))
 print('Prozentuale Abweichung von der Theorie : ', 100*(c_kupfer_d - c_kupfer_theo)/c_kupfer_theo)
 C_kupfer_mol = c_blei * 63.5
 C_kupfer_mol_d = np.mean(C_kupfer_mol)
+C_V_kupfer=[1,1,1]
+C_V_kupfer[0] = C_kupfer_mol[0] - 9 * (16.8e-6)**2 *136e3 *63.5 / 8.96 * 361.15
+C_V_kupfer[1] = C_kupfer_mol[1] - 9 * (16.8e-6)**2 *136e3 *63.5 / 8.96 * 363.15
+C_V_kupfer[2] = C_kupfer_mol[2] - 9 * (16.8e-6)**2 *136e3 *63.5 / 8.96 * 367.15
+C_V_kupfer_d = np.mean(C_V_kupfer)
+print('C_V_kupfer = ', C_V_kupfer_d, ' +/- ', m(C_V_kupfer,3))
 print('C_kupfer_mol = ', C_kupfer_mol_d, ' +/- ', m(C_kupfer_mol,3))
-print('Prozentuale Abweichung von der Theorie : ',100*(C_kupfer_mol_d - C_dulong)/C_dulong)
+print('Prozentuale Abweichung von der Theorie : ',100*(C_V_kupfer_d - C_dulong)/C_dulong)
 
 #Teil 2 c von Alu
 m_alu = 149.03
@@ -65,5 +77,11 @@ print('c_alu Durchschnitt = ',c_alu_d , ' +/- ', m(c_alu, 3))
 print('Prozentuale Abweichung von der Theorie : ', 100*(c_alu_d - c_alu_theo)/c_alu_theo)
 C_alu_mol = c_blei * 27
 C_alu_mol_d = np.mean(C_alu_mol)
+C_V_alu=[1,1,1]
+C_V_alu[0] = C_alu_mol[0] - 9 * (23.5e-6)**2 *75e3 *27 / 2.7 * 361.65
+C_V_alu[1] = C_alu_mol[1] - 9 * (23.5e-6)**2 *75e3 *27 / 2.7 * 363.15
+C_V_alu[2] = C_alu_mol[2] - 9 * (23.5e-6)**2 *75e3 *27 / 2.7 * 365.95
+C_V_alu_d = np.mean(C_V_alu)
+print('C_V_alu = ', C_V_alu_d, ' +/- ', m(C_V_alu,3))
 print('C_alu_mol = ', C_alu_mol_d, ' +/- ', m(C_alu_mol,3))
-print('Prozentuale Abweichung von der Theorie : ',100*(C_alu_mol_d - C_dulong)/C_dulong)
+print('Prozentuale Abweichung von der Theorie : ',100*(C_V_alu_d - C_dulong)/C_dulong)
