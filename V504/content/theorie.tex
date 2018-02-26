@@ -88,3 +88,95 @@ Die aus der Drahtoberfläche austretenden Elektronen werden durch ein elektrisch
 \noindent
 
 \subsection{Die Langmuir-Schottkysche Raumladungsgleichung}
+Der Anodenstroms hängt noch von der Anodenspannung ab, denn bei zu niedriger Spannung erreichen nicht alle emittierten Elektronen die Anode.
+Erst bei hinreichend hoher Spannung wird ein von der Spannung unabhängiger Strom erreicht.
+Durch die beschleunigte Bewegung der Elektronen auf die Anode zu gilt auch bei kleiner Spannung nicht das Ohmsche Gesetz.
+Deswegen ist die Raumladungsdichte \rho der Elektronen eine Funktion des Ortes.
+Diese wird zur Anode hin immer kleiner, aufgrund der Kontinuitätsbedingung, wobei j an jeder Stelle konstant ist.
+\begin{equation}
+    \text{j} = - \rho \text{v}
+    \label{eqn:gl7}
+\end{equation}
+Die Raumladungsdichte \rho beeinflusst den Verlauf der Feldstärke zwischen Anode und Kathode, sie schirmt das Feld von der Kathode ab.
+Der gemessene Diodenstrom ist somit kleiner als der nach Gleichung \ref{eqn:gl6} zu erwartende Sättigungsstrom.
+Für den quantitativen Zusammenhang wird von der Potentialgleichung ausgegangen:
+\begin{equation}
+    \Delta \text{V} = - \frac{1}{\epsilon_0} \rho
+    \label{eqn:gl8} 
+\end{equation}
+Zur Vereinfachung wird angenommen, dass Anode und Kathode unendlich ausgedehnt sind im Abstand a zueinander.
+Durch Gleichung \ref{eqn:gl7}, \ref{eqn:gl8} und dem Energiesatz $\text{e}_0 \text{V} = m_0/2 \text{v}^2$ ergibt sich:
+\begin{equation}
+    \sqrt[4]{\text{V}^3(\text{x})} = \frac{3}{4} \sqrt{\frac{4 \text{j}}{\epsilon_0 \sqrt{2 \text{e}_0/\text{m}_0}}}\text{x}
+    \label{eqn:gl9}
+\end{equation}
+Daraus folgt, dass das Potential nicht linear, sondern nach einem $\sqrt[3]{\text{x}^3}$-Gesetz ansteigt.
+Deswegen verläuft die Feldstärke proportional zu $\text{x}^{\frac{1}{3}}$ und \rho proportional zu $\text{x}^{-\frac{2}{3}}$, zu sehen in Abb. \ref{fig:abb4}.
+Gestrichelt eingezeichnet ist der raumladungsfreie Fall.
+Aus Gleichung \ref{eqn:gl9} ergibt sich:
+\begin{equation}
+    \text{j} = \frac{4}{9} \epsilon_0 \sqrt{2 \text{e}_0/\text{m}_0} \frac{\text{V}^{3/2}}{a^2}
+    \label{eqn:gl10}
+\end{equation}
+Anstelle des ohmschen Gesetzes (j ~ V) wächst hier j mit $\text{V}^{3/2}$.
+Die Gleichung \ref{eqn:gl10} wird als Langmuir-Schottkysche Raumladungsgesetz bezeichnet.
+\begin{figure}
+    \centering
+    \includegraphics[height=5.0cm]{data/abb4.jpg}
+    \caption{Ortsabhängigkeit des Potentials V, der Feldstärke E und der Raumladungsdichte \rho im Raumladungsgebiet einer Hochvakuumdiodenkennlinie \cite{V504}}
+    \label{fig:abb4}
+\end{figure} \\
+\noindent
+
+\subsection{Anlaufstromgebiet einer Hochvakuumdiode}
+Auch bei V=0 wird noch ein geringer Anodenstrom gemessen.
+Dieser entsteht durch die Eigengeschwindigkeit der Elektronen, die sie beim Verlassen der Kathode besitzen.
+Nach Gleichung \ref{eqn:gl1} gibt es bei T>0 endlich viele Elektronen, deren Energie größer als die Austrittsarbeit ist. 
+Den Energieüberschuss 
+\begin{align*}
+    \Delta \text{E} = \text{E} - \left(\xi + \text{e}_0 \Phi \right)
+\end{align*}
+findet man als kinetische Energie der emittierten Elektronen.
+Diesen Strom wird als Anlaufstrom bezeichnet.
+Es ist zu berücksichtigen, dass auch das Anodenmaterial eine Austrittsarbeit $\Phi_A$ besitzt.
+Durch die elektrisch leitende Verbindung zwischen Anode und Kathode außerhalb der Diode werden die Fermi-Oberflächen (d.h. die Stelle E = \xi auf der Energieachse) der Metalle auf die gleiche Höhe gebracht.
+Mit einem äußeren Potential V verschieben sich $\text{e}_0 \text{V}$ gegeneinander.
+\begin{figure}
+    \centering
+    \includegraphics[height=5.0cm]{data/abb5.jpg}
+    \caption{Potentialverhältnisse in einer Hochvakuumdiode im Bereich ihres Anlaufstromgebietes  \cite{V504}}
+    \label{fig:abb5}
+\end{figure} \\
+\noindent
+Da die Zahl der Leitungselektronen, deren Energie zwischen E und E+dE liegt, nach Gleichung \ref{eqn:gl2} angenähert exponentiell von E abhängt, besteht auch eine entsprechende Abhängigkeit der Anlaufstromstärke vom äußeren Potential V: 
+\begin{align*}
+    \text{j}(\text{V}) = \text{j}_0 \text{exp} \left(\frac{\text{e}_0 \Phi_A + \text{e}_0 \text{V}}{y}\right)
+\end{align*}
+
+\subsection{Kennlinie der Hochvakuumdiode}
+Nach den vorherigen -ausführungen lässt sich die Kennlinie in drei Abschnitte unterteilen.
+Anlauf-, Raumladungs- und Sättigungsstromgebiet.
+Das erstere ist durch einen exponentiellen Zusammenhang zwischen I und V gekennzeichnet.
+Daran schließt sich das Raumladungsgebiet an, in dem eine $\sqrt{\text{V}^3}$-Abhängigkeit zu beobachten ist.
+Dieses Gebiet wird durch das Sättigungsstromgebiet abgelöst, weil die Raumladungsgleichung nicht für beliebig hohe Anodenspannungen gilt.
+\begin{figure}
+    \centering
+    \includegraphics[height=5.0cm]{data/abb6.jpg}
+    \caption{Kennlinie einer Hochvakuumdiode \cite{V504}}
+    \label{fig:abb6}
+\end{figure} \\
+\noindent
+
+\section{Aufbau}
+\begin{figure}
+    \centering
+    \includegraphics[height=5.0cm]{data/abb7.jpg}
+    \caption{Schaltung zur Aufnahme von Diodenkennlinien \cite{V504}}
+    \label{fig:abb7}
+\end{figure}
+Von einem Konstantspannungsgerätes wird eine Heizspannung $\text{I}_f$ von ca. 2-3 A erzeugt.
+Über ein seperates Voltmeter wird die Heizspannung $\text{V}_f$ abgelesen.
+Die Anodenspannung V wird einem weiteren regelbaren Konstantspannungsgerät entnommen.
+Zur Aufzeichnung der Kennlinie mittels eines XY-Schreibers wird in den Anodenstromkreis ein 100\Omega-Widerstand eingebaut und der dort auftretenden Spannungsabfall wird als Stromsignal für den Y-Eingang verwendet.
+Die Anodenspannung wird über einen 9M\Omega-Widerstand an den X-Eingang angeschlossen.
+Sie wird dadurch um den Faktor 10 heruntergeteilt, da der Eingangswiderstand des Schreibers 1MΩ beträgt.
