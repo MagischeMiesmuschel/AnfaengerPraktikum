@@ -1,9 +1,94 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Kennlinien und Sättigungsstrom}
+\label{sec:str}
+
+Für 5 verschiedene Heizleistungen werden Anodenspannung und -strom gemessen, um entsprechende Kennlinien zu erstellen.
+Die erfassten Daten sind in folgender Tabelle dargestellt und können für eine Berechnung des Sättigungsstroms genutzt werden.
+
+Die Berechnung erfolgt über eine Ausgleichsrechnung mit folgender Funktion:
+\begin{equation}
+  I(U) = I_\text{S} - A e^{B \cdot U}
+\end{equation}
+Für die Kennlinie mit der maximalen Heizleistung kann kein Sättigungsstrom bestimmt werden, da die Kennlinie noch nicht im Sättigungsstromgebiet verläuft.
+Dies ist in Abbildung \ref{fig:plot5} eindeutig an der fehlenden Rechtskrümmung der Werte zu erkennen.
 \begin{figure}
   \centering
   \includegraphics{plot1.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \caption{Kennlinie 1.}
+  \label{fig:plot1}
 \end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{plot2.pdf}
+  \caption{Kennlinie 2.}
+  \label{fig:plot2}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{plot3.pdf}
+  \caption{Kennlinie 3.}
+  \label{fig:plot3}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{plot4.pdf}
+  \caption{Kennlinie 4.}
+  \label{fig:plot4}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{plot5.pdf}
+  \caption{Kennlinie 5.}
+  \label{fig:plot5}
+\end{figure}
+\noindent
+Die berechneten Sättigungsströme sind in folgender Tabelle aufgeführt.
+
+\subsection{Langmuir-Schottkysches Raumladungsgesetz}
+\label{sec:expo}
+
+Kennlinie 5 (siehe Abb. \ref{fig:plot5}) verläuft, wie an der Linkskrümmung zu erkennen ist, im Raumladungsgebiet.
+Mit einer Ausgleichsrechnung kann diese Kennlinie also betrachtet werden, um den Exponenten des Langmuir-Schottkysches Raumladungsgesetzes zu überprüfen.
+Die Regression wird mit folgender Gleichung durchgeführt
+\begin{equation}
+  I(U) = A \cdot U^B
+\end{equation}
+und liefert für den Exponenten $B = \num{1.358(15)}$.
+
+\subsection{Anlaufstrom und Kathodentemperatur}
+\label{sec:anlauf}
+
+Die gemessenen Anlaufströme in Abhängigkeit der Gegenspannung sind in folgender Tabelle abgebildet.
+
+Die gemessenen Spannungen entsprechen jedoch nicht der Spannung zwischen Anode und Kathode, da der Innenwiderstand des Nanoamperemeters (1 M$\Omega$) einen Spannungsabfall hervorruft.
+Eine wie folgend aussehende Korrektur ist notwendig:
+\begin{equation*}
+  U_\text{korr} = U - R_\text{Innen} I_\text{A}
+\end{equation*}
+Anschließend kann über eine Ausgleichsrechnung (siehe Abb. \ref{fig:plot6}) die Kathodentemperatur bestimmt werden.
+Dafür wird diese Gleichung benutzt:
+\begin{equation}
+  I(U) = A e^{B \cdot U}
+\end{equation}
+Für die Kathodentemperatur berechnet sich so $T = \SI{2790(60)}{\kelvin}$.
+\begin{figure}
+  \centering
+  \includegraphics{plot6.pdf}
+  \caption{Anlaufstrom.}
+  \label{fig:plot6}
+\end{figure}
+
+\subsection{Leistungsbilanz und Kathodentemperatur}
+\label{sec:temp}
+
+Aus den eingestellten Heizspannungen und -strömen lässt sich mit die Kathodentemperatur berechnen.
+Alle Konstanten werden der Anleitung entnommen.
+Die Temperaturen sind in der anschließenden Tabelle dargestellt.
+
+\subsection{Austrittsarbeit}
+
+Die Austrittsarbeit kann nun über die Richardson-Gleichung bestimmt werden.
+Dafür werden die Temperaturen aus Kapitel \ref{sec:temp} und die Sättigungsströme aus Kapitel \ref{sec:str} verwendet.
+Folgende Werte für die Austrittsarbeit werden berechnet.
