@@ -43,6 +43,22 @@ Die Berechnung erfolgt über eine Ausgleichsrechnung mit folgender Funktion:
 \end{equation}
 Für die Kennlinie mit der maximalen Heizleistung kann kein Sättigungsstrom bestimmt werden, da die Kennlinie noch nicht im Sättigungsstromgebiet verläuft.
 Dies ist in Abbildung \ref{fig:plot5} eindeutig an der fehlenden Rechtskrümmung der Werte zu erkennen.
+Die berechneten Sättigungsströme sind in folgender Tabelle aufgeführt.
+\begin{table}
+\centering
+\caption{Sättigungsströme.}
+\label{tab:a}
+\begin{tabular}{c c}
+\toprule
+Kennlinie & $I_\text{S}$ \\
+\midrule
+1 & \SI{0.148(1)}{\milli\ampere} \\
+2 & \SI{0.308(4)}{\milli\ampere} \\
+3 & \SI{0.750(31)}{\milli\ampere} \\
+4 & \SI{2.773(445)}{\milli\ampere} \\
+\bottomrule
+\end{tabular}
+\end{table}
 \begin{figure}
   \centering
   \includegraphics{plot1.pdf}
@@ -73,25 +89,8 @@ Dies ist in Abbildung \ref{fig:plot5} eindeutig an der fehlenden Rechtskrümmung
   \caption{Kennlinie 5.}
   \label{fig:plot5}
 \end{figure}
-\noindent
-Die berechneten Sättigungsströme sind in folgender Tabelle aufgeführt.
-\begin{table}
-\centering
-\caption{Sättigungsströme.}
-\label{tab:a}
-\begin{tabular}{c c}
-\toprule
-Kennlinie & $I_\text{S}$ \\
-\midrule
-1 & \SI{0.148(1)}{\milli\ampere} \\
-2 & \SI{0.308(4)}{\milli\ampere} \\
-3 & \SI{0.750(31)}{\milli\ampere} \\
-4 & \SI{2.773(445)}{\milli\ampere} \\
-\bottomrule
-\end{tabular}
-\end{table}
 
-
+\FloatBarrier
 \subsection{Langmuir-Schottkysches Raumladungsgesetz}
 \label{sec:expo}
 
@@ -103,6 +102,7 @@ Die Regression wird mit folgender Gleichung durchgeführt
 \end{equation}
 und liefert für den Exponenten $B = \num{1.358(15)}$.
 
+\FloatBarrier
 \subsection{Anlaufstrom und Kathodentemperatur}
 \label{sec:anlauf}
 
@@ -156,6 +156,7 @@ Für die Kathodentemperatur berechnet sich so $T = \SI{2790(60)}{\kelvin}$.
   \label{fig:plot6}
 \end{figure}
 
+\FloatBarrier
 \subsection{Leistungsbilanz und Kathodentemperatur}
 \label{sec:temp}
 
@@ -179,6 +180,7 @@ Kennlinie & Heizspannung $U_\text{H}$ & Heizstrom $I_\text{H}$ & Temperatur $T$ 
 \end{tabular}
 \end{table}
 
+\FloatBarrier
 \subsection{Austrittsarbeit}
 
 Die Austrittsarbeit kann nun über die Richardson-Gleichung bestimmt werden.
