@@ -6,7 +6,37 @@
 
 Für 5 verschiedene Heizleistungen werden Anodenspannung und -strom gemessen, um entsprechende Kennlinien zu erstellen.
 Die erfassten Daten sind in folgender Tabelle dargestellt und können für eine Berechnung des Sättigungsstroms genutzt werden.
-
+\begin{table}
+\centering
+\caption{Anodenspannungen und -ströme.}
+\label{tab:messwerte}
+\begin{tabular}{c c c c c c}
+\toprule
+$U_\text{A}$ in V & $I_1$ in mA & $I_2$ in mA & $I_3$ in mA & $I_4$ in mA & $I_5$ in mA \\
+\midrule
+10  & 0.020 & 0.026 & 0.028 & 0.029 & 0.050 \\
+20  & 0.044 & 0.060 & 0.069 & 0.073 & 0.077 \\
+30  & 0.072 & 0.100 & 0.119 & 0.128 & 0.141 \\
+40  & 0.097 & 0.139 & 0.177 & 0.195 & 0.216 \\
+50  & 0.111 & 0.180 & 0.232 & 0.266 & 0.307 \\
+60  & 0.120 & 0.206 & 0.289 & 0.351 & 0.411 \\
+70  & 0.130 & 0.234 & 0.355 & 0.436 & 0.519 \\
+80  & 0.134 & 0.255 & 0.412 & 0.526 & 0.631 \\
+90  & 0.136 & 0.267 & 0.460 & 0.609 & 0.754 \\
+100 & 0.136 & 0.274 & 0.499 & 0.686 & 0.874 \\
+110 & 0.140 & 0.279 & 0.534 & 0.764 & 1.006 \\
+120 & 0.142 & 0.283 & 0.560 & 0.832 & 1.137 \\
+130 & 0.143 & 0.286 & 0.579 & 0.901 & 1.260 \\
+140 & 0.144 & 0.289 & 0.594 & 0.962 & 1.381 \\
+150 & 0.145 & 0.291 & 0.606 & 1.021 & 1.522 \\
+160 & 0.146 & 0.293 & 0.618 & 1.071 & 1.652 \\
+170 & 0.147 & 0.295 & 0.622 & 1.117 & 1.784 \\
+180 & 0.148 & 0.297 & 0.626 & 1.156 & 1.919 \\
+190 & 0.149 & 0.299 & 0.632 & 1.187 & 2.050 \\
+200 & 0.150 & 0.301 & 0.637 & 1.212 & 2.190 \\
+\bottomrule
+\end{tabular}
+\end{table}
 Die Berechnung erfolgt über eine Ausgleichsrechnung mit folgender Funktion:
 \begin{equation}
   I(U) = I_\text{S} - A e^{B \cdot U}
@@ -45,6 +75,22 @@ Dies ist in Abbildung \ref{fig:plot5} eindeutig an der fehlenden Rechtskrümmung
 \end{figure}
 \noindent
 Die berechneten Sättigungsströme sind in folgender Tabelle aufgeführt.
+\begin{table}
+\centering
+\caption{Sättigungsströme.}
+\label{tab:a}
+\begin{tabular}{c c}
+\toprule
+Kennlinie & $I_\text{S}$ \\
+\midrule
+1 & \SI{0.148(1)}{\milli\ampere} \\
+2 & \SI{0.308(4)}{\milli\ampere} \\
+3 & \SI{0.750(31)}{\milli\ampere} \\
+4 & \SI{2.773(445)}{\milli\ampere} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 
 \subsection{Langmuir-Schottkysches Raumladungsgesetz}
 \label{sec:expo}
@@ -61,7 +107,37 @@ und liefert für den Exponenten $B = \num{1.358(15)}$.
 \label{sec:anlauf}
 
 Die gemessenen Anlaufströme in Abhängigkeit der Gegenspannung sind in folgender Tabelle abgebildet.
-
+\begin{table}
+\centering
+\caption{Anlaufströme und Gegenspannungen.}
+\label{tab:c}
+\begin{tabular}{c c}
+\toprule
+Gegenspannung $U$ in V & Anlaufströme $I_\text{A}$ in nA \\
+\midrule
+0.05 & 100 \\
+0.1  & 80  \\
+0.15 & 58  \\
+0.2  & 47  \\
+0.25 & 37  \\
+0.3  & 28  \\
+0.35 & 20  \\
+0.4  & 15  \\
+0.45 & 14  \\
+0.5  & 9.5 \\
+0.55 & 7   \\
+0.6  & 6   \\
+0.65 & 4.5 \\
+0.7  & 3   \\
+0.75 & 2.1 \\
+0.8  & 1.5 \\
+0.85 & 1   \\
+0.9  & 0.8 \\
+0.95 & 0.5 \\
+1    & 0.4 \\
+\bottomrule
+\end{tabular}
+\end{table}
 Die gemessenen Spannungen entsprechen jedoch nicht der Spannung zwischen Anode und Kathode, da der Innenwiderstand des Nanoamperemeters (1 M$\Omega$) einen Spannungsabfall hervorruft.
 Eine wie folgend aussehende Korrektur ist notwendig:
 \begin{equation*}
@@ -86,9 +162,40 @@ Für die Kathodentemperatur berechnet sich so $T = \SI{2790(60)}{\kelvin}$.
 Aus den eingestellten Heizspannungen und -strömen lässt sich mit die Kathodentemperatur berechnen.
 Alle Konstanten werden der Anleitung entnommen.
 Die Temperaturen sind in der anschließenden Tabelle dargestellt.
+\begin{table}
+\centering
+\caption{Kathodentemperatur.}
+\label{tab:d}
+\begin{tabular}{c c c c}
+\toprule
+Kennlinie & Heizspannung $U_\text{H}$ & Heizstrom $I_\text{H}$ & Temperatur $T$ \\
+\midrule
+1 & \SI{4.3}{\volt} & \SI{2}{\ampere}   & \SI{1964}{\kelvin} \\
+2 & \SI{4.6}{\volt} & \SI{2.1}{\ampere} & \SI{2029}{\kelvin} \\
+3 & \SI{5}{\volt}   & \SI{2.2}{\ampere} & \SI{2103}{\kelvin} \\
+4 & \SI{5.3}{\volt} & \SI{2.3}{\ampere} & \SI{2163}{\kelvin} \\
+5 & \SI{6.2}{\volt} & \SI{2.5}{\ampere} & \SI{2308}{\kelvin} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Austrittsarbeit}
 
 Die Austrittsarbeit kann nun über die Richardson-Gleichung bestimmt werden.
 Dafür werden die Temperaturen aus Kapitel \ref{sec:temp} und die Sättigungsströme aus Kapitel \ref{sec:str} verwendet.
 Folgende Werte für die Austrittsarbeit werden berechnet.
+\begin{table}
+\centering
+\caption{Austrittsarbeit.}
+\label{tab:e}
+\begin{tabular}{c c c c}
+\toprule
+Kennlinie & Temperatur $T$ & Sättigungsstrom $I_\text{S}$ & Austrittsarbeit $e_0 \phi$ \\
+\midrule
+1 & \SI{1964}{\kelvin} & \SI{0.148(1)}{\milli\ampere}   & \SI{4.6769(12)}{\eV} \\
+2 & \SI{2029}{\kelvin} & \SI{0.308(4)}{\milli\ampere}   & \SI{4.7152(25)}{\eV} \\
+3 & \SI{2103}{\kelvin} & \SI{0.750(31)}{\milli\ampere}  & \SI{4.740(8)}{\eV} \\
+4 & \SI{2163}{\kelvin} & \SI{2.773(445)}{\milli\ampere} & \SI{4.642(30)}{\eV} \\
+\bottomrule
+\end{tabular}
+\end{table}
