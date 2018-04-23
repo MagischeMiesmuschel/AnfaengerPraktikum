@@ -1,9 +1,224 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Empfindlichkeit der Braunschen Röhre}
+\label{sec:Empfindlichkeit}
+Unter der Empfindlichkeit der Braunschen Röhre wird das Verhältnis zwischen der Ablenkung $D$ und der angelegten Spannung $d_U$ verstanden.
+Mit den Werten in Tabelle \ref{tab:messwerte1} wird $D$ gegen $U_\text{d}$ in Abbildung \ref{fig:plot1} aufgetragen und durch lineare Regression die Steigung der Ausgleichsgeraden durch die Messpunkte ermittelt.
+
+\FloatBarrier
+\begin{table}
+  \centering
+  \caption{Messwerte Ablenkung}
+  \label{tab:messwerte1}
+  \begin{tabular}{c c c c c c}
+  \toprule
+  $U_\text{d} 1$ in V & $U_\text{d} 2$ in V & $U_\text{d} 3$ in V & $U_\text{d} 4$ in V & $U_\text{d} 5$ in V & $D$ in cm \\
+  \midrule
+  20 & 23 & 25 & 28.6 & 30.3 & 4.8 \\
+  16.4 & 19 & 20.7 & 23.4 & 25.4 & 4.2 \\
+  12.7 & 15 & 16.3 & 18.4 & 19.8 & 3.6 \\
+  9.1 & 10.6 & 11.8 & 13.3 & 14.3 & 3 \\
+  5.5 & 6.5 & 7.3 & 8.2 & 8.9 & 2.4 \\
+  2.1 & 2.2 & 2.5 & 3.3 & 3.6 & 1.8 \\
+  -1.9 & -2.1 & -2.3 & -2.2 & -2.0 & 1.2 \\
+  -5.6 & -6.7 & -7.0 & -7.5 & -7.7 & 0.6 \\
+  -9.5 & -10.8 & -11.8 & -12.5 & -13 & 0 \\
+  \bottomrule
+\end{tabular}
+\end{table}
+
+\FloatBarrier
 \begin{figure}
   \centering
   \includegraphics{plot1.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \caption{Ablenkung bei verschiedenen Spannungen $U_\text{d}$}
+  \label{fig:plot1}
 \end{figure}
+
+\noindent
+Die daraus folgenden Steigungen $\frac{D}{U_\text{d}}$ sind in der nachfolgenden Tabelle \ref{tab:messwerte2} aufgelistet
+
+\FloatBarrier
+\begin{table}
+  \centering
+  \caption{Empfindlichkeiten}
+  \label{tab:messwerte2}
+  \begin{tabular}{c c c c c c}
+  \toprule
+   & $U_B 1$ in V & $U_B 2$ in V & $U_B 3$ in V & $U_B 4$ in V & $U_B 5$ in V \\
+  \midrule
+   & 200 & 230 & 250 & 280 & 300 \\
+  \bottomrule
+  a & 0.00163 & 0.00141 & 0.00130 & 0.00117 & 0.00110 \\
+  \bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+
+\subsection{Bestimmung der Apparaturkonstante}
+\label{sec:Apparaturkonstante}
+
+Die Apparaturkonstante K
+\begin{align*}
+  \text{K} = \frac{\text{pL}}{\text{2d}}
+\end{align*}
+soll berechnet werden. 
+Dazu werden die zuvor ermittelten Steigungen gegen die reziproke Beschleunigungsspannug $U_\text{B}$ in Abbildung \ref{fig:plot2} aufgetragen und eine lineare Ausgleichsrechnung durchgeführt.
+
+\FloatBarrier
+\begin{figure}
+  \centering
+  \includegraphics{plot2.pdf}
+  \caption{Empfindlichkeit gegen reziproke Beschleunigungsspannug}
+  \label{fig:plot2}
+\end{figure}
+
+\noindent
+Die daraus berechnete Steigung beläuft sich auf $a$ = 0.3190.
+Mit Hilfe der Gleichung
+\begin{align*}
+  D = \frac{\text{p}}{\text{2d}}\text{L}\frac{U_\text{d}}{U_\text{B}} \Leftrightarrow \frac{D}{U_\text{d}} = \frac{\text{Lp}}{2d} \frac{1}{U_\text{B}} = a \cdot \frac{1}{U_\text{B}}
+\end{align*}
+entspricht die Steigung der Ausgeichsgeraden der gesuchten Apparaturkonstanten.
+Durch die angegebenen Abmessungen des Versuchsaufbaus, kann diese auch theoretisch noch berechnet werden.
+
+\begin{align*}
+  \text{p} = 1.9 \text{cm}, & \text{L} = 14.3 \text{cm}, \text{d} = 0.38 \text{cm} \\
+  & a = 35.75 \text{cm}	\widehat{=} 0.3575 \text{m}
+\end{align*}
+
+Die Abweichung zwischen beiden Werten für die Apparaturkonstante liegt bei 10,77\%.
+
+\subsection{Synchronisationsfrequenz}
+\label{synchro}
+
+Bei den folgenden Frequenzen in der Tabelle \ref{tab:messwerte4} sind bei einer Beschleunigungsspannug $U_B = 422$V stehende Bilder entstanden.
+Die dazugehörige Zahl n kann anhand er Wellenbäuche der stehenden Wellen gut erkannt werden.
+
+\FloatBarrier
+\begin{table}
+  \centering
+  \caption{Sägezahnspannungsfrequenzen}
+  \label{tab:messwerte4}
+  \begin{tabular}{c c}
+  \toprule
+   $\nu$ in Hz & n \\
+  \midrule
+  22.63 & 3 \\
+  39.98 & 2 \\
+  79.99  & 1 \\
+  159.69 & $\frac{1}{2}$ \\
+  \bottomrule
+  \bottomrule
+\end{tabular}
+\end{table}
+
+Daraus ergibt sich die Mittlerefrequenz von $\nu_{sinus} = (79.92 \pm 0.07) \text{Hz}$, diese entspricht der Sinusfrequenz des angelegten Sinusgenerators.
+Mit der beobachteten Auslenkung $D = 13$mm und der formel
+\begin{align*}
+  D = K \frac{U_d}{U_B} \Leftrightarrow U_d = \frac{D U_B}{K}
+\end{align*}
+wird der Scheitelwert der angelegten Sinusspannung berrechnet.
+Es ergibt sich $U_d = 16.25$V.
+
+
+\subsection{Spezifische Ladung der Elektronen}
+\label{spezLadung}
+
+Um die Ablenkung durch das Magnetfeld berechnen zu können, wurden in der Messreihe
+der Spulenstrom I, die Stärke des an der Spule herrschenden Magnetfelds B sowie die Ablenkung D der Elektronen, die auf dem Leuchtschirm sichtbar ist, aufgenommen.
+
+\FloatBarrier
+\begin{table}
+  \centering
+  \caption{Messwerte für die Spule mit 20 Windungen bei $U_B = 250$V}
+  \label{tab:messwerte3}
+  \begin{tabular}{c c c}
+  \toprule
+   $I$ in A & $B$ in mT & $D$ in cm \\
+  \midrule
+  0    & 0 & 0 \\
+  0.28 & 0.018 & 0.6 \\
+  0.6  & 0.038 & 1.2 \\
+  0.94 & 0.060 & 1.8 \\
+  1.25 & 0.080 & 2.4 \\
+  1.56 & 0.099 & 3.0 \\
+  1.9  & 0.121 & 3.6 \\
+  2.25 & 0.143 & 4.2 \\
+  2.59 & 0.165 & 4.8 \\
+  \bottomrule
+  \bottomrule
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+\begin{table}
+  \centering
+  \caption{Messwerte für die Spule mit 20 Windungen bei $U_B = 350$V}
+  \label{tab:messwerte3}
+  \begin{tabular}{c c c}
+  \toprule
+   $I$ in A & $B$ in mT & $D$ in cm \\
+  \midrule
+  0    & 0 & 0 \\
+  0.34 & 0.022 & 0.6 \\
+  0.74  & 0.047 & 1.2 \\
+  1.1 & 0.070 & 1.8 \\
+  1.46 & 0.093 & 2.4 \\
+  1.85 & 0.118 & 3.0 \\
+  2.24  & 0.143 & 3.6 \\
+  2.65 & 0.169 & 4.2 \\
+  3.05 & 0.195 & 4.8 \\
+  \bottomrule
+  \bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+
+Es wird die $\frac{D}{L^2 + D^2}$ gegen das Magnetfeld $B$ in die Abbildung \ref{fig:plot3} aufgetragen und eine lineare Ausgleichsrechnung durchgeführt.
+\begin{align*}
+  \frac{D}{L^2 +D^2} = -0.0717 \cdot B_1 + 0.1667 \\
+  \frac{D}{L^2 +D^2} = -0.0916 \cdot B_2 + 0.1963 \\
+  b_1 = -0.0717 \\
+  b_2 = -0.0916
+\end{align*}
+
+\FloatBarrier
+\begin{figure}
+  \centering
+  \includegraphics{plot2.pdf}
+  \caption{D/(L²+D²) gegen B mit N=20}
+  \label{fig:plot3}
+\end{figure}
+
+Aus der Steigung der Ausgleichsgeraden berechnet man mit folgender formel die spezifische Ladung der Elektronen.
+\begin{align*}
+  \frac{D}{L^2+D^2} = \frac{1}{\sqrt{8 U_B}} \sqrt{\frac{e_0}{m_0}} B \\
+  \Leftrightarrow b = \frac{1}{\sqrt{8 U_B}}\sqrt{\frac{e_0}{m_0}}
+  \Leftrightarrow \frac{e_0}{m_0} = b^2 \cdot 8 U_B
+\end{align*}
+
+Mit den berechneten Steigungen $b_1 \text{und} b_2$ ergeben sich für die speziefische Ladung die Werten
+
+\begin{align*}
+  \frac{e_0}{m_0} = 1.217 \cdot 10^7 \\
+  \frac{e_0}{m_0} = 2.347 \cdot 10^7
+\end{align*}
+
+Als Mittelwert erhält man somit für die spezifische Ladung $\frac{e_0}{m_0} = 1.782 \cdot 10^7 \pm 1.130 \cdot 10^7 $.
+Diese weicht vom Litteraturwert ($\frac{e_0}{m_0} = 1.759 \cdot 10^11$) um 9864 \% ab.
+
+\subsection{Inklinationswinkel}
+\label{inklination}
+
+Bei einer Beschleunigungsspannug $U_b = 200V$ konnte mit einer Stromstärke von $I = 0.198 A$ ein Gegenfeld zum Erdmagentfeld mit der Stärke von $B = 0.0126 \text{mT}$ erzeugt werden um den Leuchtfleck wieder in Ausgangslage zu bringen.
+Mit Hilfe des Deklinatoriums wird der Inklinationswinkel auf $\phi = 71 \circ$ bestimmt.
+Durch Geomatrische Zusammenhänge kann man die Totalintensität des Erdmagnetfeldes berechnen mit:
+\begin{align*}
+  B_{total} = \frac{B}{\text{cos}(phi)}
+\end{align*}
+Somit ergibt sich die Totalintensität des Magnetfeldes zu $B_{total} = 0.0286 mT$.
+Verglichen mit dem Literaturwert der Totalintensität des Magnetfeldes in Mitteleuropa ($B_{total} = 0.048 mT$) ergibt sich eine Abweichung von 40.42 \%.
