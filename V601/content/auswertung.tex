@@ -23,10 +23,10 @@ Für die hier verwendete Röhre beträgt $a = \SI{1}{\centi\meter}$.
     \toprule
     Temperatur $T$ in K & Weglänge $\bar{w}$ in m & Verhältnis $a/\bar{w}$\\
     \midrule
-    314,15 & 1 &  1\\
-    423,15 & 1 &  1\\
-    448,15 & 1 &  1\\
-    378,15 & 1 &  1\\
+    314,15 & \num{1.689e-3} &  5,92\\
+    423,15 & \num{6.014e-6} &  1663\\
+    448,15 & \num{2.429e-6} &  4117\\
+    378,15 & \num{4.158e-5} &  240\\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -108,6 +108,10 @@ Die Ordinaten sind dabei proportional zur Anzahl, die Abszissen proportional zur
     \bottomrule
   \end{tabular}
 \end{table}
+Aus Abbildung \ref{fig:plot1} lässt sich mit der eingezeichneten Hilfsgerade ablesen, dass die meisten Elektronen eine Energie von 9,223 eV besitzen.
+Da die Elektronen mit 11 Volt beschleunigt werden, ergibt sich ein Kontaktpotential von $K_1$ = 1,777 Volt.
+Dass der Peak bei 9 Volt in Abbildung \ref{fig:plot1} und die Sprungstelle bei 1,2 Volt in Abbildung \ref{fig:plot2} stetig sind, liegt an der Energieverteilung der Elektronen, die der Fermi-Dirac-Statistik folgt.
+Der sonst flache Verlauf des Abbildung \ref{fig:plot2} lässt sich durch die gleichmäßig Verteilung der Energiekomponente in Richtung der Auffängerelektrode erklären, die auf die zufällig stattfindenden elastischen Stöße zurückzuführen werden kann.
 \begin{figure}
   \centering
   \includegraphics{plot1.pdf}
@@ -169,11 +173,11 @@ Die Abstände können aus dem dritten Graphen abgelesen werden und sind in Tabbl
 \end{table}
 Aus der mittleren Anregungsenergie kann die dazugehörige Wellenlänge berechnet werden.
 \begin{equation*}
-  \lambda = \frac{h \cdot c}{U_1} =
+  \lambda = \frac{h \cdot c}{U_1} = \SI{241}{\nano\meter}
 \end{equation*}
 Aus der Abweichung zwischen erstem Maxima und der Anregungsenergie lässt sich das Kontaktpotential berechnen.
 \begin{equation*}
-  K_2 = M_1 - U_1 =
+  K_2 = M_1 - U_1 = \SI{6.71}{\volt} - \SI{5.142}{\volt} = \SI{1.568}{\volt}
 \end{equation*}
 Der Energieverlust durch die elastischen Stöße führt nur zu einem Abflachen der Kurve.
 Da jedoch für die Auswertung der Anregungsenergie nur die Abstände der Maxima von Interesse sind, spielt dieser Effekt keine Rolle.
@@ -184,6 +188,6 @@ Da jedoch für die Auswertung der Anregungsenergie nur die Abstände der Maxima 
 Die Ionisierungsenergie wird mit Hilfe des letzten Graphen aus Kapitel \ref{sec:Anhang} bestimmt.
 Dazu wird eine Asymptote in den Graphen eingezeichnet und aus deren Schnittpunkt $x_0 = \SI{15.45}{\volt}$ mit der x-Achse und den zuvor berechneten Kontaktpotentialen die Ionisierungsenergie berechnet.
 \begin{align*}
-E_\text{ion,1} &= (x_0 - K_1) \text{e}_0 = \SI{4}{\volt}  \\
-E_\text{ion,2} &= (x_0 - K_1) \text{e}_0 = \SI{4}{\volt}  \\
+E_\text{ion,1} &= (x_0 - K_1) \text{e}_0 = \SI{13.673}{\eV}  \\
+E_\text{ion,2} &= (x_0 - K_1) \text{e}_0 = \SI{13.882}{\eV}  \\
 \end{align*}
