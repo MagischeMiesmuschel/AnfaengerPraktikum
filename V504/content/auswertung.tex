@@ -5,10 +5,10 @@
 \label{sec:str}
 
 Für 5 verschiedene Heizleistungen werden Anodenspannung und -strom gemessen, um entsprechende Kennlinien zu erstellen.
-Die erfassten Daten sind in folgender Tabelle dargestellt und können für eine Berechnung des Sättigungsstroms genutzt werden.
+Die erfassten Daten sind in folgender Tabelle \ref{tab:messwerte} dargestellt und können für eine Berechnung des Sättigungsstroms genutzt werden.
 \begin{table}
 \centering
-\caption{Anodenspannungen und -ströme.}
+\caption{Für 5 verschiedene Heizleistungen gemessene Anodenspannungen und -ströme.}
 \label{tab:messwerte}
 \begin{tabular}{c c c c c c}
 \toprule
@@ -37,76 +37,59 @@ $U_\text{A}$ in V & $I_1$ in mA & $I_2$ in mA & $I_3$ in mA & $I_4$ in mA & $I_5
 \bottomrule
 \end{tabular}
 \end{table}
-Die Berechnung erfolgt über eine Ausgleichsrechnung mit folgender Funktion:
-\begin{equation}
-  I(U) = I_\text{S} - A e^{B \cdot U}
-\end{equation}
+Der Sättigungsstrom wird an den in Abbildung \ref{fig:plot1} dargestellten Kennlinien abgelesen.
 Für die Kennlinie mit der maximalen Heizleistung kann kein Sättigungsstrom bestimmt werden, da die Kennlinie noch nicht im Sättigungsstromgebiet verläuft.
-Dies ist in Abbildung \ref{fig:plot5} eindeutig an der fehlenden Rechtskrümmung der Werte zu erkennen.
-Die berechneten Sättigungsströme sind in folgender Tabelle aufgeführt.
+Dies ist in Abbildung \ref{fig:plot1} eindeutig an der fehlenden Rechtskrümmung der Kennlinie 5 zu erkennen.
+Die abgelesenen Sättigungsströme sind in folgender Tabelle \ref{tab:a} aufgeführt.
 \begin{table}
 \centering
-\caption{Sättigungsströme.}
+\caption{Für die verschiedenen Heizspannungen abgelesenen Sättigungsströme.}
 \label{tab:a}
-\begin{tabular}{c c}
+\begin{tabular}{c c c}
 \toprule
-Kennlinie & $I_\text{S}$ \\
+Kennlinie & Heizspannung $U_\text{H}$ & $I_\text{S}$ \\
 \midrule
-1 & \SI{0.148(1)}{\milli\ampere} \\
-2 & \SI{0.308(4)}{\milli\ampere} \\
-3 & \SI{0.750(31)}{\milli\ampere} \\
-4 & \SI{2.773(445)}{\milli\ampere} \\
+1 & \SI{4.3}{\volt} & \SI{0.148}{\milli\ampere} \\
+2 & \SI{4.6}{\volt} & \SI{0.308}{\milli\ampere} \\
+3 & \SI{5}{\volt}   & \SI{0.750}{\milli\ampere} \\
+4 & \SI{5.3}{\volt} & \SI{1.240}{\milli\ampere} \\
+5 & \SI{6.2}{\volt} & kein Wert \\
 \bottomrule
 \end{tabular}
 \end{table}
 \begin{figure}
   \centering
   \includegraphics{plot1.pdf}
-  \caption{Kennlinie 1.}
+  \caption{Kennlinien einer Hochvakuumdiode für 5 verschiedene Heizleistungen.}
   \label{fig:plot1}
 \end{figure}
-\begin{figure}
-  \centering
-  \includegraphics{plot2.pdf}
-  \caption{Kennlinie 2.}
-  \label{fig:plot2}
-\end{figure}
-\begin{figure}
-  \centering
-  \includegraphics{plot3.pdf}
-  \caption{Kennlinie 3.}
-  \label{fig:plot3}
-\end{figure}
-\begin{figure}
-  \centering
-  \includegraphics{plot4.pdf}
-  \caption{Kennlinie 4.}
-  \label{fig:plot4}
-\end{figure}
-\begin{figure}
-  \centering
-  \includegraphics{plot5.pdf}
-  \caption{Kennlinie 5.}
-  \label{fig:plot5}
-\end{figure}
-
 \FloatBarrier
+
 \subsection{Langmuir-Schottkysches Raumladungsgesetz}
 \label{sec:expo}
 
-Kennlinie 5 (siehe Abb. \ref{fig:plot5}) verläuft, wie an der Linkskrümmung zu erkennen ist, im Raumladungsgebiet.
-Mit einer Ausgleichsrechnung kann diese Kennlinie also betrachtet werden, um den Exponenten des Langmuir-Schottkysches Raumladungsgesetzes zu überprüfen.
-Die Regression wird mit folgender Gleichung durchgeführt
-\begin{equation}
-  I(U) = A \cdot U^B
-\end{equation}
-und liefert für den Exponenten $B = \num{1.358(15)}$.
-
+Kennlinie 5 (siehe Abb. \ref{fig:plot1}) verläuft, wie an der Linkskrümmung zu erkennen ist, im Raumladungsgebiet.
+Mit einer dopppelt logarithmischen Ausgleichsrechnung kann diese Kennlinie also betrachtet werden, um den Exponenten des Langmuir-Schottkysches Raumladungsgesetzes zu überprüfen.
+\begin{align*}
+   y &= a \cdot x^n \\
+   \intertext{Wird der natürliche Logarithmus angewendet, folgt:}
+   \lg(y) &= \lg(a) + n \cdot \lg(x) \\
+   Y &= n \cdot X + C \\
+   \text{mit} \lg(y) &= Y \quad \lg(x) = x \quad \lg(a) = C
+\end{align*}
+Die Ausgleichsrechnung (siehe Abb. \ref{fig:plot5}) liefert für den Exponenten $n = \num{1.369(29)}$.
+\begin{figure}
+  \centering
+  \includegraphics{plot5.pdf}
+  \caption{doppelt logarithmische Darstellung der Kennlinie 5.}
+  \label{fig:plot5}
+\end{figure}
 \FloatBarrier
+
 \subsection{Anlaufstrom und Kathodentemperatur}
 \label{sec:anlauf}
 
-Die gemessenen Anlaufströme in Abhängigkeit der Gegenspannung sind in folgender Tabelle abgebildet.
+Die gemessenen Anlaufströme in Abhängigkeit der Gegenspannung sind in folgender Tabelle \ref{tab:c} abgebildet.
 \begin{table}
 \centering
 \caption{Anlaufströme und Gegenspannungen.}
@@ -144,15 +127,12 @@ Eine wie folgend aussehende Korrektur ist notwendig:
   U_\text{korr} = U - R_\text{Innen} I_\text{A}
 \end{equation*}
 Anschließend kann über eine Ausgleichsrechnung (siehe Abb. \ref{fig:plot6}) die Kathodentemperatur bestimmt werden.
-Dafür wird diese Gleichung benutzt:
-\begin{equation}
-  I(U) = A e^{B \cdot U}
-\end{equation}
-Für die Kathodentemperatur berechnet sich so $T = \SI{2790(60)}{\kelvin}$.
+Dafür wird eine halb logarithmische Ausgleichsrechnung durchgeführt, über die sich der Exponent berechnen lässt.
+Für die Kathodentemperatur berechnet sich so $T = \SI{2470(4)}{\kelvin}$.
 \begin{figure}
   \centering
   \includegraphics{plot6.pdf}
-  \caption{Anlaufstrom.}
+  \caption{gemessener Anlaufstrom in Abhängigkeit der Gegenspannung.}
   \label{fig:plot6}
 \end{figure}
 
@@ -160,9 +140,13 @@ Für die Kathodentemperatur berechnet sich so $T = \SI{2790(60)}{\kelvin}$.
 \subsection{Leistungsbilanz und Kathodentemperatur}
 \label{sec:temp}
 
-Aus den eingestellten Heizspannungen und -strömen lässt sich mit die Kathodentemperatur berechnen.
+Aus den eingestellten Heizspannungen und -strömen lässt sich mit \eqref{eqn:x} die Kathodentemperatur berechnen.
+\begin{equation}
+  T = \sqrt[4]{\frac{I_\text{H} U_\text{H} - N_\text{WL}}{f \sigma \eta}}
+  \label{eqn:x}
+\end{equation}
 Alle Konstanten werden der Anleitung entnommen.
-Die Temperaturen sind in der anschließenden Tabelle dargestellt.
+Die Temperaturen sind in der anschließenden Tabelle \ref{tab:d} dargestellt.
 \begin{table}
 \centering
 \caption{Kathodentemperatur.}
@@ -194,10 +178,10 @@ Folgende Werte für die Austrittsarbeit werden berechnet.
 \toprule
 Kennlinie & Temperatur $T$ & Sättigungsstrom $I_\text{S}$ & Austrittsarbeit $e_0 \phi$ \\
 \midrule
-1 & \SI{1964}{\kelvin} & \SI{0.148(1)}{\milli\ampere}   & \SI{4.6769(12)}{\eV} \\
-2 & \SI{2029}{\kelvin} & \SI{0.308(4)}{\milli\ampere}   & \SI{4.7152(25)}{\eV} \\
-3 & \SI{2103}{\kelvin} & \SI{0.750(31)}{\milli\ampere}  & \SI{4.740(8)}{\eV} \\
-4 & \SI{2163}{\kelvin} & \SI{2.773(445)}{\milli\ampere} & \SI{4.642(30)}{\eV} \\
+1 & \SI{1964}{\kelvin} & \SI{0.148}{\milli\ampere}   & \SI{4.6769}{\eV} \\
+2 & \SI{2029}{\kelvin} & \SI{0.308}{\milli\ampere}   & \SI{4.7152}{\eV} \\
+3 & \SI{2103}{\kelvin} & \SI{0.750}{\milli\ampere}  & \SI{4.740}{\eV} \\
+4 & \SI{2163}{\kelvin} & \SI{1.240}{\milli\ampere} & \SI{4.642}{\eV} \\
 \bottomrule
 \end{tabular}
 \end{table}

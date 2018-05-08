@@ -1,9 +1,189 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{mittlere freie Weglänge}
+\label{sec:A1}
+Die vom Sättigungsdampfdruck abhängige mittlere freie Weglänge $\bar{w}$ hat maßgeblich auf die Zusammenstöße zwischen Elektronen Hg-Atome Einfluss.
+Das Verhältnis von mittlerer freier Weglänge $\bar{w}$ und dem Abstand Kathode-Beschleunigungselektrode $a$ muss zwischen 1000 und 4000 liegen.
+In diesem Bereich ist der Sättigungsdampfdruck groß genug, um ausreichend Zusammenstöße für die Beobachtung des Franck-Hertz-Effekts hervorzurufen.
+Der Sättigungsdampfdruck ist jedoch noch zu gering für ein vermehrtes Auftreten von elastischen Stößen,
+die dafür sorgen, dass die Elektronen ihre Richtung ändern und die Auffängerelektrode nciht mehr erreichen.
+Für die mittlere freie Weglänge und den Sättigungsdampfdruck $p_\text{sät}$ gelten folgende Beziehungen.
+\begin{align}
+  \bar{w} \, [\text{cm}] &= \frac{0,0029}{p_\text{sät}} \\
+  p_\text{sät}(T) \, [\text{mbar}] &= 5,5 \cdot 10^7 e^{-6876/T}
+\end{align}
+In der anschließenden Tabelle \ref{tab:weg} werden die mittlere freie Weglänge $\bar{w}$ und der Abstand Kathode-Beschleunigungselektrode $a$ nun verglichen.
+Für die hier verwendete Röhre beträgt $a = \SI{1}{\centi\meter}$.
+\begin{table}
+  \centering
+  \caption{Verhältnis von mittlerer freier Weglänge $\bar{w}$ und der Abstand Kathode-Beschleunigungselektrode $a$.}
+  \label{tab:weg}
+  \begin{tabular}{c c c}
+    \toprule
+    Temperatur $T$ in K & Weglänge $\bar{w}$ in m & Verhältnis $a/\bar{w}$\\
+    \midrule
+    314,15 & 1 &  1\\
+    423,15 & 1 &  1\\
+    448,15 & 1 &  1\\
+    378,15 & 1 &  1\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Energieverteilung der Elektronen}
+\label{sec:A2}
+
+Die integrale Energieverteilung kann durch die Überführung der differntiellen in die integrale Energieverteilung bestimmt werden.
+Zunächst muss also die differntielle Energieverteilung aus den ersten beiden Graphen in Kapitel \ref{sec:Anhang} ermittelt werden, die die Bremsspannung $U_\text{A}$ in Abhängigkeit des Auffängerstroms $I_\text{A}$ abbilden.
+Der Auffängerstrom ist proportional zur Anzahl der Elektronen und die Bremsspannung proportional zur Energie der Elektronen.
+Die differntielle Energieverteilung kann also über in die Graphen eingezeichnete Steigungsdreicke berechnet werden.
+Dafür ist allerdings eine Skalierung der x-Achse der Graphen notwendig, die im Folgenden durchgeführt wird (siehe Tabelle \ref{tab:skal1}).
+\begin{table}
+  \centering
+  \caption{Skalierung der x-Achse der ersten beiden Graphen aus Kapitel \ref{sec:Anhang}.}
+  \label{tab:skal1}
+  \begin{tabular}{c c c}
+    \toprule
+    Bremsspannung & Graph 1 (\SI{314,15}{\kelvin}) & Graph 2 (\SI{423,15}{\kelvin})\\
+    in V & Anzahl mm-Kästchen & Anzahl mm-Kästchen \\
+    \midrule
+    0-2  & 48 &  49\\
+    2-4  & 47 &  49\\
+    4-6  & 52 &  51\\
+    6-8  & 53 &  50\\
+    \bottomrule
+    Skalierung $S$ & $S_1 = \num{4.010(12)e-2}$ V/mm & $S_2 = \num{4.021(4)e-2}$ V/mm \\
+  \end{tabular}
+\end{table}
+Die aus den Steigungsdreicken berechneten Steigungen sind in Tabelle \ref{tab:steig} aufgeführt und werden in Abbildung \ref{fig:plot1} und \ref{fig:plot2} gegen die Bremsspannung aufgetragen.
+Die Ordinaten sind dabei proportional zur Anzahl, die Abszissen proportional zur Energie der Elektronen.
+\begin{table}
+  \centering
+  \caption{ Bremsspannung und Steigung der Graphen.}
+  \label{tab:steig}
+  \begin{tabular}{c c c | c c c}
+    \toprule
+    \multicolumn{3}{c}{Graph 1 (\SI{314,15}{\kelvin})} & \multicolumn{3}{c}{Graph 2 (\SI{423,15}{\kelvin})} \\
+    Stelle $x$ & Bremsspannung $x \cdot S_1$ & Steigung & Stelle $x$ & Bremsspannung $x \cdot S_2$ & Steigung  \\
+    in mm & in V & $\increment y / \increment x$ & in mm & in V & $\increment y / \increment x$  \\
+    \midrule
+     6  & 0,240  & 0,1 & 3,5   & 0,140 & 3,0   \\
+    16  & 0,641  & 0,1 & 8.5   & 0,341 & 2,6 \\
+    26  & 1,042  & 0,1 & 13,5  & 0,542 & 2,6 \\
+    36  & 1,443  & 0,1 & 18,5  & 0,743 & 4,4 \\
+    46  & 1,844  & 0,1 & 23,5  & 0,944 & 2,6 \\
+    56  & 2,245  & 0,2 & 28,5  & 1,146 & 1,0 \\
+    66  & 2,646  & 0,1 & 33,5  & 1,347 & 1,4 \\
+    76  & 3,047  & 0,2 & 38,5  & 1,548 & 0,8 \\
+    86  & 3,448  & 0,3 & 43,5  & 1,749 & 0,2 \\
+    96  & 3,850  & 0,2 & 48,5  & 1,950 & 0,4 \\
+    106 & 4,251  & 0,3 & 53,5  & 2,151 & 0,08 \\
+    116 & 4,652  & 0,2 & 58,5  & 2,352 & 0,08 \\
+    126 & 5,053  & 0,2 & 63,5  & 2,553 & 0,08 \\
+    136 & 5,454  & 0,3 & 68,5  & 2,754 & 0,08 \\
+    146 & 5,855  & 0,4 & 73,5  & 2,955 & 0,08 \\
+    156 & 6,256  & 0,4 & 78,5  & 3,156 & 0,4 \\
+    166 & 6,657  & 0,5 & 83,5  & 3,357 & 0,4 \\
+    176 & 7,058  & 0,6 & 88,5  & 3,558 & 0,4 \\
+    186 & 7,459  & 0,7 & 93,5  & 3.759 & 0,4 \\
+    193 & 7,760  & 1,0 & 98,5  & 3.960 & 0,4 \\
+    198 & 7,960  & 1,0 & 103,5 & 4,161 & 0,6 \\
+    203 & 8,161  & 1,2 & 108,5 & 4,363 & 0,6 \\
+    208 & 8,361  & 1,2 & 113,5 & 4,564 & 0,6 \\
+    213 & 8,562  & 1,6 & 118,5 & 4,765 & 0,6 \\
+    218 & 8,762  & 2,0 & 123,5 & 4,966 & 0,6 \\
+    223 & 8,963  & 2,8 & 128,5 & 5,167 & 0,6 \\
+    228 & 9,163  & 4,4 & 133,5 & 5,368 & 0,4 \\
+    233 & 9,364  & 3,6 & 138,5 & 5,569 & 0,6 \\
+    238 & 9,564  & 0,8 & 143,5 & 5,770 & 0,6 \\
+    243 & 9,765  & 0,0 & 148,5 & 5,971 & 0,4 \\
+        &        &     & 153,5 & 6,172 & 0,4 \\
+        &        &     & 158,5 & 6,373 & 0,4 \\
+        &        &     & 163,5 & 6,574 & 0,2 \\
+        &        &     & 168,5 & 6,775 & 0,2 \\
+        &        &     & 173,5 & 6,976 & 0,0 \\
+        &        &     & 178,5 & 7,177 & 0,0 \\
+
+    \bottomrule
+  \end{tabular}
+\end{table}
 \begin{figure}
   \centering
   \includegraphics{plot1.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \caption{Differntielle Energieverteilung bei 314,15 K.}
+  \label{fig:plot1}
 \end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{plot2.pdf}
+  \caption{Differntielle Energieverteilung bei 423,15 K.}
+  \label{fig:plot2}
+\end{figure}
+\FloatBarrier
+
+\subsection{Franck-Hertz-Kurve}
+\label{sec:A3}
+
+Die aufgenommene Franck-Hertz-Kurve ist als dritter Graph in Kapitel \ref{sec:Anhang} zu sehen.
+Genau wie zuvor in Kapitel \ref{sec:A2} muss die x-Achse skaliert werden (siehe Tabelle \ref{tab:skal2}).
+\begin{table}
+  \centering
+  \caption{Skalierung der x-Achse des dritten Graphen aus Kapitel \ref{sec:Anhang}.}
+  \label{tab:skal2}
+  \begin{tabular}{c c}
+    \toprule
+    Bremsspannung & Graph 3 (\SI{448,15}{\kelvin}) \\
+    in V & Anzahl mm-Kästchen  \\
+    \midrule
+    0-10   &  33\\
+    10-20  &  32\\
+    20-30  &  32\\
+    30-40  &  34\\
+    40-50  &  33\\
+    \bottomrule
+    Skalierung $S$ & $S_3 = \num{3.050(35)e-1}$ V/mm  \\
+  \end{tabular}
+\end{table}
+Aus Abstände der Maxima lässt die erste Anregungsenergie $U_1$ berechnen.
+Die Abstände können aus dem dritten Graphen abgelesen werden und sind in Tabble \ref{tab:an} mit den entsprechenden Energien aufgeführt.
+\begin{table}
+  \centering
+  \caption{Abstände der Maxima der Franck-Hertz-Kurve und Anregungsenergie.}
+  \label{tab:an}
+  \begin{tabular}{c c c}
+    \toprule
+    Ordnungszahl & Abstand der Maxima $M_{k+1} - M_k$ & Anregungsenergie $U_1$\\
+    & Anzahl mm-Kästchen & in eV \\
+    \midrule
+    1 & 16 & 4,880 \\
+    2 & 16 & 4,880 \\
+    3 & 16 & 4,880 \\
+    4 & 16 & 4,880 \\
+    5 & 18 & 5,490 \\
+    6 & 19 & 5,795 \\
+    7 & 17 & 5,185 \\
+    \bottomrule
+    Mittelwert $\bar{U_1}$ & & \num{5.142(140)} \\
+  \end{tabular}
+\end{table}
+Aus der mittleren Anregungsenergie kann die dazugehörige Wellenlänge berechnet werden.
+\begin{equation*}
+  \lambda = \frac{h \cdot c}{U_1} =
+\end{equation*}
+Aus der Abweichung zwischen erstem Maxima und der Anregungsenergie lässt sich das Kontaktpotential berechnen.
+\begin{equation*}
+  K_2 = M_1 - U_1 =
+\end{equation*}
+Der Energieverlust durch die elastischen Stöße führt nur zu einem Abflachen der Kurve.
+Da jedoch für die Auswertung der Anregungsenergie nur die Abstände der Maxima von Interesse sind, spielt dieser Effekt keine Rolle.
+
+\subsection{Ionisierungsenergie}
+\label{sec:A4}
+
+Die Ionisierungsenergie wird mit Hilfe des letzten Graphen aus Kapitel \ref{sec:Anhang} bestimmt.
+Dazu wird eine Asymptote in den Graphen eingezeichnet und aus deren Schnittpunkt $x_0 = \SI{15.45}{\volt}$ mit der x-Achse und den zuvor berechneten Kontaktpotentialen die Ionisierungsenergie berechnet.
+\begin{align*}
+E_\text{ion,1} &= (x_0 - K_1) \text{e}_0 = \SI{4}{\volt}  \\
+E_\text{ion,2} &= (x_0 - K_1) \text{e}_0 = \SI{4}{\volt}  \\
+\end{align*}
