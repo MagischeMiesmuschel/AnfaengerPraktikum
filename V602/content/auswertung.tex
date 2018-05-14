@@ -1,9 +1,202 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Für die Auswertung werden mehrere Materialkonstanten benötigt, die in Tabelle \ref{tab:material} aufgeführt sind.
+
+\begin{table}
+  \centering
+  \caption{Materialkonstanten der verwendeten Elemente.}
+  \label{tab:material}
+  \begin{tabular}{c c c c c}
+    \toprule
+    & $Z$ & $E^\text{Lit}_K$ $[\si{\kilo\eV}]$ & $\Theta^\text{Lit}_K$ $[^\circ]$ & $\sigma^\text{Lit}_K$ \\
+    \midrule
+    Zn & 30 & 9,65 & 18,6 & 3,56 \\
+    Br & 35 & 13,48 & 13,2 & 3,52 \\
+    Sr & 38 & 16,12 & 11,0 & 3,58 \\
+    Zr & 40 & 18,01 & 9,8 & 3,61 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Braggbedingung}
+
+Die Messung ergibt die in Abbildung \ref{fig:plot1} dargesellte Kurve, aus der sich ein Winkel für das Maximum von $14,2^\circ$ ablesen lässt.
+Dieser weicht um weniger als $1^\circ$ vom Sollwinkel ($14^\circ$) ab.
 \begin{figure}
   \centering
   \includegraphics{plot1.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \caption{Emmissionsspektrum bei festem Kristallwinkel.}
+  \label{fig:plot1}
 \end{figure}
+\FloatBarrier
+
+\subsection{maximale Energie des Bremsspektrums von Kupfer}
+
+Das kontinuierliche und das charakteristische Spektrum der Cu-Röntgenröhre ist in Abbildung \ref{fig:plot2} zu sehen.
+\begin{figure}
+  \centering
+  \includegraphics{plot2.pdf}
+  \caption{Emmissionsspektrum der Cu-Röntgenröhre.}
+  \label{fig:plot2}
+\end{figure}
+Aus dieser Kurve kann der minimale Kristallwinkel abgelesen werden, aus dem mit folgender Gleichung die maximale Energie berechnet wird.
+\begin{equation}
+  E = \frac{h c}{2d \sin(\Theta)}
+  \label{eqn:E}
+\end{equation}
+Für einen Winkel von
+\begin{equation*}
+  \Theta_\text{min} = \SI{5.4}{\degree}
+\end{equation*}
+ergibt sich eine maximale Energie von:
+\begin{equation*}
+  E_\text{max} = \SI{32.646}{\kilo\eV}
+\end{equation*}
+Dieser Wert liegt leicht unter dem Erwartungswert:
+\begin{equation*}
+  e_0 U = \SI{35}{\kilo\eV}
+\end{equation*}
+\FloatBarrier
+
+\subsection{Auflösung der Röntgenröhre}
+
+Aus Abbildung \ref{fig:plot2} lässt sich auch die Auflösung der Röntgenröhre bestimmen.
+Dafür werden die Winkel aus der Kurve abgelesen, bei denen die maximale Zählrate auf die Hälfte gefallen ist (Halbwertsbreite):
+\begin{align*}
+  \Theta_1 &= \SI{19.9}{\degree} \\
+  \Theta_2 &= \SI{20.2}{\degree}
+\end{align*}
+Mit Gleichung \eqref{eqn:E} berechnen sich die entsprechenden Energien:
+\begin{align*}
+  E_1 = \SI{9.026}{\kilo\eV} \\
+  E_2 = \SI{8.897}{\kilo\eV}
+\end{align*}
+Aus der Differnz dieser beiden Werte ergibt sich die Energieauflösung:
+\begin{equation*}
+ \increment E = \SI{0.129}{\kilo\eV}
+\end{equation*}
+Die Genauigkeit dieser Angabe muss als gering eingeschätzt werden, da die Halbwertsbreite nur sehr ungenau aus Abbildung \ref{fig:plot2} und den dazugehörigen Werten abgelesen werden kann.
+
+\subsection{Abschimrkonstanten des Kupfers}
+
+Aus Abbildung \ref{fig:plot2} werden folgende Winkel für die $K_\alpha$- und die $K_\beta$-Linie abgelesen:
+\begin{align*}
+  \Theta_\alpha &= \SI{22.2}{\degree} \\
+  \Theta_\beta &= \SI{20.0}{\degree}
+\end{align*}
+Aus Gleichung \eqref{eqn:E} folgen die dazugehörigen Energien:
+\begin{align*}
+  E_\alpha = \SI{8.13}{\kilo\eV} \\
+  E_\beta = \SI{8.98}{\kilo\eV}
+\end{align*}
+Da die Lage der Absorptionskanten $h\nu = E_n - E_\infty$ fast identisch zu der Bindungsenergie des Elektrons ist,
+kann die Abschirmunskonstante der $K_\beta$-Linie folgendermaßen berechnet werden:
+\begin{equation*}
+  \sigma_\beta = z_\text{Cu} - \sqrt{\frac{E_\beta}{R_\infty}} = 1
+\end{equation*}
+Mit der nun bekannten Abschimrkonstanten $\sigma_\beta$ kann die Abschirmkonstante der $K_\alpha$-Linie bestimmt werden:
+\begin{equation*}
+  \sigma_\alpha = z_\text{Cu} - \sqrt{\frac{R_\infty (z_Cu-\sigma_\beta)^2 - E_\alpha}{R_\infty}} = 1
+\end{equation*}
+
+\subsection{K-Linine des Absorptionsspektrums verschiedener Elemente}
+
+In den Abbildungen \ref{fig:plot3} bis \ref{fig:plot6} sind die Absorptionsspektren vier verschiedener Elemente dargestellt,
+aus denen die Winkel abgelesen werden, bei denen die K-Kanten auftreten.
+Mit diesen Winkeln können die Absoprtionsenergien bestimmt werden, die in folgende Gleichung eingesetzt werden, um die Abschirmzahlen zu berechnen.
+\begin{align*}
+   E_\text{abs} &= h\nu = E_1 - E_\infty \\
+   E_\text{abs} &= R_\infty (z-\sigma_1)^2 \frac{1}{1^2} - 0 \\
+   \sigma_1 &= z - \sqrt{\frac{E_\text{abs}}{R_\infty}}
+\end{align*}
+Die Tabelle \ref{tab:abs} umfasst die entsprechenden Werte.
+\begin{table}
+  \centering
+  \caption{Aus Kristallwinkel bzw. Absoprtionsenergie berechnete Abschirmzahlen.}
+  \label{tab:abs}
+  \begin{tabular}{c c c c c}
+    \toprule
+    & Abbildung & $\Theta_K$ $[^\circ]$ & $E_\text{abs}$ $[\si{\kilo\eV}]$ & $\sigma_K$\\
+    \midrule
+    Zn & \ref{fig:plot3} & 20,0 & 8,98 & 4,30 \\
+    Br & \ref{fig:plot4} & 13,4 & 13,26 & 3,78 \\
+    Sr & \ref{fig:plot5} & 11,1 & 15,96 & 3,74 \\
+    Zr & \ref{fig:plot6} & 10,1 & 17,52 & 4,11 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\FloatBarrier
+\begin{figure}
+  \centering
+  \includegraphics{plot3.pdf}
+  \caption{Absorptionsspektrum von Zink.}
+  \label{fig:plot3}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{plot4.pdf}
+  \caption{Absorptionsspektrum von Brom.}
+  \label{fig:plot4}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{plot5.pdf}
+  \caption{Absorptionsspektrum von Strontium.}
+  \label{fig:plot5}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{plot6.pdf}
+  \caption{Absorptionsspektrum von Zirconium.}
+  \label{fig:plot6}
+\end{figure}
+\FloatBarrier
+
+\subsection{Das Moseleysche-Gesetz}
+
+Das Moseleysche-Gesetz besagt, dass die Absoprtionsenergie $E_\text{abs}$ proportional zu $Z^2$ ist.
+\begin{equation}
+  E_\text{abs} = h c \frac{3}{4} R_\infty (Z-1)^2
+\end{equation}
+Aus dem Proportionalitätsfaktor kann die Rydbergkonstante bestimmt werden.
+In Abbildung \ref{fig:plot7} ist $\sqrt{E_\text{abs}}$ gegen $Z$ aufgetragen, um über einen linearen Fit die Rydbergkonstante zu besitmmen.
+Für die Steigung ergibt sich so ein Wert von:
+\begin{equation*}
+  m = \num{1.439e-9}
+\end{equation*}
+Aus diesem berechnet sich dann für die Rydbergkonstante:
+\begin{equation*}
+  R_\infty = \SI{1.39e7}{1\per\meter}
+\end{equation*}
+\begin{figure}
+  \centering
+  \includegraphics{plot7.pdf}
+  \caption{proportionaler Zusammenhang zwischen Absoprtionsenergie und dem Quadrat der Ordnungszahl.}
+  \label{fig:plot7}
+\end{figure}
+\FloatBarrier
+
+\subsection{L-Linine des Absorptionsspektrums von Gold}
+
+Gold, mit einer Ordnungszahl von 79, hat eine L-Kante bei \SI{14.35}{\kilo\eV} und \SI{13.73}{\kilo\eV}.
+\begin{figure}
+  \centering
+  \includegraphics{plot8.pdf}
+  \caption{Absorptionsspektrum von Gold.}
+  \label{fig:plot8}
+\end{figure}
+Aus Abbildung \ref{fig:plot8} lassen sich folgende Werte für die Kanten ablesen:
+\begin{align*}
+  \sigma_{L,2} &= \SI{12.8}{\degree}\\
+  \sigma_{L,3} &= \SI{15.0}{\degree}
+\end{align*}
+Dies entspricht Energien von:
+\begin{align*}
+  E_{L,2} = \SI{13.87}{\kilo\eV} \\
+  E_{L,3} = \SI{11,87}{\kilo\eV}
+\end{align*}
+Unter Verwendung von Gleichung \eqref{eqn:gl4} berechnet sich dann für die Abschirmkonstante:
+\begin{equation*}
+  \sigma_L = 1
+\end{equation*}
