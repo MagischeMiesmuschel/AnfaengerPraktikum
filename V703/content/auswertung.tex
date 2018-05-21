@@ -1,12 +1,13 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot1.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+\subsection{Charakteristika}
+\label{sec:charak}
+
+Es wird die Zählrate $N$ und der Strom $I$ in Abhängigkeit von der Betriebsspannung $U$ aufgenommen.
+Die Spannung wird von 300V bis 700V in 10V Schritten erhöht mit einer Messzeit von $\Delta t = 60 \si{\sec}$ pro Schritt.
+Die aufgenommenen Werte sind in Tabelle \ref{tab:charak} mit den $\sqrt{N}-\text{Fehler}$ zusammen aufgetragen.
+In Abbildung \ref{fig:plot1} ist $N$ gegen $U$ aufgetragen und das Plateau ist im Bereich von 320V bis 700V zu vermuten. 
 
 \begin{table}
   \centering
@@ -24,39 +25,174 @@
   350 & 16619 & 128,91 & 0,2 \\
   360 & 16624 & 128,93 & 0,26 \\
   370 & 16721 & 129,31 & 0,3 \\
-  380 & 17102 & 130,13 & 0,31 \\
-  390 & 16870 & 131,07 & 0,38 \\
-  400 & 17083 & 131,47 & 0,4 \\
-  410 & 17030 & 131,81 & 0,42 \\
-  420 & 16935 & 130,76 & 0,42 \\
-  430 & 17188 & 130,35 & 0,5 \\
-  440 & 17284 & 131,07 & 0,51 \\
-  450 & 17111 & 131,47 & 0,59 \\
-  460 & 17098 & 130,35 & 0,62 \\
-  470 & 16992 & 131,78 & 0,67 \\
-  480 & 17180 & 130,79 & 0,7 \\
-  490 & 17284 & 130,86 & 0,75 \\
-  500 & 16991 & 130,89 & 0,79 \\
-  510 & 17365 & 0,81 \\
-  520 & 17106 & 0,8 \\
-  530 & 17124 & 0,86 \\
-  540 & 17133 & 0,91 \\
-  550 & 17269 & 0,98 \\
-  560 & 17472 & 1 \\
-  570 & 17424 & 1,01 \\
-  580 & 17258 & 1,05 \\
-  590 & 17540 & 1,08 \\
-  600 & 17288 & 1,13 \\
-  610 & 17405 & 1,15 \\
-  620 & 17615 & 1,2 \\
-  630 & 17807 & 1,3 \\
-  640 & 17458 & 1,35 \\
-  650 & 17745 & 1,37 \\
-  660 & 17577 & 1,38 \\
-  670 & 17772 & 1,4 \\
-  680 & 18231 & 1,5 \\
-  690 & 17956 & 1,53 \\
-  700 & 18395 & 1,58 \\
+  380 & 17102 & 130,77 & 0,31 \\
+  390 & 16870 & 129,88 & 0,38 \\
+  400 & 17083 & 130,70 & 0,4 \\
+  410 & 17030 & 130,50 & 0,42 \\
+  420 & 16935 & 130,13 & 0,42 \\
+  430 & 17188 & 131,10 & 0,5 \\
+  440 & 17284 & 131,47 & 0,51 \\
+  450 & 17111 & 130,81 & 0,59 \\
+  460 & 17098 & 130,76 & 0,62 \\
+  470 & 16992 & 130,35 & 0,67 \\
+  480 & 17180 & 131,07 & 0,7 \\
+  490 & 17284 & 131,46 & 0,75 \\
+  500 & 16991 & 130,35 & 0,79 \\
+  510 & 17365 & 131,77 & 0,81 \\
+  520 & 17106 & 130,78 & 0,8 \\
+  530 & 17124 & 130,85 & 0,86 \\
+  540 & 17133 & 130,89 & 0,91 \\
+  550 & 17269 & 131,41 & 0,98 \\
+  560 & 17472 & 132,18 & 1 \\
+  570 & 17424 & 132 & 1,01 \\
+  580 & 17258 & 131,37 & 1,05 \\
+  590 & 17540 & 132,44 & 1,08 \\
+  600 & 17288 & 131,49 & 1,13 \\
+  610 & 17405 & 131,93 & 1,15 \\
+  620 & 17615 & 132,72 & 1,2 \\
+  630 & 17807 & 133,44 & 1,3 \\
+  640 & 17458 & 132,13 & 1,35 \\
+  650 & 17745 & 133,21 & 1,37 \\
+  660 & 17577 & 132,58 & 1,38 \\
+  670 & 17772 & 133,31 & 1,4 \\
+  680 & 18231 & 135,02 & 1,5 \\
+  690 & 17956 & 134 & 1,53 \\
+  700 & 18395 & 135,62 & 1,58 \\
   \bottomrule
 \end{tabular}
 \end{table}
+\FloatBarrier
+
+Mit einer Ausgleichsrechnung, unter Verwendung der Formel
+\begin{align*}
+  f(x)=ax+b
+\end{align*}
+wurde die Steigung $a = 3,539 \frac{1}{V}$ des Plateaus ermittelt.
+Daraus ergibt sich $a = 3539 \frac{\%}{100V}$.
+
+\begin{figure}
+  \centering
+  \includegraphics{plot1.pdf}
+  \caption{Charakteristika.}
+  \label{fig:plot1}
+\end{figure}
+\FloatBarrier
+\begin{figure}
+  \centering
+  \includegraphics{plot2.pdf}
+  \caption{Vergrößertes Plateau.}
+  \label{fig:plot2}
+\end{figure}
+\FloatBarrier
+
+\subsection{Totzeitbestimmung}
+\label{sec:totzeit}
+
+\subsubsection{Bestimmung durch Oszillographen}
+\label{sec:oszi}
+
+Die Totzeit wurde mit einer hohen Strahlintensität bei 550V auf dem Oszillographen durch ablesen auf den Wert von $T = 8 \mu s$ bestimmt.
+Dazu die Erholungszeit wurde mit $T_E=0,7$ms abgelesen.
+
+\subsubsection{Bestimmung durch Zwei-Quellen-Methode}
+\label{sec:zwquellen}
+
+Durch die Ausmessung der Zählraten von jeweils zwei verschiedenen Proben bei der gleichen Spannung von U=550V und anschließend gemeinsamer Messung der Zählrate auf das selbe Geiger-Müller-Zählrohr wurden folgende Werte aufgenommen.
+
+\begin{table}
+  \centering
+  \caption{Zwei-Quellen-Methode.}
+  \label{tab:zwquellen}
+  \begin{tabular}{c c c c c c}
+    \toprule
+    $N_1$ & $\sqrt{N_1}$ & $N_2$ & $\sqrt{N_2}$ & $N_{1+2}$ & $\sqrt{N_{1+2}}$\\
+    \midrule
+    36318 & 190,10 & 30562 & 174,82 & 65063 & 255,07 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\FloatBarrier
+
+Mit den Werten aus Tabelle \ref{tab:zwquellen} wurde mit folgender Formel die Totzeit berechnet.
+
+\begin{align*}
+  T &= \frac{N_1+N_2+N_{1+2}}{2N_1N_2} \\
+  T &= (8,2 \pm 1,6)\cdot 10^{-7}
+\end{align*}
+
+Die Fehlerformel für diese Rechnung sieht wie folgt aus:
+
+\begin{align*}
+  \delta T = \sqrt{(\frac{N_{1+2}}{2N_1^2N_2}-\frac{1}{2N_1^2}\cdot \delta N_1)^2 + (\frac{N_{1+2}}{2N_1N_2^2}-\frac{1}{2N_2^2}\cdot \delta N_2)^2 + (-\frac{1}{2N_1N_2} \delta N_{1+2})^2}
+\end{align*}
+
+\subsection{Ladungsmenge pro Teilchen}
+\label{sec:Ladungsmenge}
+
+Durch die in Tabelle \ref{tab:charak} gemessenen Zählraten und dazugehörigen Ströme, wird mithilfe der Messzeit und der Formel
+\begin{align*}
+  I &= \frac{\Delta Q}{\Delta t} N \\
+  \Delta Q &= \frac{I \Delta t}{N}
+\end{align*}
+die Ladungsmenge pro vom Zählrohr freigesetztem Teilchen ermittlelt.
+Wobei $N$ die Anzahl der in $\Delta$ t registrierten Teilchen ist.
+In Tabelle \ref{tab:eleladung} sind die berechneten Werte aufgetragen, $e_0$ ist hier die Elementarladung.
+Die Fehler der Werte ergeben sich mit der Fehler-Formel für $Q$.
+
+\begin{align*}
+  \delta Q = \sqrt{(-\frac{I \cdot \Delta t}{N^2}\delta N)^2}
+\end{align*}
+
+\begin{table}
+  \caption{Ladungsmenge pro Teilchen.}
+  \label{tab:eleladung}
+  \hspace{-1.5cm}
+\begin{tabular}{c c c c c c}
+  \toprule
+  Spannung $U$ in V & Zählrate $N$ & $\sqrt{N}$-Fehler & Strom $I$ in \mu A & Ladungsmenge $\Delta$Q in nC  & $\frac{Q}{e_0}$E+10\\ 
+  \midrule
+  300 & 0 & 0 & 0 & 0 & 0 \\
+  310 & 15437 & 124,25 & 0 & 0 & 0\\
+  320 & 16376 & 127,97 & 0,1 & 0,37\pm 2,86E-3  & 0,23 \pm 17,9E-4\\
+  330 & 16575 & 128,74 & 0,18 & 0,65\pm 5,06E-3  & 0,40 \pm 31,6E-4\\
+  340 & 16541 & 128,61 & 0,2 & 0,73 \pm 5,64E-3  & 0,45 \pm 35,2E-4 \\
+  350 & 16619 & 128,91 & 0,2 & 0,72 \pm 5,60E-3  & 0,45 \pm 34,9E-4\\
+  360 & 16624 & 128,93 & 0,26 & 0,94  \pm 7,27E-3 & 0,59 \pm 45,4E-4\\
+  370 & 16721 & 129,31 & 0,3 & 1,08  \pm 8,32E-3  & 0,67 \pm 52,0E-4 \\
+  380 & 17102 & 130,77 & 0,31 & 1,09 \pm 8,32E-3  & 0,68 \pm 51,9E-4\\
+  390 & 16870 & 129,88 & 0,38 & 1,35 \pm 10,4E-3  & 0,84 \pm 65,0E-4 \\
+  400 & 17083 & 130,70 & 0,4 & 1,40  \pm 10,7E-3  & 0,88 \pm 67,1E-4 \\
+  410 & 17030 & 130,50 & 0,42 & 1,48  \pm 11,3E-3  & 0,92 \pm 70,8E-4 \\
+  420 & 16935 & 130,13 & 0,42 & 1,49  \pm 11,4E-3  & 0,93 \pm 71,4E-4 \\
+  430 & 17188 & 131,10 & 0,5 & 1,75  \pm 13,3E-3  & 1,09 \pm 83,1E-4 \\
+  440 & 17284 & 131,47 & 0,51 & 1,77 \pm 13,5E-3  &1,11 \pm 84,1E-4 \\
+  450 & 17111 & 130,81 & 0,59 & 2,06 \pm  15,8E-3 & 1,29 \pm 98,7E-4 \\
+  460 & 17098 & 130,76 & 0,62 & 2,18  \pm 16,6E-3  & 1,36 \pm 103,8E-4 \\
+  470 & 16992 & 130,35 & 0,67 & 2,37 \pm18,1E-3  & 1,48 \pm 113,3E-4\\
+  480 & 17180 & 131,07 & 0,7 & 2,44  \pm  18,7E-3 & 1,53 \pm 116,4E-4 \\
+  490 & 17284 & 131,46 & 0,75 & 2,60  \pm  19,8E-3 & 1,63 \pm 123,6E-4\\
+  500 & 16991 & 130,35 & 0,79 & 2,79  \pm 21,4E-3  & 1,74 \pm 133,6E-4 \\
+  510 & 17365 & 131,77 & 0,81 & 2,80  \pm 21,2E-3  &  1,75 \pm 132,6E-4 \\
+  520 & 17106 & 130,78 & 0,8 & 2,81  \pm 21,5E-3  & 1,75 \pm 133,9E-4\\
+  530 & 17124 & 130,85 & 0,86 & 3,01 \pm 23,0E-3  & 1,88 \pm 143,7E-4 \\
+  540 & 17133 & 130,89 & 0,91 & 3,19  \pm 24,3E-3  & 1,99 \pm 152,0E-4 \\
+  550 & 17269 & 131,41 & 0,98 & 3,40  \pm 25,9E-3  & 2,12 \pm 161,7E-4 \\
+  560 & 17472 & 132,18 & 1 & 3,43  \pm 26,0E-3  & 2,14 \pm 162,2E-4 \\
+  570 & 17424 & 132 & 1,01 & 3,48  \pm 26,3E-3  & 2,17 \pm 164,5E-4 \\
+  580 & 17258 & 131,37 & 1,05 & 3,65 \pm 27,8E-3  & 2,28 \pm 173,5E-4 \\
+  590 & 17540 & 132,44 & 1,08 & 3,69  \pm 27,9E-3  & 2,31 \pm 174,1E-4 \\
+  600 & 17288 & 131,49 & 1,13 & 3,92 \pm 29,8E-3  & 2,45 \pm 186,2E-4 \\
+  610 & 17405 & 131,93 & 1,15 & 3,96  \pm 30,0E-3  & 2,47 \pm 187,6E-4 \\
+  620 & 17615 & 132,72 & 1,2 & 4,09  \pm 30,1E-3  & 2,55 \pm 192,2E-4 \\
+  630 & 17807 & 133,44 & 1,3 & 4,38  \pm 32,8E-3  & 2,73 \pm 204,9E-4 \\
+  640 & 17458 & 132,13 & 1,35 & 4,64 \pm35,1E-3  & 2,90 \pm 219,2E-4 \\
+  650 & 17745 & 133,21 & 1,37 & 4,63  \pm  34,8E-3 &  2,89 \pm 217,1E-4 \\
+  660 & 17577 & 132,58 & 1,38 & 4,71  \pm 35,5E-3  & 2,94 \pm 221,8E-4 \\
+  670 & 17772 & 133,31 & 1,4 & 4,72  \pm 35,5E-3  & 2,95 \pm 221,3E-4 \\
+  680 & 18231 & 135,02 & 1,5 & 4,93  \pm 36,6E-3  & 3,08 \pm 228,2E-4 \\
+  690 & 17956 & 134 & 1,53 & 5,11  \pm 38,2E-3  & 3,19 \pm 238,2E-4 \\
+  700 & 18395 & 135,62 & 1,58 & 5,15  \pm  38,0E-3 & 3,22 \pm 237,2E-4 \\
+  \bottomrule
+\end{tabular}
+\end{table}
+\FloatBarrier
