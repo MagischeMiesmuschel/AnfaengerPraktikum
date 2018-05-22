@@ -34,10 +34,9 @@ Für die hier verwendete Röhre beträgt $a = \SI{1}{\centi\meter}$.
 \subsection{Energieverteilung der Elektronen}
 \label{sec:A2}
 
-Die integrale Energieverteilung kann durch die Überführung der differntiellen in die integrale Energieverteilung bestimmt werden.
-Zunächst muss also die differntielle Energieverteilung aus den ersten beiden Graphen in Kapitel \ref{sec:Anhang} ermittelt werden, die die Bremsspannung $U_\text{A}$ in Abhängigkeit des Auffängerstroms $I_\text{A}$ abbilden.
+Die differntielle Energieverteilung wird aus den ersten beiden Graphen in Kapitel \ref{sec:Anhang} ermittelt, die die Bremsspannung $U_\text{A}$ in Abhängigkeit des Auffängerstroms $I_\text{A}$ abbilden.
 Der Auffängerstrom ist proportional zur Anzahl der Elektronen und die Bremsspannung proportional zur Energie der Elektronen.
-Die differntielle Energieverteilung kann also über in die Graphen eingezeichnete Steigungsdreicke berechnet werden.
+Die differntielle Energieverteilung kann also über die in die Graphen eingezeichnete Steigungsdreicke berechnet werden.
 Dafür ist allerdings eine Skalierung der x-Achse der Graphen notwendig, die im Folgenden durchgeführt wird (siehe Tabelle \ref{tab:skal1}).
 \begin{table}
   \centering
@@ -111,7 +110,7 @@ Die Ordinaten sind dabei proportional zur Anzahl, die Abszissen proportional zur
 Aus Abbildung \ref{fig:plot1} lässt sich mit der eingezeichneten Hilfsgerade ablesen, dass die meisten Elektronen eine Energie von 9,223 eV besitzen.
 Da die Elektronen mit 11 Volt beschleunigt werden, ergibt sich ein Kontaktpotential von $K_1$ = 1,777 Volt.
 Dass der Peak bei 9 Volt in Abbildung \ref{fig:plot1} und die Sprungstelle bei 1,2 Volt in Abbildung \ref{fig:plot2} stetig sind, liegt an der Energieverteilung der Elektronen, die der Fermi-Dirac-Statistik folgt.
-Der sonst flache Verlauf des Abbildung \ref{fig:plot2} lässt sich durch die gleichmäßig Verteilung der Energiekomponente in Richtung der Auffängerelektrode erklären, die auf die zufällig stattfindenden elastischen Stöße zurückzuführen werden kann.
+Der sonst flache Verlauf der Abbildung \ref{fig:plot2} lässt sich durch die gleichmäßig Verteilung der Energiekomponente in Richtung der Auffängerelektrode erklären, die auf die zufällig stattfindenden elastischen Stöße zurückzuführen werden kann.
 \begin{figure}
   \centering
   \includegraphics{plot1.pdf}
@@ -186,8 +185,27 @@ Da jedoch für die Auswertung der Anregungsenergie nur die Abstände der Maxima 
 \label{sec:A4}
 
 Die Ionisierungsenergie wird mit Hilfe des letzten Graphen aus Kapitel \ref{sec:Anhang} bestimmt.
+Als erstes muss wieder eine Skalierung des Graphen vorgenommen werden (siehe Abb. \ref{tab:skal3}).
+\begin{table}
+  \centering
+  \caption{Skalierung der x-Achse des vierten Graphen aus Kapitel \ref{sec:Anhang}.}
+  \label{tab:skal3}
+  \begin{tabular}{c c}
+    \toprule
+    Bremsspannung & Graph 4 (\SI{378,15}{\kelvin}) \\
+    in V & Anzahl mm-Kästchen  \\
+    \midrule
+    0-10   &  34\\
+    10-20  &  33\\
+    20-30  &  34\\
+    30-40  &  35\\
+    40-50  &  35\\
+    \bottomrule
+    Skalierung $S$ & $S_4 = \num{2.925(32)e-1}$ V/mm  \\
+  \end{tabular}
+\end{table}
 Dazu wird eine Asymptote in den Graphen eingezeichnet und aus deren Schnittpunkt $x_0 = \SI{15.45}{\volt}$ mit der x-Achse und den zuvor berechneten Kontaktpotentialen die Ionisierungsenergie berechnet.
 \begin{align*}
 E_\text{ion,1} &= (x_0 - K_1) \text{e}_0 = \SI{13.673}{\eV}  \\
-E_\text{ion,2} &= (x_0 - K_1) \text{e}_0 = \SI{13.882}{\eV}  \\
+E_\text{ion,2} &= (x_0 - K_2) \text{e}_0 = \SI{13.882}{\eV}  \\
 \end{align*}

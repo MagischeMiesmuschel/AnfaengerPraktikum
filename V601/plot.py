@@ -8,12 +8,13 @@ from scipy.stats import sem
 k1, k2 = np.genfromtxt('data/werte1.txt', unpack=True)
 x1, y1 = np.genfromtxt('data/werte2.txt', unpack=True)
 x2, y2 = np.genfromtxt('data/werte3.txt', unpack=True)
-k3 = np.genfromtxt('data/werte4.txt', unpack=True)
+k3, k4 = np.genfromtxt('data/werte4.txt', unpack=True)
 oz1, ab1 = np.genfromtxt('data/werte5.txt', unpack=True)
 
 k1 = 2/k1
 k2 = 2/k2
 k3 = 10/k3
+k4 = 10/k4
 
 print("Skalierung")
 S1 = np.mean(k1)
@@ -25,6 +26,9 @@ print(S2, S2err)
 S3 = np.mean(k3)
 S3err = sem(k3)
 print(S3, S3err)
+S4 = np.mean(k4)
+S4err = sem(k4)
+print(S4, S4err)
 print()
 
 Stelle1 = x1
