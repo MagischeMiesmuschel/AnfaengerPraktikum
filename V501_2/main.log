@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.10.2)  22 MAY 2018 10:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.10.2)  22 MAY 2018 10:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/AP/AnfaengerPraktikum/V601/main.tex
-(d:/AP/AnfaengerPraktikum/V601/main.tex
+**d:/AP/AnfaengerPraktikum/V501_2/main.tex
+(d:/AP/AnfaengerPraktikum/V501_2/main.tex
 LaTeX2e <2017-04-15>
 Babel <3.13> and hyphenation patterns for 84 language(s) loaded.
 (./header.tex (d:/texlive/2017/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -625,12 +625,12 @@ l.28 \msg_fatal:nn {fontspec} {cannot-use-pdftex}
  ) ) ) 
 Here is how much of TeX's memory you used:
  12761 strings out of 492990
- 247404 string characters out of 6136334
+ 247410 string characters out of 6136334
  377171 words of memory out of 5000000
  16280 multiletter control sequences out of 15000+600000
  530572 words of font info for 23 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,1n,51p,10468b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,1n,51p,10470b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 No pages of output.
 PDF statistics:
