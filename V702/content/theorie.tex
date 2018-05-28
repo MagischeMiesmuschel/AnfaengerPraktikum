@@ -1,4 +1,79 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+\subsection{Kernreaktionen mit Neutronen}
+\label{sec:kr}
+
+Da Neutronen nicht die Coulomb-Barriere eines Kerns überwinden müssen, sind sie besonders gut dafür geeignet, instablie Nuklide zu erzeugen.
+Im folgenden Kapitel wird deshalb, die Wechselwirkung zwischen Neutronen und Kernen näher erläutert.
+Durch die Absorption eines Neutrons entsteht ein neuer Kern $\text{A}^*$, der Zwischenkern,
+dessen Energie um die kinetische Energie und die Bindungsenergie des Neutrons zunimmt.
+Aufgrund der starken Wechselwirkung verteilt sich die Energie auf alle Nukleonen und der Neutroneneinfang sorgt nicht für das Abstoßen eines Nukleons aus dem Kern.
+Stattdessen emittiert der angeregte Zwischenkern ein $\gamma$-Quant und geht in seinen Grundzustand über.
+\begin{equation}
+  \ce{^{m}_zA + ^{1}_0n -> ^{m+1}_zA^* -> ^{m+1}_zA + \gamma }
+\end{equation}
+Der neue Kern $\ce{^{m+1}_zA}$ ist meistens instabil, da er im Vergleich zu einem stabilen Kern gleicher Ordnungszahl mehr Neutronen enthält.
+Durch einen $\beta$-Zerfall, bei dem infolge des Massendefekts Energie frei wird,
+wandelt er sich in einen stabilen Kern um. \cite{V702}
+\begin{equation}
+  \ce{^{m+1}_zA -> ^{m+1}_{z+1}C + \beta^- + E_{kin} + \bar{\nu}_e}
+\end{equation}
+
+\subsection{Wirkungsquerschnitt}
+
+Der Wirkungsquerschnitt $\sigma$ ist ein Maß für die Wahrscheinlichkeit, dass ein Neutron eingefangen wird.
+Er beschreibt die fiktive Fläche, die ein Kern bsitzen müsste, um jedes eintreffende Neutron einzufangen.
+Folgende Gleichung lässt sich so aufstellen,
+wenn $n$ Neutronen pro Sekunde  $\SI{1}{\square\meter}$ einer dünnen Folie (Dicke $d$, $K$ Atome/$\si{\cubic\meter}$) treffen und dabei $u$ Einfänge auftreten.
+\begin{equation}
+  \sigma = \frac{u}{nKd}
+\end{equation}
+Im Falle der Neutronenabsorption ist der Wirkungsquerschnitt stark von der Geschwindigkeit $v$ bzw. der kinetischen Energie der Neutronen $E$ abhängig.
+Für langsame Neutronen betsteht folgender proportionaler Zusammenhang zwischen Neutronenenergie $E$ und Wirkungsquerschnitt $\sigma$:
+\begin{equation}
+  \sigma \propto 1/\sqrt{E} \propto 1/v
+\end{equation}
+Anschaulich kann die größere Absorptionswahrscheinlichkeit der langsamen Neutronen mit ihrer längeren Aufenthaltszeit im Einwirkungsbereich des Kerns erkärt werden. \cite{V702}
+
+\subsection{Erzeugung niederenergetischer Neutronen}
+
+Aufgrund seiner Instabilität kommt das Neutron nicht natürlich vor, sondern muss künstlich freigesetzt werden.
+In diesem Versuch wird das zum Beispiel durch Beschuss von $\ce{^{9}_4Be}$-Kernen mit $\alpha$-Strahlung realisiert, die aus dem Zerfall von $\ce{^{226}_88Ra}$ entsteht.
+\begin{equation}
+  \ce{^{9}_4Be + ^{4}_2\text{\alpha} -> ^{12}_6C + ^{1}_0n}
+\end{equation}
+Zur Abbremsung werden die Neutronen, die ein kontinuierliches Energiespektrum besitzen, durch eine Material mit leichten Kernen geschickt (in diesem Experiment Paraffin).
+Zwischen den Neutronen und den Kernen finden elasitsche Stöße statt, bei denen die Neutronen durch Energieübertragung an die Kerne langsamer werden.
+Das funktioniert umso besser, je leichter die Kerne sind, weshalb Moleküle benutzt werden, die Wasserstoff enthalten, wie das Paraffin (gesättigte Kohlenwasserstoffe).
+Die Neutronen erreichen so annähernd die mittlere kinetische Energie der Moleküle von $\SI{0.025}{\eV}$, was einer Geschwindigkeit von $\SI{2.2}{\kilo\meter\per\second}$ entspricht.
+Diese Neutronen werden thermische Neutronen genannt. \cite{V702}
+
+\subsection{Zerfall instabiler Isotope}
+
+In und Ag können durch die in Kapitel \ref{sec:kr} erwähnten Prozesse in instabile Isotope umgewandelt werden, die in einem $\beta$-Zerfall wieder in stabile Nuklide übergehen.
+Für einen radioaktiven Zerfall gilt allgemein für die Anzahl der noch nicht zerfallenen Kerne folgenede Gesetzmäßigkeit.
+\begin{equation}
+  N(t) = N_0 \text{e}^{-\lambda t}
+  \label{eqn:Zerfall}
+\end{equation}
+$N_0$ ist dabei die anfängliche Anzahl der Atome und $\lambda$ die Zerfallskonstante.
+In der Praxis werden die Zerfälle $N_{\increment t}(t) = N(t) - N(t + \increment t)$ in einem Zeitintervall $\increment t$ gemessen, um die Zerfallskonstante $\lambda$ zu bestimmen.
+Gleichung \eqref{eqn:Zerfall} nimmt so dann folgende Form an.
+\begin{align}
+  N_{\increment t}(t) &= N_0 \text{e}^{-\lambda t} - N_0 \text{e}^{-\lambda (t + \increment t)} = N_0 (1 -\text{e}^{-\lambda \increment t}) \text{e}^{-\lambda t} \\
+  \ln(N_{\increment t}(t)) &= \ln(N_0 (1 -\text{e}^{-\lambda \increment t})) - \lambda t
+\end{align}
+Dabei muss auf eine geeignete Wahl von $\increment t$ geachtet werden.
+Denn ist $\increment t$ zu klein wird der statistische Fehler zu groß und ist $\increment t$  zu groß ist das radioaktive Präparat größtenteils schon zerfallen.
+Für Indium sieht der Zerfall folgendermaßen aus.
+\begin{equation}
+  \ce{^{115}_49In + ^{1}_0n -> ^{116}_49In -> ^{116}_50Sn + \beta^- + \bar{\nu}_e}
+\end{equation}
+Da natürliches Silber aus den Isotopen $\ce{^{107}_47Ag}$ und $\ce{^{109}_47Ag}$ besteht, laufen zwei Zerfälle gleichzeitig ab, wenn das Silber durch Neutronenbeschuss aktiviert wird.
+\begin{align}
+  \ce{^{107}_47Ag + ^{1}_0n -> ^{108}_47Ag -> ^{108}_48Cd + \beta^- + \bar{\nu}_e} \\
+  \ce{^{109}_47Ag + ^{1}_0n -> ^{110}_47Ag -> ^{110}_48Cd + \beta^- + \bar{\nu}_e}
+\end{align}
+Eine Bestimmung der einzelnen Halbwertszeiten ist trotzdem möglich, denn nach ausreichender Zeit ist das kurzlebige Isotop $\ce{^{110}_47Ag}$ praktisch komplett zefallen.
+Die gemessenen Zerfälle stammen nur noch vom langlebigen Isotop $\ce{^{108}_47Ag}$. \cite{V702}
