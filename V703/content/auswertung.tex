@@ -79,13 +79,17 @@ Mit einer Ausgleichsrechnung, unter Verwendung der Formel
 \begin{align*}
   f(x)=ax+b
 \end{align*}
-wird die Steigung $a = 3,539 \frac{1}{V}$ des Plateaus ermittelt.
-Daraus ergibt sich $a = 3539 \frac{\%}{100V}$.
+wird die Steigung $a = 3,539 \pm 0,069 \frac{1}{V}$ und der Wert $b = 15439.86 \pm 35,41 $des Plateaus ermittelt.
+Für die Prozentuale Steigung der Geraden pro 100V ergibt sich mit folgender Rechnung und den Werten $a$ und $b$:
+\begin{align*}
+  \frac{f(700V) - f(300V)}{f(700V)} \cdot \frac{1}{4} = 0,0198 \pm 0,0003
+\end{align*}
+Dies Entspricht einem Wert von $2 \frac{\%}{100V}$ für die Steigung.
 
 \begin{figure}
   \centering
   \includegraphics{plot1.pdf}
-  \caption{Charakteristika.}
+  \caption{Aufzeichnung des Plateaus mit Regressionsgerade.}
   \label{fig:plot1}
 \end{figure}
 \FloatBarrier
@@ -103,7 +107,7 @@ Daraus ergibt sich $a = 3539 \frac{\%}{100V}$.
 \subsubsection{Bestimmung durch Oszillographen}
 \label{sec:oszi}
 
-Die Totzeit wird mit einer hohen Strahlintensität bei 550 V auf dem Oszillographen durch Ablesen auf den Wert von $T = 8 \mu s$ bestimmt.
+Die Totzeit wird mit einer hohen Strahlintensität bei 550 V auf dem Oszillographen durch Ablesen auf den Wert von $T = 80 \mu s$ bestimmt.
 Dazu wird für die Erholungszeit $T_E=0,7$ms abgelesen.
 
 \subsubsection{Bestimmung durch Zwei-Quellen-Methode}
@@ -125,10 +129,12 @@ Durch die Ausmessung der Zählraten von jeweils zwei verschiedenen Proben bei de
 \end{table}
 \FloatBarrier
 
-Mit den Werten aus Tabelle \ref{tab:zwquellen} wird mit folgender Formel die Totzeit berechnet.
-
+Mit den Werten aus Tabelle \ref{tab:zwquellen} wird mit der Formel \ref{eqn:glTot} die Totzeit berechnet.
+\begin{equation}
+  T &= \frac{N_1+N_2-N_{1+2}}{2N_1N_2}
+  \label{eqn:glTot}  
+\end{equation}
 \begin{align*}
-  T &= \frac{N_1+N_2+N_{1+2}}{2N_1N_2} \\
   T &= (8,2 \pm 1,6)\cdot 10^{-7}
 \end{align*}
 
@@ -148,12 +154,20 @@ Durch die in Tabelle \ref{tab:charak} gemessenen Zählraten und dazugehörigen S
 \end{align*}
 die Ladungsmenge pro vom Zählrohr freigesetztem Teilchen ermittlelt.
 Wobei $N$ die Anzahl der in $\Delta$ t registrierten Teilchen ist.
-In Tabelle \ref{tab:eleladung} sind die berechneten Werte aufgetragen, $e_0$ ist hier die Elementarladung.
+In Tabelle \ref{tab:eleladung} sind die berechneten Werte aufgetragen und in \ref{fig:plot3} das Verhältnis zur Spannung graphisch dargestellt, $e_0$ ist hier die Elementarladung.
 Die Fehler der Werte ergeben sich mit der Fehler-Formel für $Q$.
 
 \begin{align*}
   \delta Q = \sqrt{(-\frac{I \cdot \Delta t}{N^2}\delta N)^2}
 \end{align*}
+
+\begin{figure}
+  \centering
+  \includegraphics{plot3.pdf}
+  \caption{Ladungsmenge gegen Spannung.}
+  \label{fig:plot3}
+\end{figure}
+\FloatBarrier
 
 \begin{table}
   \caption{Ladungsmenge pro Teilchen.}
