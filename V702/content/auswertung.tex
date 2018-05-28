@@ -89,6 +89,10 @@ Die Ausgleichsgerade wurde mit der Funktion
 berechnet.
 Die Parameter $a$ und $b$ wurden berechnet zu $a = 0,000217 \pm (4 \cdot 10^{-7})$ und $b = 7,926 \pm (2 \cdot 10^{-4})$. \\
 Hier ist $a$ die Zerfallskonstante $\lambda$ und $b$ ist $\text{ln}(N_0(1-e^{-\lambda \Delta t}))$. \\
+
+\subsubsection{Halbwertszeit}
+\label{sec:IH}
+
 Mit $\lambda$ kann nun die Halbwertszeit berechnet werden.
 Durch einsetzen in die Formel 
 \begin{equation}
@@ -160,7 +164,7 @@ Durch die Messung über eine Zeit von 7 Minuten mit Zeitintervallen von $\Delta 
 \end{table}
 \FloatBarrier
 
-Für die Abbildung \ref{fig:fig:plot2} wurden die logarithmischen Werte der Zählrate, sowie deren Fehler benötigt.
+Für die Abbildung \ref{fig:plot2} wurden die logarithmischen Werte der Zählrate, sowie deren Fehler benötigt.
 In Tabelle \ref{tab:lnN2} sind diese Werte zu sehen.
 
 \begin{table}
@@ -226,12 +230,17 @@ In Tabelle \ref{tab:lnN2} sind diese Werte zu sehen.
 \end{figure}
 \FloatBarrier
 
+\subsubsection{$^{107}$Ag}
+
 Weil Silber aus den zwei Isotopen $^{107}\text{Ag}$ und $^{109}\text{Ag}$, mit verschiedenen Halbwertszeiten besteht, muss vor der Ausgleichrechnung eine Trennung der beiden Bereiche vorgenommen werden.
 Links vom Punkt $t^*$ sind noch beide Zerfälle in signifikanter Größe vorhanden und rechts nur noch der Zerfall des langlebigen Isotops $^{107}\text{Ag}$ mit einer Halbwertszeit von $T = 142,2 s$ in der Theorie \cite{Periode}.
 Zur weiteren Auswertung muss erst nur der rechte Bereich mit etwas Abstand zum Punkt $t^*$ mit einer Ausgleichsgeraden in Abbildung \ref{fig:plot3} berechnet werden.
 Dazu wird die Funktion \ref{eqn:glFit} genutzt.
 In dem Zeitbereich ab 120 s ergeben sich die Werte $a =  0.005681 \pm (4 \cdot 10^{-7}) s$ und $b = 3.790 \pm 0.032$.
 Auch hier ist $a$ gleich $\lambda$ und $b$ ist $\text{ln}(N_0(1-e^{-\lambda \Delta t}))$.
+
+\subsubsection{Halbwertszeit $^{107}$Ag}
+
 Mit $\lambda$ kann nun die Halbwertszeit berechnet werden.
 Durch einsetzen in die Formel \ref{eqn:glTot} ergibt sich für die Halbwertszeit von $^{107}\text{Ag}$ $T = 122,02 \pm (9 \cdot 10^{-3}) s$.
 Dies entspricht ungefähr einer Zeit von $t = 2$ Minuten und 2 Sekunden, mit gleicher Unsicherheit.
@@ -245,6 +254,8 @@ Daraus ergibt sich eine prozentuale Abweichung von ca 14,2 \% vom Theoriewert.
   \label{fig:plot3}
 \end{figure}
 \FloatBarrier
+
+\subsubsection{$^{109}$Ag}
 
 Zur Auswertung des kurzlebigen Isotops $^{109}\text{Ag}$, mit einer Halbwertszeit von $T = 24,6 s$ in der Theorie \cite{Periode}, müssen die Werte 
 
@@ -276,8 +287,8 @@ Die neuen Zählraten des kurzlebigen Isotops sind in Tabelle \ref{tab:Nk} zu seh
 \end{table}
 \FloatBarrier
 
-Für die Abbildung \ref{fig:fig:plot4} wurden die logarithmischen Werte der Zählrate, sowie deren Fehler benötigt.
-In Tabelle \ref{tab:tab:lnN2k} sind diese Werte zu sehen.
+Für die Abbildung \ref{fig:plot4} wurden die logarithmischen Werte der Zählrate, sowie deren Fehler benötigt.
+In Tabelle \ref{tab:lnN2k} sind diese Werte zu sehen.
 
 \begin{table}
   \centering
@@ -309,6 +320,9 @@ In Tabelle \ref{tab:tab:lnN2k} sind diese Werte zu sehen.
 
 Hier wurde für die Ausgleichsgerade wieder die Formel \ref{eqn:glFit} verwendet, mit den Parametern $a = 0,032949 \pm (2 \cdot 10^{-6})$ und $b = 5,54 \pm (4 \cdot 10^{-3})$.
 Auch hier ist $a$ gleich $\lambda$ und $b$ ist $\text{ln}(N_0(1-e^{-\lambda \Delta t}))$.
+
+\subsubsection{Halbwertszeit $^{109}$Ag}
+
 Mit $\lambda$ kann nun die Halbwertszeit berechnet werden.
 Durch einsetzen in die Formel \ref{eqn:glTot} ergibt sich für die Halbwertszeit von $^{109}\text{Ag}$ zu $T = 21,04 \pm (2 \cdot 10^{-3}) s$.
 In der Theorie wird ein Wert von $T = 24,6 s$ \cite{Periode} angegeben.
