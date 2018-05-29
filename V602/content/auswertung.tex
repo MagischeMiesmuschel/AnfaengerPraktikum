@@ -31,7 +31,7 @@ Dieser weicht um weniger als $1^\circ$ vom Sollwinkel ($14^\circ$) ab.
 \end{figure}
 \FloatBarrier
 
-\subsection{maximale Energie des Bremsspektrums von Kupfer}
+\subsection{Maximale Energie des Bremsspektrums von Kupfer}
 
 Das kontinuierliche und das charakteristische Spektrum der Cu-Röntgenröhre ist in Abbildung \ref{fig:plot2} zu sehen.
 \begin{figure}
@@ -40,7 +40,8 @@ Das kontinuierliche und das charakteristische Spektrum der Cu-Röntgenröhre ist
   \caption{Emmissionsspektrum der Cu-Röntgenröhre.}
   \label{fig:plot2}
 \end{figure}
-Aus dieser Kurve kann der minimale Kristallwinkel abgelesen werden, aus dem mit folgender Gleichung die maximale Energie berechnet wird.
+Aus dieser Kurve kann der Grenzwinkel abgelesen werden, bei dem keine Strahlung mehr gemessen werden kann.
+Aus diesem wird mit folgender Gleichung die maximale Energie berechnet.
 \begin{equation}
   E = \frac{h c}{2d \sin(\Theta)}
   \label{eqn:E}
@@ -155,19 +156,19 @@ Die Tabelle \ref{tab:abs} umfasst die entsprechenden Werte.
 
 \subsection{Das Moseleysche-Gesetz}
 
-Das Moseleysche-Gesetz besagt, dass die Absoprtionsenergie $E_\text{abs}$ proportional zu $Z^2$ ist.
+Das Moseleysche-Gesetz besagt, dass die Absoprtionsenergie $E_\text{abs}$ proportional zu $Z_\text{eff}^2$ ist.
 \begin{equation}
-  E_\text{abs} = h c \frac{3}{4} R_\infty (Z-1)^2
+  E_\text{abs} = R_\infty (Z-\sigma)^2
 \end{equation}
 Aus dem Proportionalitätsfaktor kann die Rydbergkonstante bestimmt werden.
-In Abbildung \ref{fig:plot7} ist $\sqrt{E_\text{abs}}$ gegen $Z$ aufgetragen, um über einen linearen Fit die Rydbergkonstante zu besitmmen.
-Für die Steigung ergibt sich so ein Wert von:
+In Abbildung \ref{fig:plot7} ist $\sqrt{E_\text{abs}}$ gegen $Z$ aufgetragen, um über einen linearen Fit die Rydbergenergie zu besitmmen.
+Für die Steigung und ergibt sich so ein Wert von:
 \begin{equation*}
-  m = \num{1.439e-9}
+  m = \SI{0.1143}{\sqrt{\kilo\eV}}
 \end{equation*}
-Aus diesem berechnet sich dann für die Rydbergkonstante:
+Aus diesem berechnet sich dann die Rydbergenergie:
 \begin{equation*}
-  R_\infty = \SI{1.39e7}{1\per\meter}
+  R_\infty = \SI{13.06}{\eV}
 \end{equation*}
 \begin{figure}
   \centering

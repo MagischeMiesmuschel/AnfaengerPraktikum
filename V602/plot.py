@@ -92,10 +92,9 @@ plt.clf()
 def g(x, A, B):
     return A*x + B
 
-x = np.array([30, 35, 38, 40])
+x = np.array([30-3.56, 35-3.52, 38-3.58, 40-3.61])
 y = np.array([9.65, 13.48, 16.12, 18.01])
 
-y = y*1000*1.6*10**(-19)
 y = np.sqrt(y)
 
 params, pcov = curve_fit(g, x, y)
@@ -107,7 +106,7 @@ plt.plot(x, y, 'kx', label='Messwerte')
 plt.plot(x, g(x, *params), 'b-', label='Fit')
 plt.grid()
 plt.legend()
-plt.ylabel(r'$\sqrt{E_\text{abs}}$ in $\sqrt{J}$')
-plt.xlabel(r'$Z$')
+plt.ylabel(r'$\sqrt{E_\text{abs}}$ in $\sqrt{\text{keV}}$')
+plt.xlabel(r'$Z_\text{eff}$')
 plt.savefig('build/plot7.pdf')
 plt.clf()
