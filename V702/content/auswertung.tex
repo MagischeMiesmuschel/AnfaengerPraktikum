@@ -234,6 +234,7 @@ In Tabelle \ref{tab:lnN2} sind diese Werte zu sehen.
 
 Weil Silber aus den zwei Isotopen $^{107}\text{Ag}$ und $^{109}\text{Ag}$, mit verschiedenen Halbwertszeiten besteht, muss vor der Ausgleichrechnung eine Trennung der beiden Bereiche vorgenommen werden.
 Links vom Punkt $t^*$ sind noch beide Zerfälle in signifikanter Größe vorhanden und rechts nur noch der Zerfall des langlebigen Isotops $^{107}\text{Ag}$ mit einer Halbwertszeit von $T = 142,2 s$ in der Theorie \cite{Periode}.
+$t^*$ wurde hier durch beobachten des Kurvenverlaufs auf 100s gesetzt.
 Zur weiteren Auswertung muss erst nur der rechte Bereich mit etwas Abstand zum Punkt $t^*$ mit einer Ausgleichsgeraden in Abbildung \ref{fig:plot3} berechnet werden.
 Dazu wird die Funktion \ref{eqn:glFit} genutzt.
 In dem Zeitbereich ab 120 s ergeben sich die Werte $a =  0.005681 \pm (4 \cdot 10^{-7}) s$ und $b = 3.790 \pm 0.032$.
@@ -327,3 +328,10 @@ Mit $\lambda$ kann nun die Halbwertszeit berechnet werden.
 Durch einsetzen in die Formel \ref{eqn:glTot} ergibt sich für die Halbwertszeit von $^{109}\text{Ag}$ zu $T = 21,04 \pm (2 \cdot 10^{-3}) s$.
 In der Theorie wird ein Wert von $T = 24,6 s$ \cite{Periode} angegeben.
 Daraus ergibt sich eine prozentuale Abweichung von ca 14,5 \% vom Theoriewert.
+
+Mit den nun beiden bekannten Halbwertszeiten und Faktoren, der kurz- und langlebigen Isotope, kann die Funktion in Abbildung \ref{fig:plot2} für die kombinierten Bereiche dargestellt werden.
+Sie hat die Gestallt:
+\begin{equation}
+  e^{b_{kurz}} \cdot e^{-\lambda_{kurz} t} + e^{b_{lang}} \cdot e^{-\lambda_{lang} t}
+\end{equation}
+Für die Abbildung \ref{fig:plot2} wurde nun nur noch der Logarithmus gebildet.

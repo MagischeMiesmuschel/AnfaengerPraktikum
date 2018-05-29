@@ -57,7 +57,7 @@ plt.clf()
 
 #Totzeitberechnung
 
-T = (N_1 + N_2 - N_12)/(2 * N_1 * N_2)
+T = (N_1/120 + N_2/120 - N_12/120)/(2 * N_1/120 * N_2/120)
 print("Totzeit: ", T)
 
 #Ladungsmenge

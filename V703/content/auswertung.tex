@@ -107,13 +107,13 @@ Dies Entspricht einem Wert von $2 \frac{\%}{100V}$ für die Steigung.
 \subsubsection{Bestimmung durch Oszillographen}
 \label{sec:oszi}
 
-Die Totzeit wird mit einer hohen Strahlintensität bei 550 V auf dem Oszillographen durch Ablesen auf den Wert von $T = 80 \mu s$ bestimmt.
+Die Totzeit wird mit einer hohen Strahlintensität bei 550 V auf dem Oszillographen durch Ablesen auf den Wert von $T_1 = 80 \mu s$ bestimmt.
 Dazu wird für die Erholungszeit $T_E=0,7$ms abgelesen.
 
 \subsubsection{Bestimmung durch Zwei-Quellen-Methode}
 \label{sec:zwquellen}
 
-Durch die Ausmessung der Zählraten von jeweils zwei verschiedenen Proben bei der gleichen Spannung von $U = \SI{550}{V}$ und anschließend gemeinsamer Messung der Zählrate auf das selbe Geiger-Müller-Zählrohr werden folgende Werte aufgenommen.
+Durch die Ausmessung der Zählraten von jeweils zwei verschiedenen Proben bei der gleichen Spannung von $U = \SI{550}{V}$ und anschließend gemeinsamer Messung der Zählrate auf das selbe Geiger-Müller-Zählrohr werden folgende Werte über jeweils eine Zeit von $t_T = 120s$ aufgenommen.
 
 \begin{table}
   \centering
@@ -135,9 +135,10 @@ Mit den Werten aus Tabelle \ref{tab:zwquellen} wird mit der Formel \ref{eqn:glTo
   \label{eqn:glTot}  
 \end{equation}
 \begin{align*}
-  T = (8,2 \pm 1,6)\cdot 10^{-7}
+  T_2 = (9,8 \pm 1,9)\cdot 10^{-5} s
 \end{align*}
 
+Es mussten die Zählraten auf Zählrate pro Sekunde gerechnet werden, deswegen wurde für $N_1 = \frac{N_1}{t_T}$, für $N_2 = \frac{N_2}{t_T}$ und für $N_{1+2} = \frac{N_{1+2}}{t_T}$ eingesetzt.
 Die Fehlerformel für diese Rechnung sieht wie folgt aus:
 
 \begin{align*}
