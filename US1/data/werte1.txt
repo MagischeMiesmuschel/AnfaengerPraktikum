@@ -1,0 +1,8 @@
+# Zylinder Länge in cm, Zeit in micro Sekunden
+11.9 89.2
+7.9 60.2
+3.7 29.7
+10 76.6
+5.9 46
+8 60
+3.1 23.6
