@@ -1,0 +1,36 @@
+\section{Theorie}
+\label{sec:Theorie}
+
+Durch Messung der Reichweite von $\alpha$-Strahlung kann dessen Energie bestimmt werden.
+Neben Ionisationsprozessen können die $\alpha$-Teilchen ihre Energie auch durch Anregung oder Dissoziation von Molekülen verlieren.
+Der Energieverlust $-dE_{\alpha}/dx$ hängt dabei von der Energie der $\alpha$-Strahlung und der Dichte des durchlaufenen Materials ab, 
+wobei bei kleinen Geschwindigkeiten die Wahrscheinlichkeit zur Wechselwirkung zunimmt.
+Für hinreichend große Energien läßt sich der Energieverlust der $\alpha$-Teilchen durch die Bethe-Bloch-Gleichung \ref{eqn:gl1} beschreiben
+\begin{equation}
+    -\frac{dE_{\alpha}}{dx} = \frac{z^2 e^4}{4 \pi \epsilon_0 m_e} \frac{n Z}{v^2} \text{ln} \left(\frac{2 m_e v^2}{I}\right)
+    \label{eqn:gl1}
+\end{equation}
+$z$ ist die Ladung und $v$ die Geschwindigkeit der $\alpha$-Strahlung.
+$Z$ ist die Ordnungszahl, $n$ die Teilchendichte und $I$ die Ionisierungsenergie des Targetgases.
+Die Gültigkeit der Gleichung \ref{eqn:gl1} endet bei sehr kleinen Energien.
+Die Wegstrecke bis zur vollständigen Abbremsung ist die Reichweite der $\alpha$-Teilchen und lässt sich mit 
+\begin{equation}
+    R = \int_0^{E_{\alpha}} \frac{dE_{\alpha}}{dE_{\alpha}/dx}
+    \label{eqn:gl2}
+\end{equation}
+berechnen.
+Weil bei niedriger werdenen Energien die Bethe-Bloch-Gleichung \ref{eqn:gl1} nicht mehr gilt, durch vermehrte Ladungsaustauschprozesse,
+werden zur Bestimmung der mittleren Reichweite empirisch gewonnene Kurven genutzt.
+Für die mittlere Reichweite von $\alpha$-Strahlung in Luft mit Energien $E_{\alpha} \leq 2,5$MeV kann die Beziehung 
+\begin{equation}
+    R_m = 3,1 \cdot E_{\alpha}^{3/2}
+    \label{eqn:gl3}
+\end{equation}
+verwendet werden.
+Die Reichweite von $\alpha$-Teilchen in Gasen ist bei konstanter Temperatur und konstantem Volumen proportional zum Druck $p$.
+Deswegen kann durch eine Absorptionsmessung, bei der man den Druck variiert die Reichweite bestimmt werden.
+Für die effektive Länge $x$ gilt bei festem Abstand $x_0$ zwischen Detektor und $\alpha$-Strahler die Beziehung
+\begin{equation}
+    x = x_0 \frac{p}{p_0}
+\end{equation}
+Mit $p_0 = 1013$ mbar für den Normaldruck.
