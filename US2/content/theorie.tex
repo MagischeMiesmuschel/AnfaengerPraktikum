@@ -1,4 +1,72 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+Der Frequenzbereich von ca. 20 kHz bis ca 1 GHz wird Ultraschall genannt.
+Schall ist eine longitudinale Welle, welche sich saufgrund von Druckschwnakungen fortbewegt.
+Die akustische Impedanz ist $Z = c * \rho$, die durch die Dichte $\rho$ des durchstrahlten Materials und der Schallgeschwindigkeit in diesem Material bestimmt wird.
+Es treten, ähnlich wie bei elektromagnetischen Wellen, Reflexion, Brechung und ähnliche Effekte auf.
+Aber die Phasengeschwindigkeit der Schallwelle ist materialabhängig. \\
+
+In Gasen und Flüssigkeiten breitet sich der Schall immer als Longitudinalwelle aus.
+Die Schallgeschwindigkeit hängt z.B. bei einer Flüssigkeit von ihrer Kompressibilität $\kappa$ und ihrer Dichte $\rho$ ab.
+\begin{equation}
+    c_{Fl} = \sqrt{\frac{1}{\kappa \rho}}
+    \label{eqn:gl1}
+\end{equation}
+Bei einem Festkörper ist die Schallausbreitung komplizierter, da infolge Schubspannungen nicht nur Longitudinalwellen sondern auch Transversalwellen möglich sind.
+Hier ersetzt bei der Berechnung der Schallgeschwindigkeit in einem Festkörper das Elastizitätsmodul $E$ die Kompressibilität $\kappa^{-1}$.
+\begin{equation}
+    c_{Fl} = \sqrt{\frac{E}{\rho}}
+    \label{eqn:gl2}
+\end{equation}
+In Festkörpern sind Schallwellen Richtungsabhängig. \\
+
+Bei der Schallausbreitung geht ein Teil der Energie durch Absorption verloren.
+Die Intensität $I_0$ nimmt exponentiell nach der Strecke $x$ ab.
+\begin{equation}
+    I(x) = I_0 \cdot e^{-\alpha x}
+    \label{eqn:gl3}
+\end{equation}
+$\alpha$ ist der Absorptionskoeffizient der Schallamplitude. \\
+
+Beim Treffen auf eine Grenzfläche wird ein Teil der Schallwelle reflektiert.
+Der Reflexionskoeffizient $R$, das Verhältnis von reflektierten zu einfallender Schallintensität, setzt sich dabei aus der akustischen Impedanz der beiden angrenzenden Materialien zusammen.
+\begin{equation}
+    R = \left(\frac{Z_1-Z_2}{Z_1+Z_2}\right)^2
+\end{equation}
+Der Transmittierte Anteil $T$ läßt sich aus $T = 1 − R$ berechnen.\\
+
+Ultraschall kann auf verschiedene Arten erzeugt werden.
+Die Anwendung des reziproken piezo-elektrischen Effekts ist eine.
+Bringt man einen piezoelektrischen
+Kristall in ein elektrisches Wechselfeld, so kann man diesen zu Schwingungen anregen, wenn eine polare Achse des Kristalls in Richtung des elektrischen Feldes zeigt.
+Der Piezokristall strahlt beim Schwingen Ultraschallwellen ab.
+Für Resonanz der Anregerfrequenz und Eigenfrequenz können große Amplituden erzeugt werden.
+Der Piezokristall kann auch umgekehrt als Schallempfänger genutzt werden, hierbei treffen die Schallwellen auf den Kristall und regen diesen zu Schwingungen an.
+Quarze sind dabei die meist benutzten piezoelektrischen Kristalle, da sie gleichbleibende physikalische Eigenschaften haben. Jedoch haben sie einen relativ schwachen piezoelektrischen Effekt.\\
+
+Durch Laufzeitmessungen erhält man Informationen über durchstrahlte Körper.
+Es werden die beiden Methoden, das Durchschallungs-Verfahren und das Impuls-Echo-Verfahren verwendet.\\
+
+Beim Durchschallungs-Verfahren wird mit einem Ultraschallsender ein kurzzeitiger Schallimpuls ausgesendet und am anderen Ende
+des Probenstücks mit einem Ultraschallempfänger aufgefangen.
+Befindet sich eine Fehlstelle in der durchstrahlten Probe, so wird eine abgeschwächte Intensität am Ultraschallempfänger gemessen.
+Eine Aussage darüber, wo sich die Fehlstelle in der Probe befindet, ist nicht möglich. \\
+
+Beim Impuls-Echo-Verfahren wird der Ultraschallsender auch als Empfänger verwendet.
+Der ausgesendete Ultraschallpuls wird hierbei an einer Grenzfläche reflektiert und nach seiner Rückkehr von der Empfänger aufgenommen.
+Bei Fehlstellen kann die Höhe des Echos Aufschluß über die Größe der Fehlstelle geben.
+Bei bekannter Schallgeschwindigkeit kann aus der Laufzeit t die Lage der Fehlstelle über
+\begin{equation}
+    s = \frac{1}{2} c t
+    \label{eqn:gl4}
+\end{equation}
+bestimmt werden.
+Die Laufzeitdiagramme können in einem A-Scan, B-Scan oder einem TM-Scan dargestellt werden. \\
+
+Der A-Scan (Amplitude Scan) ist ein eindimensionales Verfahren zum Abtasten von Strukturen,
+bei dem die Echoamplituden als Funktion der Zeit abgebildet werden.
+Mit Hilfe des B-Scans (Brightness Scan) kann durch das Bewegen der Sonde ein zweidimensionales Bild aufgezeichnet werden.
+Dabei werden die Echoamplituden in verschiedenen Helligkeitsstufen dargestellt.
+Der TM-Scan (Time-Motion Scan) kann die Bewegung eines Objekts aufgenommen werden,
+indem durch schnelles Abtasten eine zeitliche Bildfolge erstellt wird. \cite{US2}
