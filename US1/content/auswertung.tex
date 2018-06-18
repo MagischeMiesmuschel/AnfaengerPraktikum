@@ -37,36 +37,23 @@ Deshalb wird eine lineare Ausgleichsrechnung durchgeführt (siehe Abb. \ref{fig:
   \caption{linearer Zusammenhang zwischen Laufzeit und der Länge der Zylinder für das Impuls-Echo-Verfahren.}
   \label{fig:plot1}
 \end{figure}
-Die Steigung dieser Geraden enspricht der Schallgeschwindigkeit und deren Nullstelle der doppelten Laufzeit durch die Anpassungsschicht.
+Die Steigung dieser Geraden enspricht der Schallgeschwindigkeit, deren y-Achsenabschnitt der doppelten Dicke der Anpassungsschicht
+und deren Nullstelle der doppelten Laufzeit durch die Anpassungsschicht.
 \begin{align*}
   A_\text{Echo} &= c_\text{Echo} = \SI{2697(40)}{\meter\per\second} \\
   B_\text{Echo} &= \SI{0.42(24)}{\centi\meter} \\
+  d_\text{Echo} &= \frac{B_\text{Echo}}{2} = \SI{0.21}{\centi\meter} \\
   t_\text{Anpassung,Echo} &= - \frac{B_\text{Echo}}{2 \cdot A_\text{Echo}} =\SI{0.77}{\micro\second}
 \end{align*}
-Die Schallgeschwindigkeit in der Anpassungsschicht ist nicht bekannt.
-Da die Anpassungsschicht jedoch dazu dient, den Übergang des Schalls in das Acryl zu erleichtern, kann für die Anpassungsschicht eine ähnliche Schallgeschwindigkeit angenommen werden.
-So kann aus der Laufzeit folgende Dicke bestimmt werden.
-\begin{equation*}
-d_\text{Echo} = c_\text{Echo} \cdot t_\text{Anpassung,Echo} = \SI{0.21}{\centi\meter}
-\end{equation*}
 
 \subsubsection{Dämpfung}
 
 Um die Dämpfung zu berechnen, wird Gleichung \eqref{eqn:gl3} umgestellt werden.
 \begin{equation}
- \alpha = -\frac{\ln(I(x)/I_0)}{x}
+ \alpha*x = -\ln(I(x)/I_0)}
 \end{equation}
-Mit den Werten aus Tabelle \ref{tab:echo} werden die Absorptionskoeffizienten berechnet.
-\begin{align*}
-  \alpha_1 &= \SI{4.01}{\per\meter} \\
-  \alpha_2 &= \SI{0.89}{\per\meter} \\
-  \alpha_3 &= \SI{0.53}{\per\meter} \\
-  \alpha_4 &= \SI{2.37}{\per\meter} \\
-  \alpha_5 &= \SI{0.83}{\per\meter} \\
-  \alpha_6 &= \SI{1.05}{\per\meter} \\
-  \alpha_7 &= \SI{10.66}{\per\meter} \\
-  \bar\alpha &= \SI{1.48}{\per\meter}
-\end{align*}
+Nun kann mit den Werten aus Tabelle \ref{tab:echo} über eine lineare Ausgleichsrechnung der Absorptionskoeffizient berechnet werden.
+
 
 \subsection{Durchschallungsverfahren}
 
@@ -100,12 +87,9 @@ Die Steigung dieser Geraden enspricht der Schallgeschwindigkeit und deren Nullst
 \begin{align*}
   A_\text{Durchschallung} &= c_\text{Durchschallung} = \SI{2627(64)}{\meter\per\second} \\
   B_\text{Durchschallung} &= \SI{0.36(20)}{\centi\meter} \\
+  d_\text{Durchschallung} &= \frac{B_\text{Durchschallung}}{2} = \SI{0.18}{\centi\meter}
   t_\text{Anpassung,Durchschallung} &= - \frac{B_\text{Durchschallung}}{2 \cdot A_\text{Durchschallung}} =\SI{0.69}{\micro\second}
 \end{align*}
-Aus der Laufzeit kann folgende Dicke bestimmt werden.
-\begin{equation*}
-d_\text{Durchschallung} = c_\text{Durchschallung} \cdot t_\text{Anpassung,Durchschallung} = \SI{0.18}{\centi\meter}
-\end{equation*}
 
 \subsection{Spekrale Analyse und Cepstrum}
 \label{sec:cep}
@@ -143,11 +127,11 @@ Zur Berechnung wird die Schallgeschwindigkeit aus \ref{sec:geschw} benutzt.
 
 \subsection{Abmessungen des Auges}
 
-Im richtigen Einschallwinkel lassen sich 4 Reflexionen im Auge messen (siehe Tabelle \ref{tab:Auge}), die an den Grenzflächen der verschiedenen Augenbestandteile auftreten.
+Im richtigen Einschallwinkel lassen sich 4 Reflexionen im Auge messen (siehe Tabelle \ref{tab:Auge1}), die an den Grenzflächen der verschiedenen Augenbestandteile auftreten.
 \begin{table}
   \centering
   \caption{Laufzeiten der Echos im Auge.}
-  \label{tab:Auge}
+  \label{tab:Auge1}
   \begin{tabular}{c c c c}
     \toprule
     $t_1$ (Iris) & $t_2$ (Linse Eingang) & $t_3$ (Linse Ausgang) & $t_4$ (Retina) \\
@@ -161,7 +145,7 @@ Bevor die Abstände mit Gleichung \eqref{eqn:gl4} berechnet werden können, muss
 \begin{table}
   \centering
   \caption{Laufzeiten der Echos im Auge.}
-  \label{tab:Auge}
+  \label{tab:Auge2}
   \begin{tabular}{c c c c c}
     \toprule
     von & zu & Laufzeit $\increment t$ & Abmessung Augenmodell & echtes Auge (1:3) \\

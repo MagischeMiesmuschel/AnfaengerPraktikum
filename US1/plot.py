@@ -54,9 +54,19 @@ plt.ylabel(r'Länge der Zylinder in cm')
 plt.savefig('build/plot2.pdf')
 plt.clf()
 
+
+
+params, pcov = curve_fit(f, l3, -np.log(I_x/I_0))
+errors = np.sqrt(np.diag(pcov))
 print('Daempfung')
-Daempfung = np.zeros(7)
-Daempfung = Daempfung + np.log(I_x/I_0)/l3
-Daempfung = Daempfung*100
-print(Daempfung)
-print(np.mean(Daempfung))
+print('A =', params[0], '±', errors[0])
+print('B =', params[1], '±', errors[1])
+
+plt.plot(l3, -np.log(I_x/I_0) , 'kx', label='Messwerte')
+plt.plot(l3, f(l3, *params), 'b-', label='Fit')
+plt.grid()
+plt.legend()
+plt.xlabel(r'Länge t in $\si{\centi\meter}$')
+plt.ylabel(r'$-\ln(I(x)/I_0)$')
+plt.savefig('build/plot3.pdf')
+plt.clf()
