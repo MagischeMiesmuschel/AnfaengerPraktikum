@@ -12,7 +12,7 @@ Diese wird vor jeder folgenden Rechnung von der Zählrate abgezogen.
 \subsection{Indium}
 \label{sec:indium}
 
-Durch die Messung über eine Zeit von 60 Minuten mit Zeitintervallen von $\Delta t = 240s$, bei konstanter Spannung, erhält man folgende Messwerte für die Zählrate von Indium abzüglich der Nullrate:
+Durch die Messung über eine Zeit von 60 Minuten mit Zeitintervallen von $\Delta t = 240s$, bei konstanter Spannung, werden folgende Messwerte für die Zählrate von Indium abzüglich der Nullrate ermittelt:
 
 \begin{table}
   \centering
@@ -42,7 +42,7 @@ Durch die Messung über eine Zeit von 60 Minuten mit Zeitintervallen von $\Delta
 \end{table}
 \FloatBarrier
 
-Für die Abbildung \ref{fig:plot1} wurden die logarithmischen Werte der Zählrate, sowie deren Fehler benötigt.
+Für die Abbildung \ref{fig:plot1} werden die logarithmischen Werte der Zählrate, sowie deren Fehler benötigt.
 In Tabelle \ref{tab:lnN1} sind diese Werte zu sehen.
 
 \begin{table}
@@ -75,7 +75,7 @@ In Tabelle \ref{tab:lnN1} sind diese Werte zu sehen.
 
 \begin{figure}
   \centering
-  \includegraphics{width = 4cm}{plot1.pdf}
+  \includegraphics[width=4cm]{plot1.pdf}
   \caption{Halblogarithmische Zerfallskurve für Indium.}
   \label{fig:plot1}
 \end{figure}
@@ -87,7 +87,11 @@ Die Ausgleichsgerade wurde mit der Funktion
   \label{eqn:glFit}
 \end{equation}
 berechnet.
-Die Parameter $a$ und $b$ wurden berechnet zu $a = 0,000217 \pm (4 \cdot 10^{-7})$ und $b = 7,926 \pm (2 \cdot 10^{-4})$. \\
+Die Parameter $a$ und $b$ wurden berechnet zu 
+\begin{align*}
+  a &= 0,000217 \pm (8,2 \cdot 10^{-8}) \\
+  b &= 7,926 \pm (2 \cdot 10^{-4})
+\end{align*}
 Hier ist $a$ die Zerfallskonstante $\lambda$ und $b$ ist $\text{ln}(N_0(1-e^{-\lambda \Delta t}))$. \\
 
 \subsubsection{Halbwertszeit}
@@ -99,10 +103,16 @@ Durch einsetzen in die Formel
   T = \frac{\text{ln}2}{\lambda}
   \label{eqn:glTot}
 \end{equation}
-ergibt sich für die Halbwertszeit von Indium $T = 3195,28 \pm (6 \cdot 10^{-4}) s$.
+ergibt sich für die Halbwertszeit von Indium $T = 3195,28 \pm 1,20 s$.
 Dies entspricht einer Zeit von $t = 53$ Minuten und 15 Sekunden, mit gleicher Unsicherheit.
 In der Theorie wird ein Wert von $T = 3257,4 s$ \cite{Periode} angegeben.
 Daraus ergibt sich eine prozentuale Abweichung von ca 1,9 \% vom Theoriewert.
+Wobei der Fehler $\Delta T = 1,20$ zu $T$ mit folgender Formel berechnet wurde:
+\begin{align*}
+  \Delta T &= \sqrt{\left(\frac{\delta T}{\delta \lambda}\right)^2 \cdot \left(\Delta \lambda\right)^2} \\
+  \Delta T &= \frac{\text{ln(2)}}{\lambda^2} \cdot \Delta \lambda
+  \Delta T &= 1,20
+\end{align*}
 
 \subsection{Silber}
 \label{sec:silber}
@@ -119,44 +129,44 @@ Durch die Messung über eine Zeit von 7 Minuten mit Zeitintervallen von $\Delta 
   \midrule
   10.0 & 236.02 & 15.36 \\
   20.0 & 168.02 & 12.96 \\
-  30.0 & 121.02 & 11 \\
+  30.0 & 121.02 & 11.00 \\
   40.0 & 104.02 & 10.19 \\
   50.0 & 88.02 & 9.38  \\
   60.0 & 65.02 & 8.06  \\
   70.0 & 55.02 & 7.41  \\
   80.0 & 32.02 & 5.65  \\
-  90.0 & 36.02 & 6  \\
+  90.0 & 36.02 & 6.00  \\
   100.0 & 35.02 & 5.91  \\
-  110.0 & 25.02 & 5  \\
+  110.0 & 25.02 & 5.00  \\
   120.0 & 32.02 & 5.65  \\
   130.0 & 23.02 & 4.79  \\
   140.0 & 24.02 & 4.90  \\
-  150.0 & 16.02 & 4 \\
+  150.0 & 16.02 & 4.00 \\
   160.0 & 19.02 & 4.36  \\
   170.0 & 18.02 & 4.24  \\
   180.0 & 10.02 & 3.16  \\
   190.0 & 14.02 & 3.74  \\
   200.0 & 14.02 & 3.74  \\
   210.0 & 15.02 & 3.87  \\
-  220.0 & 9.02 & 3  \\
+  220.0 & 9.02 & 3.00  \\
   230.0 & 18.02 & 4.24  \\
   240.0 & 11.02 & 3.31  \\
   250.0 & 11.02 & 3.31  \\
   260.0 & 11.02 & 3.31  \\
-  270.0 & 4.02 & 2  \\
-  280.0 & 9.02 & 3  \\
-  290.0 & 12.02 & 3  \\
+  270.0 & 4.02 & 2.00  \\
+  280.0 & 9.02 & 3.00  \\
+  290.0 & 12.02 & 3.00  \\
   300.0 & 10.02 & 3.16  \\
   310.0 & 8.02 & 2.83  \\
   320.0 & 7.02 & 2.64  \\
-  330.0 & 4.02 & 2  \\
-  340.0 & 9.02 & 3  \\
-  350.0 & 4.02 & 2  \\
+  330.0 & 4.02 & 2.00  \\
+  340.0 & 9.02 & 3.00  \\
+  350.0 & 4.02 & 2.00  \\
   360.0 & 5.02 & 2.24  \\
   370.0 & 5.02 & 2.24  \\
   380.0 & 7.02 & 2.64  \\
   390.0 & 6.02 & 2.45  \\
-  400.0 & 4.02 & 2  \\
+  400.0 & 4.02 & 2.00  \\
   410.0 & 8.02 & 2.83  \\
   420.0 & 3.02 & 1.73  \\
   \bottomrule
@@ -234,16 +244,20 @@ In Tabelle \ref{tab:lnN2} sind diese Werte zu sehen.
 
 Weil Silber aus den zwei Isotopen $^{107}\text{Ag}$ und $^{109}\text{Ag}$, mit verschiedenen Halbwertszeiten besteht, muss vor der Ausgleichrechnung eine Trennung der beiden Bereiche vorgenommen werden.
 Links vom Punkt $t^*$ sind noch beide Zerfälle in signifikanter Größe vorhanden und rechts nur noch der Zerfall des langlebigen Isotops $^{107}\text{Ag}$ mit einer Halbwertszeit von $T = 142,2 s$ in der Theorie \cite{Periode}.
-$t^*$ wurde hier durch beobachten des Kurvenverlaufs auf 100s gesetzt.
+$t^*$ wird hier durch beobachten des Kurvenverlaufs auf 100s gesetzt.
 Zur weiteren Auswertung muss erst nur der rechte Bereich mit etwas Abstand zum Punkt $t^*$ mit einer Ausgleichsgeraden in Abbildung \ref{fig:plot3} berechnet werden.
 Dazu wird die Funktion \ref{eqn:glFit} genutzt.
-In dem Zeitbereich ab 120 s ergeben sich die Werte $a =  0.005681 \pm (4 \cdot 10^{-7}) s$ und $b = 3.790 \pm 0.032$.
+In dem Zeitbereich ab 120 s ergeben sich die Werte
+\begin{align*}
+  a &=  0.005681 \pm (1,08 \cdot 10^{-4}) \\
+  b &= 3.790 \pm 0.032
+\end{align*}
 Auch hier ist $a$ gleich $\lambda$ und $b$ ist $\text{ln}(N_0(1-e^{-\lambda \Delta t}))$.
 
 \subsubsection{Halbwertszeit $^{107}$Ag}
 
 Mit $\lambda$ kann nun die Halbwertszeit berechnet werden.
-Durch einsetzen in die Formel \ref{eqn:glTot} ergibt sich für die Halbwertszeit von $^{107}\text{Ag}$ $T = 122,02 \pm (9 \cdot 10^{-3}) s$.
+Durch einsetzen in die Formel \ref{eqn:glTot} ergibt sich für die Halbwertszeit von $^{107}\text{Ag}$ $T = 122,02 \pm 2,30 s$.
 Dies entspricht ungefähr einer Zeit von $t = 2$ Minuten und 2 Sekunden, mit gleicher Unsicherheit.
 In der Theorie wird ein Wert von $T = 142,2 s$ \cite{Periode} angegeben.
 Daraus ergibt sich eine prozentuale Abweichung von ca 14,2 \% vom Theoriewert.
@@ -265,7 +279,7 @@ Zur Auswertung des kurzlebigen Isotops $^{109}\text{Ag}$, mit einer Halbwertszei
 \end{align*}
 
 von den Zählraten im Bereich $t < t^*$ abgezogen werden.
-Es wurde der Bereich bis 70 s gewählt.
+Es wird der Bereich bis 70 s gewählt.
 Die neuen Zählraten des kurzlebigen Isotops sind in Tabelle \ref{tab:Nk} zu sehen. 
 
 \begin{table}
@@ -282,7 +296,7 @@ Die neuen Zählraten des kurzlebigen Isotops sind in Tabelle \ref{tab:Nk} zu seh
   40.0 & 68.7 & 8.2 \\
   50.0 & 54.7 & 7.3 \\
   60.0 & 33.5 & 5.7 \\
-  70.0 & 25.2 & 5 \\
+  70.0 & 25.2 & 5.0 \\
   \bottomrule
 \end{tabular}
 \end{table}
@@ -319,13 +333,17 @@ In Tabelle \ref{tab:lnN2k} sind diese Werte zu sehen.
 \end{figure}
 \FloatBarrier
 
-Hier wurde für die Ausgleichsgerade wieder die Formel \ref{eqn:glFit} verwendet, mit den Parametern $a = 0,032949 \pm (2 \cdot 10^{-6})$ und $b = 5,54 \pm (4 \cdot 10^{-3})$.
+Hier wird für die Ausgleichsgerade wieder die Formel \ref{eqn:glFit} verwendet, mit den Parametern 
+\begin{align*}
+  a &= 0,032949 \pm (9,7 \cdot 10^{-5}) \\
+  b &= 5,54 \pm (4 \cdot 10^{-3})
+\end{align*}
 Auch hier ist $a$ gleich $\lambda$ und $b$ ist $\text{ln}(N_0(1-e^{-\lambda \Delta t}))$.
 
 \subsubsection{Halbwertszeit $^{109}$Ag}
 
 Mit $\lambda$ kann nun die Halbwertszeit berechnet werden.
-Durch einsetzen in die Formel \ref{eqn:glTot} ergibt sich für die Halbwertszeit von $^{109}\text{Ag}$ zu $T = 21,04 \pm (2 \cdot 10^{-3}) s$.
+Durch einsetzen in die Formel \ref{eqn:glTot} ergibt sich für die Halbwertszeit von $^{109}\text{Ag}$ zu $T = 21,04 \pm 0,06 s$.
 In der Theorie wird ein Wert von $T = 24,6 s$ \cite{Periode} angegeben.
 Daraus ergibt sich eine prozentuale Abweichung von ca 14,5 \% vom Theoriewert.
 

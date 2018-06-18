@@ -57,8 +57,8 @@ for i in y:
 
 x = np.linspace(0, 3600, 10000)
 params1, pcov1 = curve_fit(f, t_1, l_N_1)
-print("Steigung1: ", params1[0] ,"+-", pcov1[0][0], " ln(N(0)(1-exp(-n dt))): ", params1[1],"+-", pcov1[1][1])
-steigung1 = ufloat(params1[0], pcov1[0][0])
+print("Steigung1: ", params1[0] ,"+-", pcov1[0][1], " ln(N(0)(1-exp(-n dt))): ", params1[1],"+-", pcov1[1][1])
+steigung1 = ufloat(params1[0], pcov1[0][1])
 T = math.log(2)/steigung1
 T_theo = 3257.4
 dif_T = (T_theo - T.nominal_value)/T_theo
@@ -83,7 +83,8 @@ zy = np.linspace(0, 120, 1000)
 
 params3, pcov3 = curve_fit(f,t_2[11:], l_N_2[11:])
 print("Steigung3: ", params3[0] ,"+-", pcov3[0][0], " ln(N(0)(1-exp(-n dt))): ", params3[1],"+-", pcov3[1][1])
-steigung3 = ufloat(params3[0], pcov3[0][0])
+print(pcov3)
+steigung3 = ufloat(params3[0], pcov3[0][1])
 abschnitt3 = ufloat(params3[1],pcov3[1][1])
 T_2_lang = np.log(2)/steigung3
 T_2_lang_theo = 142.2
@@ -107,8 +108,8 @@ for i in k:
     print(t_2[i],"&", l_N_2[i], "&",p_l_N_2_kurz[i],"&",m_l_N_2_kurz[i], "\\\\" )
 
 params2, pcov2 = curve_fit(f,t_2[0:7], l_N_2_kurz)
-print("Steigung2: ", params2[0] ,"+-", pcov2[0][0], " ln(N(0)(1-exp(-n dt))): ", params2[1],"+-", pcov2[1][1])
-steigung2 = ufloat(params2[0], pcov2[0][0])
+print("Steigung2: ", params2[0] ,"+-", pcov2[0][1], " ln(N(0)(1-exp(-n dt))): ", params2[1],"+-", pcov2[1][1])
+steigung2 = ufloat(params2[0], pcov2[0][1])
 T_2_kurz = np.log(2)/steigung2
 T_2_kurz_theo = 24.6
 dif_T_2_kurz = (T_2_kurz_theo - T_2_kurz.nominal_value)/T_2_kurz_theo
