@@ -11,11 +11,11 @@
 In Tabelle \ref{tab:M1} sind der gemessene Druck und die entsprechenden Zählraten und der Channel der maximalen Energie dargestellt.
 \begin{table}
   \centering
-  \caption{}
+  \caption{Messwerte für einen Abstand von 16 mm.}
   \label{tab:M1}
   \begin{tabular}{c c c}
     \toprule
-    $p$ [mbar] & $N$ & Channel \\
+    $N$ & Channel & $p$ [mbar] \\
     \midrule
     135236 &  483 &  0 \\
     127618 &  463 &  50 \\
@@ -39,8 +39,161 @@ In Tabelle \ref{tab:M1} sind der gemessene Druck und die entsprechenden Zählrat
     \bottomrule
   \end{tabular}
 \end{table}
+Die nach Gleichung \eqref{eqn:gl4} berechnete effektive Länge wird gegen die Zählrate aufgetragen.
+Mit einer linearen Ausgleichsrechnung (siehe Abb. \ref{fig:plot1}) kann aus diesen Werten die mittlere Reichweite bestimmt werden.
+\begin{figure}
+  \centering
+  \includegraphics{build/plot1.pdf}
+  \caption{Zählrate in Abhängigkeit der effektiven Länge.}
+  \label{fig:plot1}
+\end{figure}
+Wird der Ansatz
+\begin{equation*}
+  f(x) = A*x + B
+\end{equation*}
+gewählt ergeben sich folgende Parameter
+\begin{align*}
+  A &= \SI{-2411594(123456)}{\per\meter} \\
+  B &= \num{137674(1102)}
+\end{align*}
+Für die mittlere Reichweite gilt:
+\begin{equation}
+  R_m = \frac{N_\text{max}/2 - B}{A}
+  \label{eqn:r1}
+\end{equation}
+Mit den zuvor berechneten Parametern und $N_\text{max} = 135236$ foglt also:
+\begin{equation*}
+  R_m = \SI{0.0290(16)}{\meter}
+\end{equation*}
+Der dazugehörige Fehler wird über die Gaußsche Fehlerfortpflanzung berechnet.
+\begin{equation}
+  \increment R_m = \sqrt{(-\frac{1}{A} \cdot \increment B)^2+(-\frac{N_\text{max}/2 - B}{A^2} \cdot \increment A)^2}
+  \label{eqn:r2}
+\end{equation}
+Die mittlere Reichweite entspricht nach Gleichung \eqref{eqn:gl3} einer Energie von:
+\begin{equation*}
+  E_\alpha = \SI{44.40}{\kilo\eV}
+\end{equation*}
 
-\subsubsection{Messung im Abstand von 16 mm}
-fsf
+Zur Bestimmung des Energieverlustes wird die effektive Länge gegen die Energie, die aus den Channeln abgelesen werden kann, aufgetragen.
+Aus diesen Wertepaaren wird mit einer linearen Ausgleichsrechnung (siehe Abb. \ref{fig:plot2}) der Energieverlust besimmt.
+\begin{figure}
+  \centering
+  \includegraphics{build/plot3.pdf}
+  \caption{Energie in Abhängigkeit der effektiven Länge.}
+  \label{fig:plot2}
+\end{figure}
+\begin{align*}
+  A &= \frac{\text{d}E_\alpha}{\text{d}x} = \SI{-86.74(305)}{\mega\eV\per\meter} \\
+  B &= \SI{3.87(3)}{\mega\eV}
+\end{align*}
+\FloatBarrier
+
+\subsubsection{Messung im Abstand von 22 mm}
+
+Die vorherigen Messungen und Berechnungen werden für einen anderen Abstand des $\alpha$-Strahlers wiederholt.
+In folgender Tabelle \ref{tab:M2} sind die Messwerte aufgelistet.
+\begin{table}
+  \centering
+  \caption{Messwerte für einen Abstand von 22 mm.}
+  \label{tab:M2}
+  \begin{tabular}{c c c}
+    \toprule
+    $N$ & Channel & $p$ [mbar] \\
+    \midrule
+    91901 & 467 &   0 \\
+    92910 & 456 &  50 \\
+    92045 & 442 & 100 \\
+    91330 & 435 & 150 \\
+    91081 & 423 & 200 \\
+    91055 & 415 & 250 \\
+    90774 & 408 & 300 \\
+    90951 & 398 & 350 \\
+    90017 & 387 & 400 \\
+    89691 & 382 & 450 \\
+    89082 & 370 & 500 \\
+    88990 & 360 & 550 \\
+    87405 & 352 & 600 \\
+    86777 & 339 & 650 \\
+    84426 & 326 & 700 \\
+    80633 & 310 & 750 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Für die Bestimmung der mittleren Reichweite wird wie zuvor eine Ausgleichsrechnung durchgeführt (siehe Abb. \ref{fig:plot3}),
+die folgende Parameter liefert:
+\begin{align*}
+  A &= \SI{-754542(97433)}{\per\meter} \\
+  B &= \num{97020(1137)}
+\end{align*}
+\begin{figure}
+  \centering
+  \includegraphics{build/plot2.pdf}
+  \caption{Zählrate in Abhängigkeit der effektiven Länge.}
+  \label{fig:plot3}
+\end{figure}
+Mit Gleichung \label{eqn:r1} und \label{eqn:r1} und $N_\text{max} 92045$ wird die Reichweite und der Fehler wieder berechnet:
+\begin{equation*}
+  R_m = \SI{0.068(9)}{\meter}
+\end{equation*}
+Die mittlere Reichweite entspricht nach Gleichung \eqref{eqn:gl3} einer Energie von:
+\begin{equation*}
+  E_\alpha = \SI{78.36}{\kilo\eV}
+\end{equation*}
+
+Die Ausgleichsrechnung für den Energieverlust (siehe Abb. \ref{fig:plot4}) ergibt folgende Werte:
+\begin{align*}
+  A &= \frac{\text{d}E_\alpha}{\text{d}x} = \SI{-77.49(146)}{\mega\eV\per\meter} \\
+  B &= \SI{3.99(1)}{\mega\eV}
+\end{align*}
+\begin{figure}
+  \centering
+  \includegraphics{build/plot4.pdf}
+  \caption{Energie in Abhängigkeit der effektiven Länge.}
+  \label{fig:plot4}
+\end{figure}
+
 \subsection{Statistik des radioaktiven Zerfalls}
-ffs
+\label{sec:Zufall}
+
+Zur Untersuchung der Statistik des radioaktiven Zerfalls wird 100 Mal für 10 s die Zählrate gemessen.
+Die Messergebnisse sind in Tabelle \ref{tab:M3} aufgeführt.
+\begin{table}
+  \centering
+  \caption{gemessene Zählrate bei konstanten Bedingungen (0 mbar).}
+  \label{tab:M3}
+  \begin{tabular}{c c c c c c}
+    \toprule
+    \midrule
+  85 & 00 &   86 &  68 & 110 &  90 \\
+  84 & 83 &   73 &  74 &  89 &  73 \\
+  96 & 75 &   85 &  87 &  65 &  69 \\
+  80 & 93 &   98 &  90 &  68 &  86 \\
+  98 & 84 &   75 &  77 &  73 &  83 \\
+  85 & 75 &   77 &  71 &  90 &  94 \\
+ 106 & 82 &   91 & 103 &  91 &  73 \\
+  79 & 70 &   64 &  87 &  78 & 102 \\
+  74 & 93 &   84 &  86 &  81 & 101 \\
+ 107 & 68 &   96 &  79 &  79 & 121 \\
+  74 & 86 &   83 &  88 &  95 &  84 \\
+  76 & 68 &   83 & 110 &  80 &  95 \\
+  60 & 84 &   85 &  82 & 108 &  96 \\
+  86 & 71 &  108 & 100 &  75 &  99 \\
+  97 & 68 &   71 &  83 & 101 &  62 \\
+  84 & 69 &   89 &  98 &  70 &  78 \\
+  81 & 83 &   87 & & & \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Im anschließenden Histogramm (siehe Abb. \ref{fig:plot5}) sind die Verteilung der gemessenen Zählraten im Vergleich zur Poissonverteilung und Gaußverteilung abgebildet.
+\begin{figure}
+  \centering
+  \includegraphics{build/plot5.pdf}
+  \caption{Histogramm der Messwerte, der Poisson- und Gaußverteilung.}
+  \label{fig:plot5}
+\end{figure}
+Mit folenden Gleichungen berechnen sich Mittelwert und Standardabweichung:
+\begin{align}
+  \bar N &= \frac{1}{100} \sum_{i=1}^100 N_i = 84.66 \\
+  \increment \bar N &= \sqrt{\frac{1}{100(100-1)} \sum_{i=1}^{100} (N_i- \bar N)^2} = 12.22
+\end{align}

@@ -42,8 +42,8 @@ plt.clf()
 
 
 
-kritx2 = efflng2[7:14]
-krity2 = count2[7:14]
+kritx2 = efflng2[7:15]
+krity2 = count2[7:15]
 x_fit2 = np.linspace(-0.0005, 0.0175, 20)
 
 params, pcov = curve_fit(f, kritx2, krity2)
@@ -53,7 +53,7 @@ print('A =', params[0], '±', errors[0])
 print('B =', params[1], '±', errors[1])
 A = ufloat(params[0], errors[0])
 B = ufloat(params[1], errors[1])
-print('R =', (92910/2-B)/A)
+print('R =', (92045/2-B)/A)
 
 plt.plot(efflng2, count2, 'kx', label='Messwerte')
 plt.plot(kritx2, krity2, 'cx')
@@ -100,14 +100,14 @@ plt.ylabel(r'Energie in MeV')
 plt.savefig('build/plot4.pdf')
 plt.clf()
 
-
+#
 
 print('Verteilung')
 histogram = plt.figure()
 
 print(np.mean(verteilung))
 print(np.std(verteilung))
-gaussian_numbers = np.random.normal(85, 17, 10000)
+gaussian_numbers = np.random.normal(85, 12, 10000)
 poisson_numbers = np.random.poisson(85, 10000)
 
 plt.hist([gaussian_numbers, verteilung, poisson_numbers], 20, label=['Gaußverteilung', 'Messwerte', 'Poissonverteilung'], normed=1)
