@@ -45,15 +45,26 @@ und deren Nullstelle der doppelten Laufzeit durch die Anpassungsschicht.
   d_\text{Echo} &= \frac{B_\text{Echo}}{2} = \SI{0.21}{\centi\meter} \\
   t_\text{Anpassung,Echo} &= - \frac{B_\text{Echo}}{2 \cdot A_\text{Echo}} =\SI{0.77}{\micro\second}
 \end{align*}
+\FloatBarrier
 
 \subsubsection{Dämpfung}
 
 Um die Dämpfung zu berechnen, wird Gleichung \eqref{eqn:gl3} umgestellt werden.
 \begin{equation}
- \alpha*x = -\ln(I(x)/I_0)}
+ \alpha*x = -\ln(I(x)/I_0))
 \end{equation}
-Nun kann mit den Werten aus Tabelle \ref{tab:echo} über eine lineare Ausgleichsrechnung der Absorptionskoeffizient berechnet werden.
-
+Nun kann mit den Werten aus Tabelle \ref{tab:echo} über eine lineare Ausgleichsrechnung (siehe Abb. \ref{fig:plot3}) der Absorptionskoeffizient berechnet werden.
+\begin{figure}
+  \includegraphics{build/plot3.pdf}
+  \caption{halblogarithmische Darstellung des Intensitätsabfalls.}
+  \label{fig:plot3}
+\end{figure}
+Für den Absorptionskoeffizienten berechnet sich folgender Wert.
+\begin{align*}
+  A_\text{Int} &= \alpha = \SI{4.51(116)}{\per\meter} \\
+  B_\text{Int} &= \num{18.91(908)} \\
+\end{align*}
+\FloatBarrier
 
 \subsection{Durchschallungsverfahren}
 
@@ -87,18 +98,20 @@ Die Steigung dieser Geraden enspricht der Schallgeschwindigkeit und deren Nullst
 \begin{align*}
   A_\text{Durchschallung} &= c_\text{Durchschallung} = \SI{2627(64)}{\meter\per\second} \\
   B_\text{Durchschallung} &= \SI{0.36(20)}{\centi\meter} \\
-  d_\text{Durchschallung} &= \frac{B_\text{Durchschallung}}{2} = \SI{0.18}{\centi\meter}
+  d_\text{Durchschallung} &= \frac{B_\text{Durchschallung}}{2} = \SI{0.18}{\centi\meter} \\
   t_\text{Anpassung,Durchschallung} &= - \frac{B_\text{Durchschallung}}{2 \cdot A_\text{Durchschallung}} =\SI{0.69}{\micro\second}
 \end{align*}
+\FloatBarrier
 
 \subsection{Spekrale Analyse und Cepstrum}
 \label{sec:cep}
 
-Aus Abbildung \ref{fig:cep} lassen sich drei Reflexionen erkennen, aus deren Laufzeiten sich mit Gleichung \eqref{eqn:gl4} die Dicke der Acrylscheiben bestimmen lässt.
+Aus dem Cepstrum der Ultraschallsonde (siehe Abb. \ref{fig:cep}) lassen sich drei Reflexionen erkennen, aus deren Laufzeiten sich mit Gleichung \eqref{eqn:gl4} die Dicke der Acrylscheiben bestimmen lässt.
 Zur Berechnung wird die Schallgeschwindigkeit aus \ref{sec:geschw} benutzt.
+Die Ergebnisse sind in Tabelle \ref{tab:cep} aufgeführt.
 \begin{table}
   \centering
-  \caption{Laufzeiten der Reflexionen und berechnete Dicke der Scheiben.}
+  \caption{Aus dem Cepstrum berechnete Dicke der Scheiben.}
   \label{tab:cep}
   \begin{tabular}{c c c}
     \toprule
@@ -107,6 +120,22 @@ Zur Berechnung wird die Schallgeschwindigkeit aus \ref{sec:geschw} benutzt.
     Scheibe oben & 4,23 & 0,57\\
     Scheibe unten & 7,16 & 0,97\\
     Scheiben zusammen & 11,41 & 1,54 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Die Dicke der Scheiben kann auch aus den Laufzeiten der Mehrfachreflexionen bestimmt werden.
+In Tabelle \ref{tab:mehr} sind die Ergebnisse dargestellt.
+\begin{table}
+  \centering
+  \caption{Aus den Laufzeiten der Mehrfachreflexionen berechnete Dicke der Scheiben.}
+  \label{tab:mehr}
+  \begin{tabular}{c c c}
+    \toprule
+    & $t$ [\si{\micro\second}] & Dicke der Scheiben $d$ [\si{\centi\meter}] \\
+    \midrule
+    Scheibe oben & $|30,6-35,1|$ & 0,61\\
+    Scheibe unten & $|35,1-41,9|$ & 0,92\\
+    Scheiben zusammen & $|30,6-41,9|$ & 1,52 \\
     \bottomrule
   \end{tabular}
 \end{table}

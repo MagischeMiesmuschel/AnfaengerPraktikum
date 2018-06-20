@@ -10,6 +10,7 @@ l3, I_0, I_x = np.genfromtxt('data/werte3.txt', unpack=True)
 
 x1 = np.linspace(-5, 95, 20)
 x2 = np.linspace(-5, 50, 20)
+x3 = np.linspace(2.8, 12.2, 20)
 l1 = 2*l1
 
 def f(x, A, B):
@@ -63,10 +64,11 @@ print('A =', params[0], '±', errors[0])
 print('B =', params[1], '±', errors[1])
 
 plt.plot(l3, -np.log(I_x/I_0) , 'kx', label='Messwerte')
-plt.plot(l3, f(l3, *params), 'b-', label='Fit')
+plt.plot(x3, f(x3, *params), 'b-', label='Fit')
 plt.grid()
 plt.legend()
-plt.xlabel(r'Länge t in $\si{\centi\meter}$')
+plt.xlim(2.8, 12.2)
+plt.xlabel(r'Länge x in $\si{\centi\meter}$')
 plt.ylabel(r'$-\ln(I(x)/I_0)$')
 plt.savefig('build/plot3.pdf')
 plt.clf()
