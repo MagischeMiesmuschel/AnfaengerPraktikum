@@ -1,0 +1,8 @@
+#Theta1 Theta2
+327.8 205.5 #rot
+327.5 205.8 #orange
+327.1 206.2 #gelb-grün
+326.7 206.5 #grün
+326.2 206.9 #blau
+326.1 207.0 #blau-lila
+325.3 208.1 #violett

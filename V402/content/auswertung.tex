@@ -1,0 +1,145 @@
+\section{Auswertung}
+\label{sec:Auswertung}
+\begin{table}
+  \centering
+  \caption{$\phi$ Messwerte.}
+  \label{tab:phi}
+\begin{tabular}{c c c c}
+  \toprule
+  & $\phi_1 in ^\circ$ & $\phi_2 in ^\circ$\\ & $(\phi_1 - \phi_2)/2$ \\
+  \midrule
+  Messung 1  &  205,4  &  325,4  &  60,00 \\
+  Messung 2  &  206,6  &  326,9  &  60,15 \\
+  Messung 3  &  204,0  &  324,0  &  60,00 \\
+  Messung 4  &  202,6  &  323,0  &  60,20 \\
+  Messung 5  &  192,1  &  312,0  &  59,95 \\
+  Messung 6  &  195,0  &  315,0  &  60,00 \\
+  Messung 7  &  198,2  &  318,2  &  60,00 \\
+  \bottomrule
+\end{tabular}
+\end{table}
+\FloatBarrier
+
+Mit den Messwerten aus der Tabelle \ref{tab:phi} berechnet sich der Mittelwert von $\phi$ zu
+
+\begin{align*}
+  \phi = 60,04 \pm 0,09
+\end{align*}
+
+
+Mit den Messwerten in Tabelle \ref{tab:omega} für die $\Omega$ Winkel, dem Mittelwert der $\phi$ Winkel und den Formeln
+
+\begin{equation}
+  \eta = 180^\circ - (\Omega_{links} - \Omega_{rechts})
+  \label{eqn:glausw1}
+\end{equation}
+
+und
+
+\begin{equation}
+  n = \frac{\text{sin}\left(\frac{\eta + \phi}{2}\right)}{\text{sin} \left(\phi\right)}
+  \label{eqn:glausw1}
+\end{equation}
+
+werden die Brechungsindizes in Tabelle \ref{tab:omega} berechnet.
+
+\begin{table} 
+  \centering
+  \caption{$\Omega$ Messung.}
+  \label{tab:omega}
+\begin{tabular}{c c c c}
+  \toprule
+  Wellenlänge in nm & $\Omega_{links} in ^\circ$ & $\Omega_{rechts} in ^\circ$\\ & $n$\\ 
+  \midrule
+  643,85  &  327,8  &  205,5  &  1,711  \\
+  578,02  &  327,5  &  205,8  &  1,716  \\
+  546,07  &  327,1  &  206,2  &  1,723  \\
+  491,61  &  326,7  &  206,5  &  1,723 \\
+  467,03  &  326,2  &  206,9  &  1,737 \\
+  435,83  &  326,1  &  207,0  &  1,739  \\
+  407,78  &  325,3  &  208,1  &  1,755  \\
+  \bottomrule
+\end{tabular}
+\end{table}
+\FloatBarrier
+
+Durch auftragen der berechneten $n$ zum Quadrat gegen die passend herausgesuchten Wellenlängen des Quecksilber-Cadmium Spektrums \cite{sample} aus Tabelle \ref{tab:wellen}
+
+\begin{table}
+  \centering
+  \caption{Wellenlängen des Spektrums.}
+  \label{tab:wellen}
+  \begin{tabular}{c c}
+    \toprule
+    Wellenlänge in nm & Farbe der Linie \\
+    \midrule
+    643,85 & rot \\
+    578,02 & orange \\
+    546,07 & gelb-grün \\
+    491,61 & grün \\
+    467,03 & blau \\
+    435,83 & blau-violett \\
+    407,78 & violett \\
+    \bottomrule 
+  \end{tabular}
+\end{table}
+\FloatBarrier
+
+und durch das Fitten mit den Funktionen
+
+\begin{equation}
+  f(x) = A_0 + \frac{A_2}{x^2}
+  \label{eqn:glf}
+\end{equation}
+
+und 
+
+\begin{equation}
+  g(x) = A_0' + A_2' \cdot x^2
+  \label{eqn:glg}
+\end{equation}
+
+wird der Plot \ref{fig:plot1} erzeugt.
+
+\begin{figure}
+  \centering
+  \includegraphics{plot1.pdf}
+  \caption{Kurvenvergleich der Messwerte.}
+  \label{fig:plot1}
+\end{figure}
+\FloatBarrier
+
+Die Fits liefern folgende Koeffizienten:
+
+\begin{align*}
+  f(x): \\
+  A_0 &= 2,828947 \pm 0,000169 \\
+  A_2 &= 40172,43 \pm 38,03 \\
+  \\
+  g(x): \\
+  A_0' &= 3,143541 \pm 0,000593 \\
+  A_2' &= 5,62 \pm 2,04 
+\end{align*}
+
+Es ist ein klarer Trend zu erkennen, dass der Fit der Funktion $f(x)$ \ref{eqn:glf} besser zum Verlauf der Messwerte passt.
+Um diesen Verdacht zu überprüfen wird das Abweichungsquadrat beider Funktionen gebildet.
+Für $f(x)$ mit Gleichung \ref{eqn:gl1}, für $g(x)$ mit Gleichung \ref{eqn:gl1} und mit den jeweiligen Koeffizienten aus den Fits.
+Mit den gegebenen Werten berechnen sich die Abweichungsquadrate zu
+
+\begin{align*}
+  s_{n} &= 9,15 \cdot 10^{-5} \\
+  s_{n'} &= 0,14
+\end{align*}
+
+Weil $s_n << s_{n'}$ ist, ist bestätigt, dass der Fit mit $f(x)$ \ref{eqn:glf} der zutreffende ist.
+
+\begin{align*}
+  n^2 &= 1 + \frac{N_1 q_1^2 \lambda_1^2}{4 \pi^2 c^2 \epsilon_0 m_1}\cdot\left(1+\left(\frac{\lambda_1}{\lambda}\right)^2\right) \\
+  n^2 &= 1 + \frac{N_1 q_1^2 \lambda_1^2}{4 \pi^2 c^2 \epsilon_0 m_1} + \frac{N_1 q_1^2 \lambda_1^2}{4 \pi^2 c^2 \epsilon_0 m_1} \cdot \left(\frac{\lambda_1}{\lambda}\right)^2 \\
+  \Rightarrow A_0 &= 1 + \frac{N_1 q_1^2 \lambda_1^2}{4 \pi^2 c^2 \epsilon_0 m_1} \\
+  \Rightarrow A_2 &= \frac{N_1 q_1^2 \lambda_1^2}{4 \pi^2 c^2 \epsilon_0 m_1} \cdot \left(\frac{\lambda_1}{\lambda}\right)^2 \\
+\end{align*}
+\begin{equation}
+  \Rightarrow \lambda_1 = \sqrt{\frac{A_2}{A_0-1}}
+  \label{eqn:ausw1}
+\end{equation}
