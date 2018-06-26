@@ -1,4 +1,64 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+Zur Herleitung der Dispersionsgleichung wird die Wechselwirkung zwischen den Ladungen der Materie
+und den elektromagnetischen Wellen untersucht.
+Die Ladungsträger, wie Ionenrümpfe und Elektronen,
+werden durch das elektrische Feld der Welle zu Schwingungen um ihre Ruhelage abgeregt.
+Dabei ist zu beachten, dass die Wellenlängen des Lichts nicht kleiner als die des sichtbaren Spektrums sind,
+da sonst quantenmechanische Effekte beachtet werden müssten.
+Außerdem sollte die Wellenlänge nicht im Resonanzbereich der Materie sein,
+da es hier zu ungewollten und nicht vernachlässigbaren Absorptionen kommt.
+Die rücktreibende Kraft $\vec{F}_\text{r,h}$, die auf einen Ladungsträger wirkt, ist proportional zur Auslenkung $\vec{x}_\text{h}$
+\begin{equation}
+  \vec{F}_\text{r,h} = a_\text{h} \vec{x}_\text{h}
+\end{equation}
+und die Lichtwelle erzeugt die äußere Kraft
+\begin{equation}
+  \vec{F}_\text{e} = q_\text{h} \vec{E}_0 e^{i \omega t}.
+\end{equation}
+So ergibt sich mit einem Dämpfungsterm ergänzt die Gleichung eines harmonischen Oszillators:
+\begin{equation}
+  m_\text{h} \frac{\text{d}^2 \vec{x}_\text{h}}{\text{d} t^2} + f_\text{h} \frac{\text{d} \vec{x}_\text{h}}{\text{d} t} + a_\text{h} \vec{x}_\text{h} = q_\text{h} \vec{E}_0 e^{i \omega t}
+  \label{eqn:Oszillator}
+\end{equation}
+Mit der Polarisation $\vec{P} = \sum N_\text{q} q_\text{h} \vec{x}_\text{h} $ und der Maxwellschenrelation $ n^2 = \epsilon $ wird die Gleichung \eqref{eqn:Oszillator} so umgeschrieben,
+dass sich ein Ausdruck für den komplexen Brechungsindex $\tilde n = n(1 + ik)$ aufstellen lässt:
+\begin{equation}
+  \tilde n = 1 + \sum_h \frac{1}{\omega^2_\text{h} - \omega^2 + i \frac{f_\text{h}}{m_\text{h}}\omega} \frac{N_\text{q} q^2_\text{h}}{m_\text{h} \epsilon_0}
+\end{equation}
+Dabei ist $q_\text{h}$ die Ladung, $N_\text{q}$ die Anzahl der Ladungsträger pro Volumeneinheit und $\omega^2_\text{h}$ die Resonanzfrequenz.
+Der Realteil dieser Funktion beschreibt die Brechung des Lichts und der Imaginärteil die Absorption des Lichts.
+Deshalb wird nur der Realteil betrachtet, der sich mit folgender Näherung vereinfachen lässt:
+\begin{equation*}
+  n^2 k = 0
+\end{equation*}
+Dies Näherung kann angenommen werden, da die Dispersionskurve nur weit außerhalb der Resonanzbereiche betrachtet wird.
+Wird zusätlich noch die Frequenz $\omega$ noch durch die Wellenlänge $\lambda$ ersetzt, ergibt sich folgender Ausdruck:
+\begin{equation}
+  n^2(\lambda) = 1 + \sum_h \frac{N_\text{q} q^2_\text{h}}{4 \pi^2 c^2 \epsilon_0 m_\text{h}} \frac{\lambda^2 \lambda^2_\text{h}}{\lambda^2 - \lambda^2_\text{h}}
+  \label{eqn:n}
+\end{equation}
+Unter der Annahme, dass die Materie nur eine Absorptionsstelle $\lambda_1$ besitzt, kann die Funktion \eqref{eqn:n} in einer Taylor-Reihe entwickelt werden.
+
+\subsection{Fall 1: \texorpdfstring{$\lambda >> \lambda_1$}{g}}
+
+Für $n^2$ folgt die Gleichung
+\begin{equation}
+  n^2(\lambda) = A_0 + \frac{A_2}{\lambda^2} + ...
+\end{equation}
+und für das zugehörige Abweichungsquadrat
+\begin{equation}
+ s^2_n = \frac{1}{z-2} \sum_{i=1}^z \left(n^2(\lambda_i) - A_0 - \frac{A_2}{\lambda^2_i}\right)^2
+\end{equation}
+
+\subsection{Fall 2: \texorpdfstring{$\lambda << \lambda_1$}{k}}
+
+Für $n^2$ folgt die Gleichung
+\begin{equation}
+  n^2(\lambda) = A'_0 - \frac{A'_2}{\lambda^2} + ...
+\end{equation}
+und für das zugehörige Abweichungsquadrat
+\begin{equation}
+  s^2_n = \frac{1}{z-2} \sum_{i=1}^z \left(n^2(\lambda_i) - A'_0 + \frac{A'_2}{\lambda^2_i}\right)^2
+\end{equation}
