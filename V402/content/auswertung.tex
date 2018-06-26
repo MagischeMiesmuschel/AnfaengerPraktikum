@@ -1,4 +1,7 @@
 \section{Auswertung}
+\subsection{Brechungsindizes}
+\label{sec:brech}
+
 \label{sec:Auswertung}
 \begin{table}
   \centering
@@ -6,7 +9,7 @@
   \label{tab:phi}
 \begin{tabular}{c c c c}
   \toprule
-  & $\phi_1 in ^\circ$ & $\phi_2 in ^\circ$\\ & $(\phi_1 - \phi_2)/2$ \\
+  & $\phi_1 in ^\circ$ & $\phi_2 in ^\circ$ & $(\phi_1 - \phi_2)/2$ \\
   \midrule
   Messung 1  &  205,4  &  325,4  &  60,00 \\
   Messung 2  &  206,6  &  326,9  &  60,15 \\
@@ -49,7 +52,7 @@ werden die Brechungsindizes in Tabelle \ref{tab:omega} berechnet.
   \label{tab:omega}
 \begin{tabular}{c c c c}
   \toprule
-  Wellenlänge in nm & $\Omega_{links} in ^\circ$ & $\Omega_{rechts} in ^\circ$\\ & $n$\\ 
+  Wellenlänge in nm & $\Omega_{links} in ^\circ$ & $\Omega_{rechts} in ^\circ$ & $n$\\ 
   \midrule
   643,85  &  327,8  &  205,5  &  1,711  \\
   578,02  &  327,5  &  205,8  &  1,716  \\
@@ -63,7 +66,7 @@ werden die Brechungsindizes in Tabelle \ref{tab:omega} berechnet.
 \end{table}
 \FloatBarrier
 
-Durch auftragen der berechneten $n$ zum Quadrat gegen die passend herausgesuchten Wellenlängen des Quecksilber-Cadmium Spektrums \cite{sample} aus Tabelle \ref{tab:wellen}
+Durch auftragen der berechneten $n$ zum Quadrat gegen die passend herausgesuchten Wellenlängen des Quecksilber-Cadmium Spektrums \cite{ref1} aus Tabelle \ref{tab:wellen}
 
 \begin{table}
   \centering
@@ -133,6 +136,86 @@ Mit den gegebenen Werten berechnen sich die Abweichungsquadrate zu
 
 Weil $s_n << s_{n'}$ ist, ist bestätigt, dass der Fit mit $f(x)$ \ref{eqn:glf} der zutreffende ist.
 
+\subsection{Abelsche Zahl}
+
+Mit der jetzt gegebenen Funktion \ref{eqn:glf} wird die abelsche Zahl berechnet.
+Dazu müssen zuerst die Brechungsindizes der Frauenhoferschen Linien
+
+\begin{align*}
+  \lambda_C = 656 \text{nm} \\
+  \lambda_D = 589 \text{nm} \\
+  \lambda_F = 486 \text{nm}
+\end{align*}
+
+mit der Funktion \ref{eqn:glf} berechnet werden.
+Es ergeben sich die Werten
+\begin{align*}
+  n_C:  1,70947 \pm 0,00006 \\
+  n_D:  1,71603 \pm 0,00006 \\
+  n_F:  1,73177 \pm 0,00007
+\end{align*}
+
+Damit kann nun die Abelsche Zahl nach der Formel 
+
+\begin{equation}
+  \nu = \frac{n_D-1}{n_F-n_C}
+  \label{eqn:abel}
+\end{equation}
+
+berechnet werden und der Fehler berechnet sich mit der Formeln
+
+\begin{align*}
+  \Delta \nu &= \sqrt{\left(\frac{\delta}{\delta n_D}\delta \nu \right)^2 \cdot \left(\Delta n_D\right)^2 + \left(\frac{\delta}{\delta n_F}\delta \nu \right)^2 \cdot \left(\Delta n_F\right)^2+\left(\frac{\delta}{\delta n_C}\delta \nu \right)^2 \cdot \left(\Delta n_C\right)^2} \\
+  \Delta \nu &= \sqrt{\left(\frac{1}{n_F - n_C}\right)^2\cdot \left(\Delta n_D\right)^2 + \left(\frac{1-n_D}{\left(n_F-n_C\right)^2}\right)^2\cdot \left(\Delta n_F\right)^2 + \left(\frac{n_D - 1}{\left(n_F-n_C\right)^2}\right)^2\cdot \left(\Delta n_F\right)^2}
+\end{align*}
+
+Nach dem Einsetzen der Werte ergibt sich für $\nu$
+
+\begin{align*}
+  \nu = 32,113 \pm 0,028
+\end{align*}
+
+Im Vergleich zum Literaturwert für das optische Glas SF18 von $\nu_{lit} = 29,30$ \cite{ref2} ist nur eine geringe Abweichung zu erkennen.
+
+\subsection{Auflösungsvermögen}
+
+Zur Berechnung des Auflösungsvermögens des Prismenspektralapparates  ist die Basislänge des Prismas notwendig.
+Diese ist gegeben als $b = 3$cm.
+Es soll die Auflösung für die Wellenlängen $\lambda_C$ und $\lambda_F$ berechnet werden.
+Dazu wird die Formel
+
+\begin{equation}
+  \frac{\lambda}{\Delta \lambda} = b \cdot \frac{\text{dn}}{\text{d}\lambda}
+  \label{eqn:aufl}
+\end{equation}
+
+Zuerst wird die Ableitung der Brechungsindize-Funktion benötigt.
+Dazu wird die Wurzel aus der Funktion \ref{eqn:glf} gezogen und abgeleitet.
+Daraus folgt
+
+\begin{equation}
+  \frac{\text{dn}}{\text{d}\lambda} = - \frac{A_2}{\lambda^3 \sqrt{A_0 + \frac{A_2}{\lambda^2}}}
+  \label{eqn:ableitung}
+\end{equation}
+
+Der dazugehörige Fehler zum Auflösungsvermögen errechnet sich mit
+
+\begin{align*}
+  \Delta \left(\frac{\lambda}{\Delta \lambda}\right) = \sqrt{\left(\frac{A_2}{2 \lambda^3 \left(A_0 + \frac{A_2}{\lambda^2}\right)^{3/2}}\right) \cdot \left(\Delta A_0^2\right) + \left(\frac{1}{\lambda^3 \left(A_0 + \frac{A_2}{\lambda^2}\right)} - \frac{A_2}{2 \lambda^5 \left(A_0 + \frac{A_2}{\lambda^2}\right)^{3/2}}\right)^2 \cdot \left(\Delta A_2^2\right)}
+\end{align*}
+
+Durch einsetzen der Wellenlängen $\lambda_C$ und $\lambda_F$ in Gleichung \ref{eqn:aufl} ergeben sich die Werte
+
+\begin{align*}
+  \frac{\lambda_C}{\Delta \lambda} &= 2497.3 \pm 2.3 \\
+  \frac{\lambda_F}{\Delta \lambda} &= 6062 \pm 6
+\end{align*}
+
+\subsection{Absorptionsstelle}
+
+Aus den Parametern der Dispersionsgleichung \ref{eqn:glf} berechnet sich die am nächsten gelegene Absorptionsstelle.
+Dazu muss die Gleichung \ref{eqn:gl2}, aber zunächst wie folgt umgestellt werden, damit für die Absorptionstselle $\lambda_1$ ein reiner Zusammenhang zwischen $A_0$ und $A_2$ besteht.
+
 \begin{align*}
   n^2 &= 1 + \frac{N_1 q_1^2 \lambda_1^2}{4 \pi^2 c^2 \epsilon_0 m_1}\cdot\left(1+\left(\frac{\lambda_1}{\lambda}\right)^2\right) \\
   n^2 &= 1 + \frac{N_1 q_1^2 \lambda_1^2}{4 \pi^2 c^2 \epsilon_0 m_1} + \frac{N_1 q_1^2 \lambda_1^2}{4 \pi^2 c^2 \epsilon_0 m_1} \cdot \left(\frac{\lambda_1}{\lambda}\right)^2 \\
@@ -143,3 +226,17 @@ Weil $s_n << s_{n'}$ ist, ist bestätigt, dass der Fit mit $f(x)$ \ref{eqn:glf} 
   \Rightarrow \lambda_1 = \sqrt{\frac{A_2}{A_0-1}}
   \label{eqn:ausw1}
 \end{equation}
+
+Mit dieser Relation und den errechneten Parametern berechnet sich $\lambda_1$ mit der Formel
+
+\begin{align*}
+  \Delta \lambda_1 = \sqrt{\left(\frac{\left(\frac{A_2}{A_0-1}\right)^{3/2}}{2A_2}\right)^2 \cdot \left(\Delta A_0\right)^2 + \left(\frac{\sqrt{\frac{A_2}{A_0-1}}}{2 A_2}\right)^2 \cdot \left(\Delta A_2\right)^2}
+\end{align*}
+
+für den Fehler, zu
+
+\begin{align*}
+  \lambda_1 = 148,21 \pm 0,07 \text{nm}
+\end{align*}
+
+Die nächstegelegne berechnete Absorbtionstelle liegt somit im ultravioletten Bereich
