@@ -1,9 +1,69 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
+Aus Gleichung \eqref{eqn:gl1} kann die Wellenlänge des Lasers berechnet werden, diese muss jedoch aufgrund der Hebelübersetzung modifiziert werden.
+Bevor die Gleichung nach $\lambda$ umgestellt wird, wird die rechte Seite mit Faktor $u = 5.046$ multipliziert.
+Die gemessenen Zählraten und die Start- und Endpunkte, die zusammen $\increment d = |d_1-d_2|$ ergeben, können nun eingesetzt werden, um $\lambda$ zu bestimmen.
+In Tabelle \ref{tab:welle} sind die Messwerte und die dazugehörige Wellenlänge $\lambda$ aufgelistet.
+\begin{table}
   \centering
-  \includegraphics{plot1.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+  \caption{Messwerte zur Berechnung der Wellenlänge des Lasers.}
+  \label{tab:welle}
+  \begin{tabular}{c c c c}
+    \toprule
+    $z$ & $d_1$ [\SI{1e-3}{\meter}] & $d_2$ [\SI{1e-3}{\meter}] & $\lambda$ [\SI{1e-9}{\meter}] \\
+    \midrule
+    3004.0 & 14.0 &   8.9 & 672.90 \\
+    3001.0 &  9.0 & 14.16 & 681.50 \\
+    3005.0 & 14.0 &  8.93 & 668.72 \\
+    3008.0 &  9.0 &  3.91 & 670.69 \\
+    3000.0 &  4.0 &   9.3 & 700.22 \\
+    3150.0 &  9.0 &  14.5 & 692.05 \\
+    3003.0 & 14.5 &  9.26 & 691.61 \\
+    3002.0 &  9.0 & 14.18 & 683.91 \\
+    3000.0 & 14.0 &  8.95 & 667.20 \\
+    3001.0 &  9.0 & 14.13 & 677.54 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\FloatBarrier
+Aus den Ergebnissen lässt sich folgender Mittelwert ableiten:
+\begin{equation*}
+  \bar \lambda = \SI{680.63(1066)e-9}{\meter}
+\end{equation*}
+Zur Bestimmung des Brechungsindex in Luft werden folgende Angaben benötigt:
+\begin{align*}
+  \text{Normaldruck} \, p_0 &= \SI{1.0132}{\bar} \\
+  \text{Nomraltemperatur} \, T_0 &= \SI{273.15}{\kelvin} \\
+  \text{Umgebungsdruck} \, p &= \SI{1}{\bar} \\
+  \text{Umgebungstemperatur} \, T &= \SI{296.15}{\kelvin} \\
+  \text{Breite der Messzelle} \, b &= \SI{50e-3}{\meter} \\
+\end{align*}
+Aus den gemessenen Zählraten $z$ und den entsprechenden Drücken $p$ lässt sich nun mit Gleichung \eqref{eqn:gl2} der Brechungsindex $n$ ermitteln.
+In Tabelle \ref{tab:n} sind die Messwerte und der dazu berechnete Brechungsindex dargestellt.
+\begin{table}
+  \centering
+  \caption{Messwerte zur Berechnung des Brechungsindex.}
+  \label{tab:n}
+  \begin{tabular}{c c c}
+    \toprule
+    $z$ & $p$ [\si{\bar}] & $n$ \\
+    \midrule
+    33.0 & 0.8 & 1.0002878 \\
+    33.0 & 0.8 & 1.0002878 \\
+    33.0 & 0.8 & 1.0002878 \\
+    33.0 & 0.8 & 1.0002878 \\
+    33.0 & 0.8 & 1.0002878 \\
+    33.0 & 0.8 & 1.0002878 \\
+    32.0 & 0.8 & 1.0002790 \\
+    33.0 & 0.8 & 1.0002878 \\
+    33.0 & 0.8 & 1.0002878 \\
+    35.0 & 0.8 & 1.0003052 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\FloatBarrier
+Für den Mittelwert ergibt sich folgender Wert:
+\begin{equation*}
+  \bar n = \num{1.0002886(61)}
+\end{equation*}
