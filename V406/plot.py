@@ -19,8 +19,8 @@ L = 1 #Abstand von Spalt zu Detektor
 
 I_doppel1, x_doppel1 = np.genfromtxt("data/werte1.txt", unpack=True) #Doppelspalt1
 print('Tabelle Doppel1:')
-for i in range(60):
-    print(x_doppel1[i], " & " ,I_doppel1[i], "\\\\")
+for i in range(30):
+    print(x_doppel1[i], " & " ,I_doppel1[i]," & ",x_doppel1[i+30], " & " ,I_doppel1[i+30], "\\\\")
 x_doppel1 *= 1e-3 #s/m
 I_doppel1 *= 1e-6 #I/A
 a1 = 0.25e-3 #Abstand 1 der Spalte
@@ -28,8 +28,8 @@ I_doppel1 = I_doppel1 - I_dunkel
 
 x_doppel2, I_doppel2 = np.genfromtxt("data/werte2.txt", unpack=True) #Doppelspalt2
 print('Tabelle Doppel2:')
-for i in range(46):
-    print(x_doppel2[i], " & " ,I_doppel2[i], "\\\\")
+for i in range(23):
+    print(x_doppel2[i], " & " ,I_doppel2[i]," & " ,x_doppel2[i+23], " & " ,I_doppel2[i+23], "\\\\")
 x_doppel2 *= 1e-3 #s/m
 I_doppel2 *= 1e-6 #I/A
 a2 = 0.35e-3 #Abstand 1 der Spalte
@@ -37,8 +37,8 @@ I_doppel2 = I_doppel2 - I_dunkel
 
 x_einzel, I_einzel = np.genfromtxt("data/werte3.txt", unpack=True) #Einzelspalt
 print('Tabelle Einzelspalt:')
-for i in range(42):
-    print(x_einzel[i], " & " ,I_einzel[i], "\\\\")
+for i in range(21):
+    print(x_einzel[i], " & " ,I_einzel[i]," & " ,x_einzel[i+21], " & " ,I_einzel[i+21], "\\\\")
 x_einzel *= 1e-3 #s/m
 I_einzel *= 1e-6 #I/A
 I_einzel = I_einzel -I_dunkel
@@ -55,7 +55,7 @@ params1, covariance_matrix1 = optimize.curve_fit(theory, x_einzel, I_einzel, p0=
 
 A_0, x_0, b = correlated_values(params1, covariance_matrix1)
 
-print('Jetzt kommt der erste Einzelspalt')
+print('Jetzt kommt der erste Einzelspalt: ')
 print('A_0 =', A_0)
 print('x_0 =', x_0)
 print('b =', b)
@@ -76,7 +76,7 @@ params2, covariance_matrix2 = optimize.curve_fit(theory2, x_doppel1, I_doppel1, 
 
 A_0, x_0, b, d = correlated_values(params2, covariance_matrix2)
 
-print('Jetzt kommt der Doppelspalt 1')
+print('Jetzt kommt der Doppelspalt 1: ')
 print('A_0 =', A_0)
 print('x_0 =', x_0)
 print('b =', b)
@@ -98,7 +98,7 @@ params3, covariance_matrix3 = optimize.curve_fit(theory2, x_doppel2, I_doppel2, 
 
 A_0, x_0, b, d = correlated_values(params3, covariance_matrix3)
 
-print('Jetzt kommt der Doppelspalt 2')
+print('Jetzt kommt der Doppelspalt 2: ')
 print('A_0 =', A_0)
 print('x_0 =', x_0)
 print('b =', b)
