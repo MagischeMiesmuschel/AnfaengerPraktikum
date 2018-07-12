@@ -11,10 +11,14 @@ kann die Beugung erklärt werden.
 \begin{figure}
   \centering
   \includegraphics[height=6cm]{data/frau.png}
-  \caption{Frauenhofer Beugung an einem Spalt. \cite{sample}}
+  \caption{Frauenhofer Beugung an einem Spalt \cite{sample}.}
   \label{fig:frau}
 \end{figure}
 In diesem Versuch wird nur die Frauenhofer Beugung (siehe Abb. \ref{fig:frau}) betrachtet, da sich diese mathematisch leichter beschreiben lässt als die Fresnel Beugung.
+Denn bei der Fresnelschen Anordnung liegen Lichtquelle und Beobachtungspunkt P im Endlichen, 
+sodass divergente Strahlenbündel auftreten. 
+Das hat zur Konsequenz, dass im Aufpunkt P Strahlen interferieren, 
+die unter verschiedenen Winkeln gebeugt werden.
 Bei der Frauenhofer Beugung wird angenommen, dass die Lichtquelle und die Beobachtungsebene jeweils unendlich weit von der Beugungsebene entfernt sind.
 So kann einerseits das Licht von der Quelle als paralleles Lichtbündel mit einer ebenen Wellenfront aufgefasst werden und
 andererseits interferieren in einem Punkt $P$ auf der Beobachtungsebene nur Strahlen die unter dem gleichen Winkel $\phi$ gebeugt werden.
@@ -22,23 +26,23 @@ Diese Strahlen besitzen eine Phasendifferenz, die aufgrund des Wegunterschiedes 
 \begin{figure}
   \centering
   \includegraphics[height=5cm]{data/phase.png}
-  \caption{Skizze zur Ableitung der Phasendifferenz. \cite{sample}}
+  \caption{Skizze zur Ableitung der Phasendifferenz \cite{sample}.}
   \label{fig:phase}
 \end{figure}
 Wenn zwei Strahlen in der Beugungsebene den Abstand $x$ aufweisen, kann mit Abbildung \ref{fig:phase} folgende Phasendifferenz abgeleitet werden:
 \begin{equation}
-  \delta = \frac{2\pi s}{\lambda} = \frac{2 \pi \sin(\phi)}{\lambda}
+  \delta = \frac{2\pi s}{\lambda} = \frac{2 \pi \sin(\phi)}{\lambda}.
   \label{eqn:phase}
 \end{equation}
-Für die ebene Welle, die sich in $z$-Richtung ausbreitet, wird folgender Ansatz gemacht:
+Für die ebene Welle, die sich in $z$-Richtung ausbreitet, wird folgender Ansatz genutzt:
 \begin{equation}
-  A(z,t) = A_0 e^{\text{i}(\omega t - 2\pi / \lambda)}
+  A(z,t) = A_0 e^{\text{i}(\omega t - 2\pi / \lambda)}.
 \end{equation}
 Um nun die Amplitude $B(z,t,\phi)$ eines beliebigen Punktes im Wellenfelds zu erhalten, muss über alle Elementarwellen, die sich in diesem Punkt treffen und überlagern, summiert werden.
 Dabei muss die Phasendifferenz aus \eqref{eqn:phase} berücksichtigt werden und da die Elementarwellen eine infinitesimalen Abstand d$x$ haben,
 wird die Summe zum Integral über die Spaltbreite $b$.
 \begin{equation}
-  B(z,t,\phi) = A_0 \int_{0}^{b} \exp\left\{\text{i}\left(\omega t - \frac{2\pi z}{\lambda} + \delta \right)\right\} dx
+  B(z,t,\phi) = A_0 \int_{0}^{b} \exp\left\{\text{i}\left(\omega t - \frac{2\pi z}{\lambda} + \delta \right)\right\} \text{d}x
 \end{equation}
 \begin{equation}
   B(z,t,\phi) = A_0 \exp\left\{\text{i}\left(\omega t - \frac{2\pi z}{\lambda} \right)\right\} \cdot
